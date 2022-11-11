@@ -18,14 +18,15 @@ export default function ArtWorkBack({
       style={{
         backgroundColor: "#345b4b",
         width: "100%",
-        height: height / 2,
+        height,
         borderBottomLeftRadius: 5,
         borderBottomRightRadius: 5,
         borderTopLeftRadius: allBorderRadius ? 5 : 0,
         borderTopRightRadius: allBorderRadius ? 5 : 0,
         backgroundImage: `url(${artworkBack})`,
         backgroundPosition: "center",
-        backgroundSize: "center",
+        backgroundSize: "100%",
+        backgroundRepeat: "no-repeat",
       }}
     ></div>
   );

@@ -11,8 +11,6 @@ import { FAQ } from "../components/artwork/FAQ";
 import { Join } from "../components/artwork/Join";
 import { Story } from "../components/artwork/Story";
 import { BlockContent } from "../components/BlockContent";
-import { Cloud } from "../components/Cloud";
-import { DesktopMenuComponent } from "../components/DesktopMenu";
 import TeamComponent from "../components/TeamComponent";
 import { SettingContext } from "../context/SettingContext";
 import { database } from "../store/firebase";
@@ -103,7 +101,7 @@ export function HomeScreen() {
     <Layout>
       <ArtWorkBack
         artworkBack={setting.loading ? "" : setting.value.background[0]}
-        height={height}
+        height={500}
         width={width}
       />
       <div style={{ padding: "0rem 3rem", marginTop: "-2%" }}>
@@ -129,7 +127,7 @@ export function HomeScreen() {
         </BlockContent>
         <ArtWorkBack
           width={width}
-          height={height / 1.5}
+          height={400}
           artworkBack={setting.loading ? "" : setting.value.background[1]}
           allBorderRadius={true}
         />
@@ -141,7 +139,7 @@ export function HomeScreen() {
       <ArtWorkBack
         artworkBack={setting.loading ? "" : setting.value.background[2]}
         width={width}
-        height={height / 1.5}
+        height={400}
       />
       <div
         style={{
@@ -152,13 +150,13 @@ export function HomeScreen() {
       >
         <Roadmap />
         <div style={{ marginTop: "10%" }}>
-          <TeamComponent />
+          <TeamComponent team={content.find((x) => x.key === "TEAM")} />
         </div>
         <div style={{ marginTop: "10%" }}>
           <FAQ />
         </div>
         <div style={{ marginTop: "10%" }}>
-          <Join />
+          <Join join={content.find((x) => x.key === "JOIN_TEAM")} />
         </div>
       </div>
     </Layout>

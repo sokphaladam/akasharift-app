@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import { BlockContent } from "../BlockContent";
 
-export function Join() {
+export function Join({ join }: { join: any }) {
   return (
     <BlockContent title="Join the play" id="enter">
       <p
@@ -12,18 +13,15 @@ export function Join() {
           marginBottom: "5rem",
           marginTop: "4.5rem",
         }}
+        dangerouslySetInnerHTML={{ __html: join.content }}
+      ></p>
+      <a
+        className="btn btn-light"
+        target={"_blank"}
+        href={join.btn.link ? join.btn.link : "#"}
       >
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero officiis,
-        porro sequi corporis accusantium voluptas quos iusto obcaecati vel.
-        Fugit nemo molestias id nihil velit aliquid ipsa itaque reiciendis rem.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero officiis,
-        porro sequi corporis accusantium voluptas quos iusto obcaecati vel.
-        Fugit nemo molestias id nihil velit aliquid ipsa itaque reiciendis rem.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero officiis,
-        porro sequi corporis accusantium voluptas quos iusto obcaecati vel.
-        Fugit nemo molestias id nihil velit aliquid ipsa itaque reiciendis rem.
-      </p>
-      <button className="btn btn-light">Button</button>
+        {join.btn.label}
+      </a>
     </BlockContent>
   );
 }

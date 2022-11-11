@@ -1,4 +1,9 @@
+import dynamic from "next/dynamic";
 import React from "react";
+
+const ButtonAninme = dynamic(() => import("./ButtonAnime"), {
+  ssr: false,
+});
 
 interface Props {
   title: string;
@@ -27,6 +32,24 @@ export function BlockContent(props: React.PropsWithChildren<Props>) {
       >
         <div
           style={{
+            backgroundColor: "transparent",
+            position: "absolute",
+            width: 250,
+            height: 50,
+            borderRadius: 5,
+            top: -25,
+            left: "50%",
+            transform: "translate(-50%, 0)",
+            textAlign: "center",
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <ButtonAninme title={props.title} />
+        </div>
+        {/* <div
+          style={{
             backgroundColor: "#737374",
             position: "absolute",
             width: 250,
@@ -42,7 +65,7 @@ export function BlockContent(props: React.PropsWithChildren<Props>) {
           }}
         >
           <h3 style={{ margin: 0 }}>{props.title}</h3>
-        </div>
+        </div> */}
         {props.children}
       </div>
     </div>

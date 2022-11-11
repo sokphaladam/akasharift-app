@@ -68,7 +68,7 @@ function AvatarUser({ data }: { data: any }) {
               className="front"
             />
             <img
-              src={data.profile}
+              src={data.profile_back ? data.profile_back : data.profile}
               alt=""
               style={{
                 width: 250,
@@ -106,7 +106,7 @@ function AvatarUser({ data }: { data: any }) {
   );
 }
 
-export default function TeamComponent() {
+export default function TeamComponent({ team }: { team: any }) {
   const [items, setItems] = useState<any[]>([]);
   const [value, loading] = useCollection(collection(database, "team"), {
     snapshotListenOptions: { includeMetadataChanges: true },
@@ -117,6 +117,7 @@ export default function TeamComponent() {
       const data = value.docs.map((x) => {
         return {
           profile: x.data().profile,
+          profile_back: x.data().profile_back,
           name: x.data().name,
           id: x.id,
           info: x.data().info,
@@ -141,12 +142,7 @@ export default function TeamComponent() {
           marginInline: "auto",
         }}
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: team.content }}></p>
         <div
           style={{
             display: "flex",

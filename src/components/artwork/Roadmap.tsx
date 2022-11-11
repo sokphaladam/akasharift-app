@@ -75,12 +75,13 @@ const customizedContent: any = (item: any) => {
             objectFit: "cover",
             borderRadius: "6px",
           }}
+          className="roadmap_image"
         />
       }
     >
       {/* <small style={{ fontSize: 10 }}>{item.date}</small> */}
       <div
-        style={{ fontSize: 11 }}
+        style={{ fontSize: 11, textAlign: "left" }}
         dangerouslySetInnerHTML={{ __html: item.description }}
       />
       {/* <a

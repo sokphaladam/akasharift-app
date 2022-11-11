@@ -52,13 +52,14 @@ export default function DesktopMenu() {
         position: "sticky",
         top: 0,
         zIndex: 999,
+        padding: 0,
       }}
     >
       <div className="container-fluid">
         <Link href="#">
           <a className="navbar-brand">
             {setting.value ? (
-              <img src={setting.value.logo} style={{ width: 50, height: 50 }} />
+              <img src={setting.value.logo} style={{ width: 75, height: 75 }} />
             ) : (
               "LOGO"
             )}
