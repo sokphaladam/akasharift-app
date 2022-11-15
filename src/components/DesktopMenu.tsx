@@ -6,7 +6,7 @@ import { TiSocialFacebook, TiSocialTwitter } from "react-icons/ti";
 import { FaDiscord } from "react-icons/fa";
 import { SettingContext } from "../context/SettingContext";
 
-const mapTab = [
+export const mapTab = [
   {
     text: "Story",
     link: "#story",

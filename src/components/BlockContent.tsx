@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import React from "react";
+import { useWindowSize } from "../hook/useWindowSize";
 
 const ButtonAninme = dynamic(() => import("./ButtonAnime"), {
   ssr: false,
@@ -11,10 +12,12 @@ interface Props {
 }
 
 export function BlockContent(props: React.PropsWithChildren<Props>) {
+  const { innerWidth } = useWindowSize();
+
   return (
     <div
       style={{
-        padding: "0rem 10%",
+        padding: innerWidth < 1500 ? "0rem 5%" : "0rem 10%",
         marginTop: "-3%",
       }}
       id={props.id + ""}

@@ -14,6 +14,7 @@ import { BlockContent } from "../components/BlockContent";
 import TeamComponent from "../components/TeamComponent";
 import { SettingContext } from "../context/SettingContext";
 import { database } from "../store/firebase";
+import { MobileHomeScreen } from "./MobileHomeScreen";
 
 const Layout = dynamic(() => import("../components/Layout"), {
   ssr: false,
@@ -31,32 +32,6 @@ const Roadmap = dynamic(() => import("../components/artwork/Roadmap"), {
   ssr: false,
 });
 
-function MobileHomeScreen() {
-  return (
-    <div>
-      <main></main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          {/* <span className={styles.logo}>
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                width={72}
-                height={16}
-              />
-            </span> */}
-        </a>
-      </footer>
-    </div>
-  );
-}
-
 export function HomeScreen() {
   const { setting } = useContext(SettingContext);
   const [content, setContent] = useState<any[]>([]);
@@ -68,7 +43,7 @@ export function HomeScreen() {
   );
   const width = process.browser ? window.innerWidth : 0;
   const height = process.browser ? window.innerHeight : 0;
-  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+  const isMobile = useMediaQuery({ query: `(max-width: 1000px)` });
 
   useEffect(() => {
     getHomeData().then((data) => console.log(data));
@@ -87,15 +62,18 @@ export function HomeScreen() {
     }
   }, [content, loading, value]);
 
-  if (isMobile) {
-    return <MobileHomeScreen />;
-  }
-
   if (loading) return <div></div>;
 
   const logo = content.find((x) => x.key === "LOGO");
 
   if (!logo) return <div></div>;
+
+  if (isMobile) {
+    if (content && logo) {
+      return <MobileHomeScreen content={content} logo={logo} />;
+    }
+    return <div></div>;
+  }
 
   return (
     <Layout>

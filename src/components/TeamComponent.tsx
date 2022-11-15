@@ -2,6 +2,7 @@
 import { collection } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
+import { useWindowSize } from "../hook/useWindowSize";
 import { database } from "../store/firebase";
 import { BlockContent } from "./BlockContent";
 
@@ -108,6 +109,7 @@ function AvatarUser({ data }: { data: any }) {
 
 export default function TeamComponent({ team }: { team: any }) {
   const [items, setItems] = useState<any[]>([]);
+  const { innerWidth } = useWindowSize();
   const [value, loading] = useCollection(collection(database, "team"), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
@@ -137,7 +139,7 @@ export default function TeamComponent({ team }: { team: any }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          width: "90%",
+          width: innerWidth > 1000 ? "90%" : "100%",
           alignItems: "center",
           marginInline: "auto",
         }}

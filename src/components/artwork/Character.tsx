@@ -143,8 +143,9 @@ export default function Charater({ character }: { character: any }) {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            width: "70%",
+            width: "100%",
             margin: "auto",
+            padding: "0 6%",
           }}
         >
           <div style={{ display: "flex" }}>
