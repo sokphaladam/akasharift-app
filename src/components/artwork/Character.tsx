@@ -20,7 +20,7 @@ const trans = (x: any, y: any, s: any) =>
 
 const Container = styled(animated.div)`
   background-color: #345b4b;
-  border-radius: 5;
+  border-radius: 0;
   background-size: cover;
   background-position: bottom;
 `;
@@ -38,7 +38,7 @@ const setting = {
     <div
       style={{
         backgroundColor: "#ddd",
-        borderRadius: "10px",
+        borderRadius: "0",
         padding: "10px",
         display: "none",
       }}
@@ -82,7 +82,7 @@ function CharacterImage({
         width,
         height,
         backgroundImage: `url(${image})`,
-        transform: props.xys.interpolate(trans),
+        // transform: props.xys.interpolate(trans),
         margin,
       }}
       id="char"
@@ -142,18 +142,25 @@ export default function Charater({ character }: { character: any }) {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "space-around",
             width: "100%",
             margin: "auto",
             padding: "0 6%",
           }}
         >
-          <div style={{ display: "flex" }}>
-            <div ref={leftList} style={{ width: 110 }}>
+          <div style={{}}>
+            <CharacterImage
+              width={75 * 4 + 30}
+              height={75 * 4 + 30}
+              image={leftCharacter[indexl].bgImage}
+              margin={"0 0 0 1rem"}
+            />
+            <br />
+            <div style={{ width: 370 }}>
               <Slider
                 {...setting}
-                vertical={true}
-                verticalSwiping={true}
+                // vertical={true}
+                // verticalSwiping={true}
                 slidesToShow={3}
                 beforeChange={(current, next) => {
                   setIndexL(next);
@@ -172,25 +179,24 @@ export default function Charater({ character }: { character: any }) {
                 })}
               </Slider>
             </div>
-            <CharacterImage
-              width={75 * 4 + 30}
-              height={75 * 4 + 30}
-              image={leftCharacter[indexl].bgImage}
-              margin={"0 0 0 1rem"}
-            />
           </div>
-          <div style={{ display: "flex" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
             <CharacterImage
               width={75 * 4 + 30}
               height={75 * 4 + 30}
               image={rightCharacter[indexr].bgImage}
               margin={"0 1rem 0 0"}
             />
-            <div ref={rightList} style={{ width: 110 }}>
+            <br />
+            <div style={{ width: 370 }}>
               <Slider
                 {...setting}
-                vertical={true}
-                verticalSwiping={true}
                 slidesToShow={3}
                 beforeChange={(current, next) => {
                   setIndexR(next);
