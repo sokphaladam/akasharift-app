@@ -131,53 +131,57 @@ export default function Charater({ character }: { character: any }) {
   if (innerWidth < 1000) {
     return (
       <div>
-        <BlockContent title="Character" id="character">
-          <div style={{ position: "relative" }}>
-            <p
-              style={{
-                width: "55%",
-                color: "#f3f3f3",
-                margin: "auto",
-                marginBottom: "5rem",
-                marginTop: "4.5rem",
-              }}
-              dangerouslySetInnerHTML={{ __html: character.content_one }}
-            ></p>
-            <div>
-              <CharacterImage
-                width={innerWidth - 100}
-                height={innerWidth - 100}
-                image={leftCharacter[indexl].bgImage}
-                margin={"0"}
-              />
+        {leftCharacter.length > 0 && (
+          <>
+            <BlockContent title="Character" id="character">
+              <div style={{ position: "relative" }}>
+                <p
+                  style={{
+                    width: "55%",
+                    color: "#f3f3f3",
+                    margin: "auto",
+                    marginBottom: "5rem",
+                    marginTop: "4.5rem",
+                  }}
+                  dangerouslySetInnerHTML={{ __html: character.content_one }}
+                ></p>
+                <div>
+                  <CharacterImage
+                    width={innerWidth - 100}
+                    height={innerWidth - 100}
+                    image={leftCharacter[indexl].bgImage}
+                    margin={"0"}
+                  />
+                </div>
+              </div>
+            </BlockContent>
+            <br />
+            <div style={{ width: innerWidth, paddingRight: "1rem" }}>
+              <Slider
+                {...setting}
+                // vertical={true}
+                // verticalSwiping={true}
+                slidesToShow={Math.round(innerWidth / 100)}
+                beforeChange={(current, next) => {
+                  setIndexL(next);
+                }}
+              >
+                {leftCharacter.map((x, i) => {
+                  return (
+                    <CharacterImage
+                      width={75}
+                      height={75}
+                      image={x.image}
+                      key={i}
+                      margin={"0"}
+                    />
+                  );
+                })}
+              </Slider>
             </div>
-          </div>
-        </BlockContent>
-        <br />
-        <div style={{ width: innerWidth, paddingRight: "1rem" }}>
-          <Slider
-            {...setting}
-            // vertical={true}
-            // verticalSwiping={true}
-            slidesToShow={Math.round(innerWidth / 100)}
-            beforeChange={(current, next) => {
-              setIndexL(next);
-            }}
-          >
-            {leftCharacter.map((x, i) => {
-              return (
-                <CharacterImage
-                  width={75}
-                  height={75}
-                  image={x.image}
-                  key={i}
-                  margin={"0"}
-                />
-              );
-            })}
-          </Slider>
-        </div>
-        <br />
+            <br />
+          </>
+        )}
       </div>
     );
   }
