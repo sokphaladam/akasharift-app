@@ -76,7 +76,7 @@ a {
 
 .team:hover {
   // box-shadow: 0 0 28px white;
-  transform: rotateY(179deg);
+  // transform: rotateY(179deg);
 }
 .team .content, .team .front, .team .back {
   width: 250px;
@@ -93,11 +93,11 @@ a {
 }
 
 .team .front h1, .team .back h1 {
-  transform: translateZ(70px);
+  // transform: translateZ(70px);
 }
 
 .team .back {
-  transform: rotateY(179deg);
+  // transform: rotateY(179deg);
 }
 
 .team::before, .team::after {
@@ -117,7 +117,7 @@ a {
 
 .team::after {
   // background-image: url("https://img.freepik.com/free-photo/3d-rendering-modern-digital-studio-background-futuristic-empty-space-with-abstract-light-effects_181624-59270.jpg?w=1060&t=st=1662436260~exp=1662436860~hmac=cbced8beac6b3e8d8ff4231e0f11b7861efbac1e5e6f8ce6a8b82ea59b694772");
-  transform: rotateY(179deg) translateZ(2px);
+  // transform: rotateY(179deg) translateZ(2px);
 }
 
 #char {
