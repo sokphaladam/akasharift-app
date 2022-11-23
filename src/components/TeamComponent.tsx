@@ -23,7 +23,7 @@ function AvatarUser({ data }: { data: any }) {
               }}
               className="front"
             />
-            <img
+            {/* <img
               src={data.profile}
               alt=""
               style={{
@@ -33,7 +33,7 @@ function AvatarUser({ data }: { data: any }) {
                 borderRadius: 0,
               }}
               className="back"
-            />
+            /> */}
           </div>
         </div>
         {data.link && (
