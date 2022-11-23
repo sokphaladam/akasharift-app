@@ -27,15 +27,18 @@ export function FAQ() {
   return (
     <BlockContent title="FAQ" id="faq">
       <div style={{ marginTop: 25 }}>
-        <Accordion defaultActiveKey="0" style={{ backgroundColor: "#7d2e2e" }}>
+        <Accordion
+          defaultActiveKey="0"
+          style={{ backgroundColor: "transparent" }}
+        >
           {items.map((x, i) => {
             return (
               <Accordion.Item
                 eventKey={i + ""}
                 key={i}
-                style={{ backgroundColor: "#7d2e2e" }}
+                style={{ backgroundColor: "transparent" }}
               >
-                <Accordion.Header style={{ backgroundColor: "#7d2e2e" }}>
+                <Accordion.Header style={{ backgroundColor: "transparent" }}>
                   {x.question}
                 </Accordion.Header>
                 <Accordion.Body>

@@ -1,12 +1,13 @@
 @import './bootstrap/scss/bootstrap.scss';
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 @import './button.scss';
+@import './desktopmenu.scss';
+@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Nunito', sans-serif !important;
+  font-family: 'Asul', sans-serif;
   background: #1b1a1a !important;
   color: white;
   overflow-x: hidden;
@@ -21,7 +22,7 @@ a {
 * {
   box-sizing: border-box;
   cursor: url('https://i.imgur.com/vllSGoU.png'), auto;
-  font-family: 'Nunito', sans-serif !important;
+  // font-family: 'Asul', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,7 +38,7 @@ a {
 }
 
 .neucha_font {
-  font-family: 'Neucha', cursive !important;
+  // font-family: 'Asul', sans-serif;
 }
 
 
@@ -122,7 +123,7 @@ a {
 #char {
   max-height: 375px;
   height: 100%;
-  border-radius: 14px;
+  border-radius: 0;
   box-shadow: 0px 0px 20px 10px #ffa22329;
   // transform: translateX(-50%);
 }

@@ -33,12 +33,108 @@ export const mapTab = [
     type: "tab",
   },
   {
-    text: "Enter",
+    text: "Join",
     link: "#enter",
     type: "tab",
   },
 ];
 
+export default function DesktopMenu() {
+  const { setting } = useContext(SettingContext);
+  const leftTab = mapTab.filter((_, i) => i < 3);
+  const rightTab = mapTab.filter((_, i) => i >= 3);
+
+  return (
+    <div className="desktop_menu">
+      <ul>
+        {leftTab.map((x) => {
+          return (
+            <li key={x.link}>
+              <Link href={x.link}>
+                <a>{x.text}</a>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <div>
+        <Link href="#">
+          <a>
+            {setting.value ? (
+              <img src={setting.value.logo} style={{ width: 75, height: 75 }} />
+            ) : (
+              "LOGO"
+            )}
+          </a>
+        </Link>
+      </div>
+      <ul>
+        {rightTab.map((x) => {
+          return (
+            <li key={x.link}>
+              <Link href={x.link}>
+                <a>{x.text}</a>
+              </Link>
+            </li>
+          );
+        })}
+        <li>
+          <Link href={setting.value.link.twitter} target="_blank">
+            <a
+              style={{
+                borderStyle: "solid",
+                borderWidth: 0.5,
+                borderRadius: 0,
+                height: 35,
+                width: 35,
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <TiSocialTwitter />
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href={setting.value.link.discord} target="_blank">
+            <a
+              style={{
+                borderStyle: "solid",
+                borderWidth: 0.5,
+                borderRadius: 0,
+                height: 35,
+                width: 35,
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <FaDiscord />
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href={setting.value.link.cardano} target="_blank">
+            <a
+              style={{
+                borderStyle: "solid",
+                borderWidth: 0.5,
+                borderRadius: 0,
+                height: 35,
+                width: 35,
+                alignItems: "center",
+                display: "flex",
+              }}
+            ></a>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+/*
 export default function DesktopMenu() {
   const { setting } = useContext(SettingContext);
 
@@ -129,9 +225,6 @@ export default function DesktopMenu() {
                     display: "flex",
                   }}
                 >
-                  {/* <img 
-                    src="https://ucarecdn.com/1958a2aa-cf35-4aa3-a4b6-ed34b726c3de/-/format/webp/-/resize/1000/" 
-                  /> */}
                 </a>
               </Link>
             </li>
@@ -141,5 +234,6 @@ export default function DesktopMenu() {
     </nav>
   );
 }
+*/
 
 export const DesktopMenuComponent = DesktopMenu;

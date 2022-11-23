@@ -15,43 +15,48 @@ export function BlockContent(props: React.PropsWithChildren<Props>) {
   const { innerWidth } = useWindowSize();
 
   return (
-    <div
-      style={{
-        padding: innerWidth < 1500 ? "0rem 5%" : "0rem 10%",
-        marginTop: "-3%",
-      }}
-      id={props.id + ""}
-    >
+    <div>
       <div
         style={{
-          backgroundColor: "#7d2e2e",
-          width: "100%",
-          padding: "1rem",
-          borderRadius: 5,
-          textAlign: "center",
-          justifyContent: "center",
-          position: "relative",
+          padding: innerWidth < 1500 ? "0rem 5%" : "0rem 10%",
+          marginTop: "-3%",
         }}
       >
         <div
           style={{
             backgroundColor: "transparent",
-            position: "absolute",
-            width: 250,
-            height: 50,
+            width: "100%",
+            padding: "1rem",
             borderRadius: 5,
-            top: -25,
-            left: "50%",
-            transform: "translate(-50%, 0)",
             textAlign: "center",
-            alignItems: "center",
-            display: "flex",
             justifyContent: "center",
+            position: "relative",
           }}
         >
-          <ButtonAninme title={props.title} />
-        </div>
-        {/* <div
+          <div
+            id={props.id + ""}
+            style={{ position: "absolute", top: -50 }}
+          ></div>
+          <div
+            style={{
+              backgroundColor: "transparent",
+              position: "absolute",
+              width: 250,
+              height: 50,
+              borderRadius: 5,
+              top: -25,
+              left: "50%",
+              transform: "translate(-50%, 0)",
+              textAlign: "center",
+              alignItems: "center",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            {/* <ButtonAninme title={props.title} /> */}
+            <h2>{props.title}</h2>
+          </div>
+          {/* <div
           style={{
             backgroundColor: "#737374",
             position: "absolute",
@@ -69,7 +74,8 @@ export function BlockContent(props: React.PropsWithChildren<Props>) {
         >
           <h3 style={{ margin: 0 }}>{props.title}</h3>
         </div> */}
-        {props.children}
+          {props.children}
+        </div>
       </div>
     </div>
   );

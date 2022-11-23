@@ -83,42 +83,50 @@ export function HomeScreen() {
         width={width}
       />
       <div style={{ padding: "0rem 3rem", marginTop: "-2%" }}>
-        <BlockContent title="Logo">
-          <p
-            style={{
-              width: "55%",
-              color: "#f3f3f3",
-              margin: "auto",
-              marginBottom: "5rem",
-              marginTop: "4.5rem",
-            }}
-            dangerouslySetInnerHTML={{
-              __html: logo.content,
-            }}
-          ></p>
-          <button
-            className="btn btn-light"
-            onClick={() => window.open(logo.btn.link, "_blank")}
-          >
-            {logo.btn.label}
-          </button>
-        </BlockContent>
-        <ArtWorkBack
-          width={width}
-          height={400}
-          artworkBack={setting.loading ? "" : setting.value.background[1]}
-          allBorderRadius={true}
-        />
-        <Story story={content.find((x) => x.key === "STORY")} />
+        <div style={{ marginTop: "10%" }}>
+          <BlockContent title="Logo">
+            <p
+              style={{
+                width: "55%",
+                color: "#f3f3f3",
+                margin: "auto",
+                marginBottom: "5rem",
+                marginTop: "4.5rem",
+              }}
+              dangerouslySetInnerHTML={{
+                __html: logo.content,
+              }}
+            ></p>
+            <button
+              className="btn btn-light"
+              onClick={() => window.open(logo.btn.link, "_blank")}
+            >
+              {logo.btn.label}
+            </button>
+          </BlockContent>
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <ArtWorkBack
+            width={width}
+            height={400}
+            artworkBack={setting.loading ? "" : setting.value.background[1]}
+            allBorderRadius={true}
+          />
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <Story story={content.find((x) => x.key === "STORY")} />
+        </div>
         <div style={{ marginTop: "10%" }}>
           <Charater character={content.find((x) => x.key === "CHARACTER")} />
         </div>
       </div>
-      <ArtWorkBack
-        artworkBack={setting.loading ? "" : setting.value.background[2]}
-        width={width}
-        height={400}
-      />
+      <div style={{ marginTop: "10%" }}>
+        <ArtWorkBack
+          artworkBack={setting.loading ? "" : setting.value.background[2]}
+          width={width}
+          height={400}
+        />
+      </div>
       <div
         style={{
           padding: "0rem 3rem",
@@ -126,7 +134,9 @@ export function HomeScreen() {
           position: "relative",
         }}
       >
-        <Roadmap />
+        <div style={{ marginTop: "10%" }}>
+          <Roadmap />
+        </div>
         <div style={{ marginTop: "10%" }}>
           <TeamComponent team={content.find((x) => x.key === "TEAM")} />
         </div>

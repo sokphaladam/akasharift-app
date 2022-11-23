@@ -6,51 +6,6 @@ import { useWindowSize } from "../hook/useWindowSize";
 import { database } from "../store/firebase";
 import { BlockContent } from "./BlockContent";
 
-const data = [
-  {
-    profile: "/assets/team/1.jpg",
-    name: "Morris",
-    age: "27",
-    hobby: "Writer",
-  },
-  {
-    profile: "/assets/team/2.jpg",
-    name: "Lessor",
-    age: "24",
-    hobby: "Singing",
-  },
-  {
-    profile: "/assets/team/3.jpg",
-    name: "Mottoes lessor",
-    age: "18",
-    hobby: "Trouble maker",
-  },
-  {
-    profile: "/assets/team/4.jpg",
-    name: "Morris",
-    age: "27",
-    hobby: "Writer",
-  },
-  {
-    profile: "/assets/team/5.jpg",
-    name: "Lessor",
-    age: "24",
-    hobby: "Singing",
-  },
-  {
-    profile: "/assets/team/6.jpg",
-    name: "Mottoes lessor",
-    age: "18",
-    hobby: "Trouble maker",
-  },
-  {
-    profile: "/assets/team/1.jpg",
-    name: "Morris",
-    age: "27",
-    hobby: "Writer",
-  },
-];
-
 function AvatarUser({ data }: { data: any }) {
   return (
     <div style={{ margin: "1rem", width: 250 }}>
@@ -64,45 +19,47 @@ function AvatarUser({ data }: { data: any }) {
                 width: 250,
                 height: 250,
                 objectFit: "cover",
-                borderRadius: 6,
+                borderRadius: 0,
               }}
               className="front"
             />
             <img
-              src={data.profile_back ? data.profile_back : data.profile}
+              src={data.profile}
               alt=""
               style={{
                 width: 250,
                 height: 250,
                 objectFit: "cover",
-                borderRadius: 6,
+                borderRadius: 0,
               }}
               className="back"
             />
           </div>
         </div>
-        <a
-          href={data.link ? data.link : "#"}
-          style={{
-            borderRadius: 4,
-            backgroundColor: "#37404c",
-            padding: "0.6rem 1.5rem",
-            position: "absolute",
-            zIndex: 1,
-            bottom: 0,
-            left: -15,
-          }}
-        >
-          Link
-        </a>
+        {data.link && (
+          <a
+            href={data.link ? data.link : "#"}
+            style={{
+              borderRadius: 4,
+              backgroundColor: "#37404c",
+              padding: "0.6rem 1.5rem",
+              position: "absolute",
+              zIndex: 1,
+              bottom: 0,
+              left: -15,
+            }}
+          >
+            Link
+          </a>
+        )}
       </div>
-      <div style={{ textAlign: "left" }}>
+      {/* <div style={{ textAlign: "left" }}>
         <b>
           <small>Name {data.name}</small>
         </b>
         <br />
         <small dangerouslySetInnerHTML={{ __html: data.info }}></small>
-      </div>
+      </div> */}
     </div>
   );
 }
