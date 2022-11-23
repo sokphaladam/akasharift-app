@@ -49,24 +49,30 @@ export function MobileHomeScreen({
             {logo.btn.label}
           </button>
         </BlockContent>
-        <ArtWorkBack
-          width={innerWidth}
-          height={200}
-          artworkBack={setting.loading ? "" : setting.value.background[1]}
-          allBorderRadius={true}
-        />
-        <Story story={content.find((x: any) => x.key === "STORY")} />
         <div style={{ marginTop: "10%" }}>
-          {/* <Charater
+          <ArtWorkBack
+            width={innerWidth}
+            height={200}
+            artworkBack={setting.loading ? "" : setting.value.background[1]}
+            allBorderRadius={true}
+          />
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <Story story={content.find((x: any) => x.key === "STORY")} />
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <Charater
             character={content.find((x: any) => x.key === "CHARACTER")}
-          /> */}
+          />
         </div>
       </div>
-      <ArtWorkBack
-        artworkBack={setting.loading ? "" : setting.value.background[2]}
-        width={innerWidth}
-        height={250}
-      />
+      <div style={{ marginTop: "10%" }}>
+        <ArtWorkBack
+          artworkBack={setting.loading ? "" : setting.value.background[2]}
+          width={innerWidth}
+          height={250}
+        />
+      </div>
       <div
         style={{
           padding: "0rem 0rem",

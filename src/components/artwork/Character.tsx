@@ -9,6 +9,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { collection } from "firebase/firestore";
 import { database } from "../../store/firebase";
 import Slider from "react-slick";
+import { useWindowSize } from "../../hook/useWindowSize";
 
 const calc = (x: any, y: any) => [
   -(y - window.innerHeight / 2) / 20,
@@ -97,6 +98,7 @@ export default function Charater({ character }: { character: any }) {
   const rightList = useRef(null);
   const [indexl, setIndexL] = useState<number>(0);
   const [indexr, setIndexR] = useState<number>(0);
+  const { innerWidth } = useWindowSize();
 
   const [value, loading] = useCollection(collection(database, "character"), {
     snapshotListenOptions: { includeMetadataChanges: true },
@@ -125,6 +127,60 @@ export default function Charater({ character }: { character: any }) {
       setRightCharacter([...data.reverse()]);
     }
   }, [value, loading, leftCharacter, rightCharacter]);
+
+  if (innerWidth < 1000) {
+    return (
+      <div>
+        <BlockContent title="Character" id="character">
+          <div style={{ position: "relative" }}>
+            <p
+              style={{
+                width: "55%",
+                color: "#f3f3f3",
+                margin: "auto",
+                marginBottom: "5rem",
+                marginTop: "4.5rem",
+              }}
+              dangerouslySetInnerHTML={{ __html: character.content_one }}
+            ></p>
+            <div>
+              <CharacterImage
+                width={innerWidth - 100}
+                height={innerWidth - 100}
+                image={leftCharacter[indexl].bgImage}
+                margin={"0"}
+              />
+            </div>
+          </div>
+        </BlockContent>
+        <br />
+        <div style={{ width: innerWidth, paddingRight: "1rem" }}>
+          <Slider
+            {...setting}
+            // vertical={true}
+            // verticalSwiping={true}
+            slidesToShow={Math.round(innerWidth / 100)}
+            beforeChange={(current, next) => {
+              setIndexL(next);
+            }}
+          >
+            {leftCharacter.map((x, i) => {
+              return (
+                <CharacterImage
+                  width={75}
+                  height={75}
+                  image={x.image}
+                  key={i}
+                  margin={"0"}
+                />
+              );
+            })}
+          </Slider>
+        </div>
+        <br />
+      </div>
+    );
+  }
 
   return (
     <BlockContent title="Character" id="character">
