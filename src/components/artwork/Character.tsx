@@ -188,7 +188,7 @@ export default function Charater({ character }: { character: any }) {
 
   return (
     <BlockContent title="Character" id="character">
-      <p
+      <h4
         style={{
           width: "55%",
           color: "#f3f3f3",
@@ -197,7 +197,7 @@ export default function Charater({ character }: { character: any }) {
           marginTop: "4.5rem",
         }}
         dangerouslySetInnerHTML={{ __html: character.content_one }}
-      ></p>
+      ></h4>
       {leftCharacter.length > 0 && rightCharacter.length > 0 && (
         <div
           style={{
@@ -278,7 +278,7 @@ export default function Charater({ character }: { character: any }) {
           </div>
         </div>
       )}
-      <p
+      <h4
         style={{
           width: "55%",
           color: "#f3f3f3",
@@ -287,7 +287,7 @@ export default function Charater({ character }: { character: any }) {
           marginTop: "4.5rem",
         }}
         dangerouslySetInnerHTML={{ __html: character.content_two }}
-      ></p>
+      ></h4>
     </BlockContent>
   );
 }

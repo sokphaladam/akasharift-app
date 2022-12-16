@@ -8,6 +8,11 @@ import { SettingContext } from "../context/SettingContext";
 
 export const mapTab = [
   {
+    text: "Join",
+    link: "#enter",
+    type: "tab",
+  },
+  {
     text: "Story",
     link: "#story",
     type: "tab",
@@ -27,16 +32,6 @@ export const mapTab = [
     link: "#team",
     type: "tab",
   },
-  {
-    text: "FAQ",
-    link: "#faq",
-    type: "tab",
-  },
-  {
-    text: "Join",
-    link: "#enter",
-    type: "tab",
-  },
 ];
 
 export default function DesktopMenu() {
@@ -45,7 +40,13 @@ export default function DesktopMenu() {
   const rightTab = mapTab.filter((_, i) => i >= 3);
 
   return (
-    <div className="desktop_menu">
+    <div
+      className="desktop_menu"
+      style={{
+        backgroundImage:
+          "url(https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FAR_0_Navigator.png?alt=media&token=71c8c0b3-a5e7-40c8-8c19-a512af6dfccc)",
+      }}
+    >
       <ul>
         {leftTab.map((x) => {
           return (
@@ -61,7 +62,15 @@ export default function DesktopMenu() {
         <Link href="#">
           <a>
             {setting.value ? (
-              <img src={setting.value.logo} style={{ width: 75, height: 75 }} />
+              <img
+                src={setting.value.logo}
+                style={{
+                  width: 75,
+                  height: 30,
+                  objectFit: "cover",
+                  marginTop: "1rem",
+                }}
+              />
             ) : (
               "LOGO"
             )}
@@ -84,15 +93,16 @@ export default function DesktopMenu() {
               style={{
                 borderStyle: "solid",
                 borderWidth: 0.5,
-                borderRadius: 0,
+                borderRadius: 4,
                 height: 35,
                 width: 35,
                 alignItems: "center",
                 display: "flex",
                 justifyContent: "center",
+                backgroundColor: "#fff",
               }}
             >
-              <TiSocialTwitter />
+              <TiSocialTwitter color="#666" />
             </a>
           </Link>
         </li>
@@ -102,31 +112,17 @@ export default function DesktopMenu() {
               style={{
                 borderStyle: "solid",
                 borderWidth: 0.5,
-                borderRadius: 0,
+                borderRadius: 4,
                 height: 35,
                 width: 35,
                 alignItems: "center",
                 display: "flex",
                 justifyContent: "center",
+                backgroundColor: "#fff",
               }}
             >
-              <FaDiscord />
+              <FaDiscord color="#666" />
             </a>
-          </Link>
-        </li>
-        <li>
-          <Link href={setting.value.link.cardano} target="_blank">
-            <a
-              style={{
-                borderStyle: "solid",
-                borderWidth: 0.5,
-                borderRadius: 0,
-                height: 35,
-                width: 35,
-                alignItems: "center",
-                display: "flex",
-              }}
-            ></a>
           </Link>
         </li>
       </ul>

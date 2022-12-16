@@ -8,7 +8,7 @@ export function Story({ story }: { story: any }) {
 
   return (
     <BlockContent title="Story" id="story">
-      {innerWidth >= 1900 && (
+      {/* {innerWidth >= 1900 && (
         <span
           style={{
             position: "absolute",
@@ -26,8 +26,8 @@ export function Story({ story }: { story: any }) {
             height={550}
           />
         </span>
-      )}
-      <p
+      )} */}
+      <h4
         style={{
           width: innerWidth > 1000 ? "55%" : "100%",
           color: "#f3f3f3",
@@ -39,8 +39,8 @@ export function Story({ story }: { story: any }) {
           padding: innerWidth > 1000 ? "0" : "20px 0px",
         }}
         dangerouslySetInnerHTML={{ __html: story.content + "" }}
-      ></p>
-      {innerWidth >= 1900 && (
+      ></h4>
+      {/* {innerWidth >= 1900 && (
         <span
           style={{
             position: "absolute",
@@ -58,7 +58,7 @@ export function Story({ story }: { story: any }) {
             height={650}
           />
         </span>
-      )}
+      )} */}
     </BlockContent>
   );
 }
