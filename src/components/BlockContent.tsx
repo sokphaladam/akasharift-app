@@ -41,7 +41,7 @@ export function BlockContent(props: React.PropsWithChildren<Props>) {
             style={{
               backgroundColor: "transparent",
               position: "absolute",
-              width: 250,
+              width: "100%",
               height: 50,
               borderRadius: 5,
               top: -25,
@@ -54,7 +54,9 @@ export function BlockContent(props: React.PropsWithChildren<Props>) {
             }}
           >
             {/* <ButtonAninme title={props.title} /> */}
-            <h2>{props.title}</h2>
+            <h3 style={{ fontSize: "40pt", textShadow: "0px 2px 4px #d0aca2" }}>
+              {props.title}
+            </h3>
           </div>
           {/* <div
           style={{

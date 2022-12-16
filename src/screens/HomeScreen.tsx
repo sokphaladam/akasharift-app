@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { collection } from "firebase/firestore";
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -77,17 +78,142 @@ export function HomeScreen() {
 
   return (
     <Layout>
-      <ArtWorkBack
+      {/* <ArtWorkBack
         artworkBack={setting.loading ? "" : setting.value.background[0]}
         height={500}
         width={width}
-      />
+      /> */}
+      <div style={{ position: "relative" }}>
+        <div
+          style={{
+            backgroundImage:
+              "url(https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F01_Intro%20Stars.PNG?alt=media&token=7b88ac9f-6186-40df-83bc-24c25cf4890a)",
+
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "100% 100%",
+            position: "absolute",
+            top: "32%",
+            left: "50%",
+            transform: "translate(-50%, -32%)",
+            height: "40%",
+            width: "70%",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              height: "600px",
+              textAlign: "center",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <h4 style={{ width: "70%" }}>
+              Welcome to Terrenwat, a distant realm where our dreams converge.
+              Be free to embark on and adventurius journey in the Akasha Rift.
+            </h4>
+          </div>
+        </div>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FAR_0_hands.png?alt=media&token=27cc17e3-1829-4799-9181-21b435af9a6f"
+          alt=""
+          style={{
+            position: "absolute",
+            top: "70%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "95%",
+          }}
+        />
+        <div className="moon"></div>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          alt=""
+          className="star"
+          style={{
+            bottom: "7%",
+            left: "20%",
+          }}
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          alt=""
+          className="star"
+          style={{
+            bottom: "-5%",
+            left: "13%",
+          }}
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          alt=""
+          className="star"
+          style={{
+            bottom: "-10%",
+            left: "20%",
+          }}
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          alt=""
+          className="star"
+          style={{
+            bottom: "7%",
+            right: "20%",
+          }}
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          alt=""
+          className="star"
+          style={{
+            bottom: "-5%",
+            right: "13%",
+          }}
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          alt=""
+          className="star"
+          style={{
+            bottom: "-10%",
+            right: "20%",
+          }}
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FAR_0_Curtain.png?alt=media&token=b3a36bfc-9671-4feb-af81-8d2f89b866b1"
+          alt=""
+          style={{
+            width: "100%",
+            objectFit: "fill",
+            height: "150%",
+            marginTop: "-9%",
+            position: "sticky",
+          }}
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FAR_0_AR.png?alt=media&token=b831f909-0098-4906-af44-0e44ca9ed6f7"
+          alt=""
+          style={{
+            position: "absolute",
+            zIndex: 999,
+            top: "10%",
+            left: "40%",
+            width: "20%",
+          }}
+        />
+      </div>
       <div style={{ padding: "0rem 3rem", marginTop: "-2%" }}>
-        <div style={{ marginTop: "10%" }}>
-          <BlockContent title="Logo">
-            <p
+        <div style={{ marginTop: "-10%" }}>
+          <BlockContent title="">
+            <h3 style={{ fontSize: "40pt", textShadow: "0px 2px 4px #d0aca2" }}>
+              ENTER THE PLAY
+            </h3>
+            <h4
               style={{
-                width: "55%",
+                width: "70%",
                 color: "#f3f3f3",
                 margin: "auto",
                 marginBottom: "5rem",
@@ -96,13 +222,7 @@ export function HomeScreen() {
               dangerouslySetInnerHTML={{
                 __html: logo.content,
               }}
-            ></p>
-            <button
-              className="btn btn-light"
-              onClick={() => window.open(logo.btn.link, "_blank")}
-            >
-              {logo.btn.label}
-            </button>
+            ></h4>
           </BlockContent>
         </div>
         <div style={{ marginTop: "10%" }}>
