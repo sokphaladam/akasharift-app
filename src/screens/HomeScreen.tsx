@@ -70,10 +70,30 @@ export function HomeScreen() {
   if (!logo) return <div></div>;
 
   if (isMobile) {
-    if (content && logo) {
-      return <MobileHomeScreen content={content} logo={logo} />;
-    }
-    return <div></div>;
+    // if (content && logo) {
+    //   return <MobileHomeScreen content={content} logo={logo} />;
+    // }
+    return (
+      <div
+        style={{
+          height,
+          width,
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+          }}
+        >
+          <h5>Under Construction</h5>
+          <p>Allow to view in desktop screen only.</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -225,7 +245,7 @@ export function HomeScreen() {
             ></h4>
           </BlockContent>
         </div>
-        <div style={{ marginTop: "10%" }}>
+        {/* <div style={{ marginTop: "10%" }}>
           <ArtWorkBack
             width={width}
             height={400}
@@ -238,9 +258,9 @@ export function HomeScreen() {
         </div>
         <div style={{ marginTop: "10%" }}>
           <Charater character={content.find((x) => x.key === "CHARACTER")} />
-        </div>
+        </div> */}
       </div>
-      <div style={{ marginTop: "10%" }}>
+      {/* <div style={{ marginTop: "10%" }}>
         <ArtWorkBack
           artworkBack={setting.loading ? "" : setting.value.background[2]}
           width={width}
@@ -266,7 +286,7 @@ export function HomeScreen() {
         <div style={{ marginTop: "10%" }}>
           <Join join={content.find((x) => x.key === "JOIN_TEAM")} />
         </div>
-      </div>
+      </div> */}
     </Layout>
   );
 }

@@ -48,7 +48,7 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
       <footer className={styles.footer}>
         <div>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            Powered by Codehub
+            Under Construction
           </a>
           {/* {!setting.loading && (
             <p
