@@ -167,4 +167,8 @@ a {
   height: 90px;
 }
 
+a:hover {
+  color: #fff !important;
+}
+
 @keyframes scale-up-center{0%{transform:scale(.5)}100%{transform:scale(1)}}
