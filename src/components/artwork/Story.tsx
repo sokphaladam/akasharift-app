@@ -7,7 +7,7 @@ export function Story({ story }: { story: any }) {
   const { innerWidth } = useWindowSize();
 
   return (
-    <BlockContent title="Story" id="story">
+    <BlockContent title="" id="story">
       {/* {innerWidth >= 1900 && (
         <span
           style={{

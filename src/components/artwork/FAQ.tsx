@@ -25,7 +25,7 @@ export function FAQ() {
   }, [value, loading, items]);
 
   return (
-    <BlockContent title="FAQ" id="faq">
+    <BlockContent title="" id="faq">
       <div style={{ marginTop: 25 }}>
         <Accordion
           defaultActiveKey="0"

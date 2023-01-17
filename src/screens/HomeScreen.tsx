@@ -228,9 +228,28 @@ export function HomeScreen() {
       <div style={{ padding: "0rem 3rem", marginTop: "-2%" }}>
         <div style={{ marginTop: "-10%" }}>
           <BlockContent title="">
-            <h3 style={{ fontSize: "40pt", textShadow: "0px 2px 4px #d0aca2" }}>
-              ENTER THE PLAY
-            </h3>
+            <div
+              style={{
+                textAlign: "center",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <h3
+                style={{ fontSize: "40pt", textShadow: "0px 2px 4px #d0aca2" }}
+              >
+                ENTER THE PLAY
+              </h3>
+              <div
+                style={{
+                  borderStyle: "solid",
+                  borderColor: "red",
+                  width: 100,
+                  borderBottomWidth: 0,
+                }}
+              ></div>
+            </div>
             <h4
               style={{
                 width: "70%",
@@ -244,6 +263,140 @@ export function HomeScreen() {
               }}
             ></h4>
           </BlockContent>
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <BlockContent title="">
+            <div
+              style={{
+                textAlign: "center",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <h3
+                style={{ fontSize: "40pt", textShadow: "0px 2px 4px #d0aca2" }}
+              >
+                WHO WILL YOU BE?
+              </h3>
+              <div
+                style={{
+                  borderStyle: "solid",
+                  borderColor: "red",
+                  width: 100,
+                  borderBottomWidth: 0,
+                }}
+              ></div>
+            </div>
+            <h4
+              style={{
+                width: "70%",
+                color: "#f3f3f3",
+                margin: "auto",
+                marginBottom: "5rem",
+                marginTop: "4.5rem",
+              }}
+            >
+              Our NFTs are the ticket to our world. This character is you. Now
+              step into our world and dare be creative, artistic, and audacious
+              to seek out your own tale with the same-minded community.
+            </h4>
+          </BlockContent>
+        </div>
+        <div style={{ marginTop: "0" }}>
+          <Charater character={content.find((x) => x.key === "CHARACTER")} />
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <ArtWorkBack
+            width={width}
+            height={400}
+            artworkBack={setting.loading ? "" : setting.value.background[1]}
+            allBorderRadius={true}
+          />
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <div
+            style={{
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "40pt",
+                textShadow: "0px 2px 4px #d0aca2",
+              }}
+            >
+              STORY
+            </h3>
+            <div
+              style={{
+                borderStyle: "solid",
+                borderColor: "red",
+                width: 100,
+                borderBottomWidth: 0,
+              }}
+            ></div>
+          </div>
+          <Story story={content.find((x) => x.key === "STORY")} />
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <div
+            style={{
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "40pt",
+                textShadow: "0px 2px 4px #d0aca2",
+              }}
+            >
+              TEAM
+            </h3>
+            <div
+              style={{
+                borderStyle: "solid",
+                borderColor: "red",
+                width: 100,
+                borderBottomWidth: 0,
+              }}
+            ></div>
+          </div>
+          <TeamComponent team={content.find((x) => x.key === "TEAM")} />
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <div
+            style={{
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "40pt",
+                textShadow: "0px 2px 4px #d0aca2",
+              }}
+            >
+              FAQ
+            </h3>
+            <div
+              style={{
+                borderStyle: "solid",
+                borderColor: "red",
+                width: 100,
+                borderBottomWidth: 0,
+              }}
+            ></div>
+          </div>
+          <FAQ />
         </div>
         {/* <div style={{ marginTop: "10%" }}>
           <ArtWorkBack

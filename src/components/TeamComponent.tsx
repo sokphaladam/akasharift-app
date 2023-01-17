@@ -7,6 +7,7 @@ import { database } from "../store/firebase";
 import { BlockContent } from "./BlockContent";
 
 function AvatarUser({ data }: { data: any }) {
+  console.log(data);
   return (
     <div style={{ margin: "1rem", width: 250 }}>
       <div style={{ position: "relative", height: 280 }}>
@@ -36,6 +37,9 @@ function AvatarUser({ data }: { data: any }) {
             /> */}
           </div>
         </div>
+        {data.name && (
+          <h6 style={{ textAlign: "left", marginTop: 5 }}>{data.name}</h6>
+        )}
         {data.link && (
           <a
             href={data.link ? data.link : "#"}
@@ -89,10 +93,10 @@ export default function TeamComponent({ team }: { team: any }) {
   }, [value, loading, items]);
 
   return (
-    <BlockContent title="Team" id="team">
+    <BlockContent title="" id="team">
       <div
         style={{
-          marginTop: 15,
+          marginTop: "5%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -101,7 +105,7 @@ export default function TeamComponent({ team }: { team: any }) {
           marginInline: "auto",
         }}
       >
-        <p dangerouslySetInnerHTML={{ __html: team.content }}></p>
+        {/* <p dangerouslySetInnerHTML={{ __html: team.content }}></p> */}
         <div
           style={{
             display: "flex",
