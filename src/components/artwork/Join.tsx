@@ -11,12 +11,12 @@ export function Join({ join }: { join: any }) {
         ref={ref}
         style={{
           width: ref.current ? ref.current.offsetWidth : '100%',
-          height: ref.current ? ref.current.offsetWidth-200 : 500,
+          height: ref.current ? ref.current.offsetWidth-200 : 1140,
           backgroundImage: `url(/assets/07-join.PNG)`,
           backgroundRepeat: "no-repeat",
           objectFit: 'contain',
           position: 'relative',
-          backgroundSize: ref.current ? `${ref.current.offsetWidth}px ${ref.current ? ref.current.offsetWidth-200 : 500}px` : '100%',
+          backgroundSize: ref.current ? `${ref.current.offsetWidth}px ${ref.current ? ref.current.offsetWidth-200 : 1140}px` : '100%',
         }}
         className="roadmap"
         >
