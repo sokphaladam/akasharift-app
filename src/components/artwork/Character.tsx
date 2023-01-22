@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { BlockContent } from "../BlockContent";
@@ -20,7 +21,7 @@ const trans = (x: any, y: any, s: any) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 const Container = styled(animated.div)`
-  background-color: #345b4b;
+  background-color: transparent;
   border-radius: 0;
   background-size: cover;
   background-position: bottom;
@@ -66,21 +67,52 @@ function CharacterImage({
   height,
   image,
   margin,
+  main,
 }: {
-  width: number;
-  height: number;
+  width?: number;
+  height?: any;
   image: string;
   margin?: string | number;
+  main?: boolean;
 }) {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: config.default,
   }));
 
+  if (!!main) {
+    return (
+      <Container
+        style={{
+          width: width ? width : "auto",
+          height: height ? height : "auto",
+          backgroundImage: `url(/assets/02_chara.PNG)`,
+          // transform: props.xys.interpolate(trans),
+          margin,
+        }}
+        id="char"
+        onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+      >
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src={image}
+            alt=""
+            style={{
+              width: width ? 180.5 : "auto",
+              height: height ? height / 1.7 : "auto",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+      </Container>
+    );
+  }
+
   return (
     <Container
       style={{
-        width,
+        width: main ? 180.5: width,
         height,
         backgroundImage: `url(${image})`,
         // transform: props.xys.interpolate(trans),
@@ -90,7 +122,7 @@ function CharacterImage({
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
     ></Container>
-  );
+  ); 
 }
 
 export default function Charater({ character }: { character: any }) {
@@ -133,7 +165,7 @@ export default function Charater({ character }: { character: any }) {
       <div>
         {leftCharacter.length > 0 && (
           <>
-            <BlockContent title="Character" id="character">
+            <BlockContent title="" id="character">
               <div style={{ position: "relative" }}>
                 <p
                   style={{
@@ -151,12 +183,13 @@ export default function Charater({ character }: { character: any }) {
                     height={innerWidth - 100}
                     image={leftCharacter[indexl].bgImage}
                     margin={"0"}
+                    main
                   />
                 </div>
               </div>
             </BlockContent>
             <br />
-            <div style={{ width: innerWidth, paddingRight: "1rem" }}>
+            <div style={{ width: innerWidth, paddingRight: "1rem", backgroundImage: `url(/assets/02_chara_panel.PNG)` }}>
               <Slider
                 {...setting}
                 // vertical={true}
@@ -187,7 +220,7 @@ export default function Charater({ character }: { character: any }) {
   }
 
   return (
-    <BlockContent title="Character" id="character">
+    <BlockContent title="" id="character">
       <h4
         style={{
           width: "55%",
@@ -210,13 +243,14 @@ export default function Charater({ character }: { character: any }) {
         >
           <div style={{}}>
             <CharacterImage
-              width={75 * 4 + 30}
-              height={75 * 4 + 30}
+              width={75 * 5 + 30}
+              height={80 * 5 + 30}
               image={leftCharacter[indexl].bgImage}
-              margin={"0 0 0 1rem"}
+              // margin={"0 0 0 1rem"}
+              main={true}
             />
             <br />
-            <div style={{ width: 370 }}>
+            <div style={{ width: 410, paddingLeft: '1rem', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: '410px 100px', backgroundImage: `url(/assets/02_chara_panel.PNG)` }}>
               <Slider
                 {...setting}
                 // vertical={true}
@@ -248,13 +282,14 @@ export default function Charater({ character }: { character: any }) {
             }}
           >
             <CharacterImage
-              width={75 * 4 + 30}
-              height={75 * 4 + 30}
+              width={75 * 5 + 30}
+              height={80 * 5 + 30}
               image={rightCharacter[indexr].bgImage}
-              margin={"0 1rem 0 0"}
+              margin={"0 2rem 0 0"}
+              main={true}
             />
             <br />
-            <div style={{ width: 370 }}>
+            <div style={{ width: 410, paddingLeft: '1rem', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: '410px 100px', backgroundImage: `url(/assets/02_chara_panel.PNG)` }}>
               <Slider
                 {...setting}
                 slidesToShow={3}
@@ -278,7 +313,7 @@ export default function Charater({ character }: { character: any }) {
           </div>
         </div>
       )}
-      <h4
+      {/* <h4
         style={{
           width: "55%",
           color: "#f3f3f3",
@@ -287,7 +322,7 @@ export default function Charater({ character }: { character: any }) {
           marginTop: "4.5rem",
         }}
         dangerouslySetInnerHTML={{ __html: character.content_two }}
-      ></h4>
+      ></h4> */}
     </BlockContent>
   );
 }
