@@ -3,6 +3,11 @@
 @import './desktopmenu.scss';
 @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap');
 
+@font-face {
+  font-family: farout;
+  src: url('/assets/font/far-out.ttf');
+}
+
 html,
 body {
   padding: 0;
@@ -167,6 +172,7 @@ a {
   left: 50%;
   transform: translate(-50%, -15%);
   box-shadow: 0px 2px 4px #d0aca2;
+  // background-image: url('https://drive.google.com/file/d/1uSOyobpQEH4RVMcyWhYZEU_-db4ComYc/view?usp=share_link');
 }
 
 .star {
@@ -180,3 +186,7 @@ a:hover {
 }
 
 @keyframes scale-up-center{0%{transform:scale(.5)}100%{transform:scale(1)}}
+
+.roadmap .title {
+  font-family: farout !important;
+}

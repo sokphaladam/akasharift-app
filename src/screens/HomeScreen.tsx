@@ -130,7 +130,7 @@ export function HomeScreen() {
               alignItems: "center",
             }}
           >
-            <h4 style={{ width: "70%" }}>
+            <h4 style={{ width: "55%" }}>
               Welcome to Terrenwat, a distant realm where our dreams converge.
               Be free to embark on and adventurius journey in the Akasha Rift.
             </h4>
@@ -309,11 +309,13 @@ export function HomeScreen() {
         <div style={{ marginTop: "10%" }}>
           <ArtWorkBack
             width={width}
-            height={400}
+            height={width/2}
             artworkBack={setting.loading ? "" : setting.value.background[1]}
             allBorderRadius={true}
+            sizeinher
           />
         </div>
+        <div id="story"></div>
         <div style={{ marginTop: "10%" }}>
           <div
             style={{
@@ -342,7 +344,21 @@ export function HomeScreen() {
           </div>
           <Story story={content.find((x) => x.key === "STORY")} />
         </div>
+        <div id="roadmap"></div>
         <div style={{ marginTop: "10%" }}>
+          <ArtWorkBack
+            width={width}
+            height={width-150}
+            artworkBack={'/assets/04_roadmap-art.PNG'}
+            allBorderRadius={true}
+            sizeinher
+          />
+        </div>
+        <div style={{ marginTop: "-25%" }}>
+          <Roadmap />
+        </div>
+        <div id="team"></div>
+        <div style={{ marginTop: "30%" }}>
           <div
             style={{
               textAlign: "center",
@@ -397,6 +413,10 @@ export function HomeScreen() {
             ></div>
           </div>
           <FAQ />
+        </div>
+        <div id="enter"></div>
+        <div style={{ marginTop: "0%" }}>
+          <Join join={content.find((x) => x.key === "JOIN_TEAM")} />
         </div>
         {/* <div style={{ marginTop: "10%" }}>
           <ArtWorkBack

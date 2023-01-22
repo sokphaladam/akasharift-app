@@ -7,7 +7,7 @@ export function Story({ story }: { story: any }) {
   const { innerWidth } = useWindowSize();
 
   return (
-    <BlockContent title="" id="story">
+    <BlockContent title="">
       {/* {innerWidth >= 1900 && (
         <span
           style={{
@@ -35,8 +35,9 @@ export function Story({ story }: { story: any }) {
           margin: innerWidth > 1000 ? "auto" : "0px",
           marginBottom: "5rem",
           marginTop: "4.5rem",
-          textAlign: "center",
+          textAlign: "justify",
           padding: innerWidth > 1000 ? "0" : "20px 0px",
+          textJustify: 'inter-word'
         }}
         dangerouslySetInnerHTML={{ __html: story.content + "" }}
       ></h4>

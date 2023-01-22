@@ -93,7 +93,7 @@ export default function TeamComponent({ team }: { team: any }) {
   }, [value, loading, items]);
 
   return (
-    <BlockContent title="" id="team">
+    <BlockContent title="">
       <div
         style={{
           marginTop: "5%",

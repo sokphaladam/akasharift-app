@@ -99,7 +99,7 @@ function CharacterImage({
             src={image}
             alt=""
             style={{
-              width: width ? width / 2 : "auto",
+              width: width ? 180.5 : "auto",
               height: height ? height / 1.7 : "auto",
               objectFit: "contain",
             }}
@@ -112,7 +112,7 @@ function CharacterImage({
   return (
     <Container
       style={{
-        width,
+        width: main ? 180.5: width,
         height,
         backgroundImage: `url(${image})`,
         // transform: props.xys.interpolate(trans),
@@ -122,7 +122,7 @@ function CharacterImage({
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
     ></Container>
-  );
+  ); 
 }
 
 export default function Charater({ character }: { character: any }) {
@@ -189,7 +189,7 @@ export default function Charater({ character }: { character: any }) {
               </div>
             </BlockContent>
             <br />
-            <div style={{ width: innerWidth, paddingRight: "1rem" }}>
+            <div style={{ width: innerWidth, paddingRight: "1rem", backgroundImage: `url(/assets/02_chara_panel.PNG)` }}>
               <Slider
                 {...setting}
                 // vertical={true}
@@ -250,7 +250,7 @@ export default function Charater({ character }: { character: any }) {
               main={true}
             />
             <br />
-            <div style={{ width: 75 * 5.5 + 30 }}>
+            <div style={{ width: 410, paddingLeft: '1rem', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: '410px 100px', backgroundImage: `url(/assets/02_chara_panel.PNG)` }}>
               <Slider
                 {...setting}
                 // vertical={true}
@@ -289,7 +289,7 @@ export default function Charater({ character }: { character: any }) {
               main={true}
             />
             <br />
-            <div style={{ width: 75 * 5.5 + 30 }}>
+            <div style={{ width: 410, paddingLeft: '1rem', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: '410px 100px', backgroundImage: `url(/assets/02_chara_panel.PNG)` }}>
               <Slider
                 {...setting}
                 slidesToShow={3}

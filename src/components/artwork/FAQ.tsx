@@ -28,7 +28,7 @@ export function FAQ() {
     <BlockContent title="" id="faq">
       <div style={{ marginTop: 25 }}>
         <Accordion
-          defaultActiveKey="0"
+          defaultActiveKey="-1"
           style={{ backgroundColor: "transparent" }}
         >
           {items.map((x, i) => {
