@@ -45,12 +45,12 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
       </div> */}
       {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
       <div className="content">{props.children}</div>
-      {/* <footer className={styles.footer}>
+      <footer className={styles.footer}>
         <div>
           <a href="#" target="_blank" rel="noopener noreferrer">
             Under Construction
           </a>
-          {!setting.loading && (
+          {/* {!setting.loading && (
             <p
               style={{
                 width: "55%",
@@ -63,9 +63,9 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
                 __html: setting.value.footer.content + "",
               }}
             ></p>
-          )}
+          )} */}
         </div>
-      </footer> */}
+      </footer>
       <Popbutton />
     </div>
   );
