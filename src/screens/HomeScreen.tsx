@@ -8,8 +8,6 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { useMediaQuery } from "react-responsive";
 import { getHomeData } from "../../pages/api/home";
 import styles from "../../styles/Home.module.scss";
-import { FAQ } from "../components/artwork/FAQ";
-import { Join } from "../components/artwork/Join";
 import { Story } from "../components/artwork/Story";
 import { BlockContent } from "../components/BlockContent";
 import TeamComponent from "../components/TeamComponent";
@@ -33,7 +31,15 @@ const Roadmap = dynamic(() => import("../components/artwork/Roadmap"), {
   ssr: false,
 });
 
-export function HomeScreen() {
+const FAQ = dynamic(() => import("../components/artwork/FAQ"), {
+  ssr: false,
+});
+
+const Join = dynamic(() => import("../components/artwork/Join"), {
+  ssr: false,
+});
+
+export default function HomeScreen() {
   const { setting } = useContext(SettingContext);
   const [content, setContent] = useState<any[]>([]);
   const [value, loading, error] = useCollection(
@@ -98,11 +104,6 @@ export function HomeScreen() {
 
   return (
     <Layout>
-      {/* <ArtWorkBack
-        artworkBack={setting.loading ? "" : setting.value.background[0]}
-        height={500}
-        width={width}
-      /> */}
       <div style={{ position: "relative" }}>
         <div
           style={{
@@ -147,9 +148,22 @@ export function HomeScreen() {
             width: "95%",
           }}
         />
-        <div className="moon"></div>
+        <div className="moon">
+          <img
+            src="/assets/00-orb-white.PNG"
+            style={{
+              width: "150%",
+              height: "150%",
+              objectFit: "cover",
+              position: "absolute",
+              top: "-17%",
+              left: "-26%",
+            }}
+            alt=""
+          />
+        </div>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          src="/assets/00_star-reds.PNG"
           alt=""
           className="star"
           style={{
@@ -158,7 +172,7 @@ export function HomeScreen() {
           }}
         />
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          src="/assets/00_star-white.PNG"
           alt=""
           className="star"
           style={{
@@ -167,16 +181,19 @@ export function HomeScreen() {
           }}
         />
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          src="/assets/00_star-yellow.PNG"
           alt=""
           className="star"
           style={{
-            bottom: "-10%",
-            left: "20%",
+            bottom: "-48%",
+            left: "15%",
+            width: "20%",
+            height: "auto",
+            zIndex: 1,
           }}
         />
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          src="/assets/00_star-white.PNG"
           alt=""
           className="star"
           style={{
@@ -185,7 +202,7 @@ export function HomeScreen() {
           }}
         />
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          src="/assets/00_star-yellow.PNG"
           alt=""
           className="star"
           style={{
@@ -194,12 +211,21 @@ export function HomeScreen() {
           }}
         />
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F1_copy-removebg-preview.png?alt=media&token=2c264f1e-1eea-4539-9e46-232e3f81d6a4"
+          src="/assets/00_star-white.PNG"
           alt=""
           className="star"
           style={{
             bottom: "-10%",
             right: "20%",
+          }}
+        />
+        <img
+          src="/assets/00_star-reds.PNG"
+          alt=""
+          className="star"
+          style={{
+            bottom: "-25%",
+            right: "30%",
           }}
         />
         <img
@@ -264,7 +290,15 @@ export function HomeScreen() {
             ></h4>
           </BlockContent>
         </div>
-        <div style={{ marginTop: "10%" }}>
+        <div
+          style={{
+            position: "relative",
+            margin: "0 -3% 0 -3%",
+          }}
+        >
+          <img src="/assets/00_lines.PNG" style={{ width: "100%" }} alt="" />
+        </div>
+        <div style={{ marginTop: "0%" }}>
           <BlockContent title="">
             <div
               style={{
@@ -303,59 +337,236 @@ export function HomeScreen() {
             </h4>
           </BlockContent>
         </div>
-        <div style={{ marginTop: "0" }}>
-          <Charater character={content.find((x) => x.key === "CHARACTER")} />
-        </div>
-        <div style={{ marginTop: "10%" }}>
-          <ArtWorkBack
-            width={width}
-            height={width/2}
-            artworkBack={setting.loading ? "" : setting.value.background[1]}
-            allBorderRadius={true}
-            sizeinher
-          />
-        </div>
-        <div id="story"></div>
-        <div style={{ marginTop: "10%" }}>
-          <div
+        <div style={{ position: "relative" }}>
+          <img
+            src="/assets/00_star-reds.PNG"
+            alt=""
+            className="star"
             style={{
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+              top: 0,
+              width: "10%",
+              height: "auto",
             }}
-          >
-            <h3
-              style={{
-                fontSize: "40pt",
-                textShadow: "0px 2px 4px #d0aca2",
-              }}
-            >
-              STORY
-            </h3>
+          />
+          <img
+            src="/assets/00_star-white.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "15%",
+              left: "13%",
+            }}
+          />
+          <img
+            src="/assets/00_star-white.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "30%",
+              left: "5%",
+            }}
+          />
+          <img
+            src="/assets/00_star-yellow.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "10%",
+              right: "20%",
+            }}
+          />
+          <img
+            src="/assets/00_star-white.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "-10%",
+              right: "10%",
+            }}
+          />
+          <img
+            src="/assets/00_star-reds.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "30%",
+              right: "15%",
+            }}
+          />
+          <div style={{ marginTop: "0" }}>
+            <Charater character={content.find((x) => x.key === "CHARACTER")} />
+          </div>
+          <div style={{ marginTop: "10%" }}>
+            <ArtWorkBack
+              width={width}
+              height={width / 2}
+              artworkBack={setting.loading ? "" : setting.value.background[1]}
+              allBorderRadius={true}
+              sizeinher
+            />
+          </div>
+        </div>
+        <div style={{ position: "relative" }}>
+          <div id="story"></div>
+          <img
+            src="/assets/00_star-yellow.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: 0,
+              width: "10%",
+              height: "auto",
+              left: "15%",
+            }}
+          />
+          <img
+            src="/assets/00_star-white.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "50%",
+              left: "13%",
+            }}
+          />
+          <img
+            src="/assets/00_star-reds.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "20%",
+              left: "5%",
+            }}
+          />
+          <img
+            src="/assets/00_star-yellow.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "10%",
+              right: "20%",
+            }}
+          />
+          <img
+            src="/assets/00_star-white.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "-10%",
+              right: "30%",
+            }}
+          />
+          <img
+            src="/assets/00_star-reds.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "50%",
+              right: "15%",
+            }}
+          />
+          <div style={{ marginTop: "0%" }}>
             <div
               style={{
-                borderStyle: "solid",
-                borderColor: "red",
-                width: 100,
-                borderBottomWidth: 0,
+                textAlign: "center",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
               }}
-            ></div>
+            >
+              <h3
+                style={{
+                  fontSize: "40pt",
+                  textShadow: "0px 2px 4px #d0aca2",
+                }}
+              >
+                STORY
+              </h3>
+              <div
+                style={{
+                  borderStyle: "solid",
+                  borderColor: "red",
+                  width: 100,
+                  borderBottomWidth: 0,
+                }}
+              ></div>
+            </div>
+            <Story story={content.find((x) => x.key === "STORY")} />
           </div>
-          <Story story={content.find((x) => x.key === "STORY")} />
         </div>
-        <div id="roadmap"></div>
-        <div style={{ marginTop: "10%" }}>
-          <ArtWorkBack
-            width={width}
-            height={width-150}
-            artworkBack={'/assets/04_roadmap-art.PNG'}
-            allBorderRadius={true}
-            sizeinher
+        <div style={{ position: "relative" }}>
+          <div id="roadmap"></div>
+          <img
+            src="/assets/00_star-reds.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "-5%",
+              right: "25%",
+              width: "10%",
+              height: "auto",
+            }}
           />
-        </div>
-        <div style={{ marginTop: "-25%" }}>
-          <Roadmap />
+          <div style={{ marginTop: "0%" }}>
+            <ArtWorkBack
+              width={width}
+              height={width / 2}
+              artworkBack={"/assets/04_roadmap-art.PNG"}
+              allBorderRadius={true}
+              sizeinher
+            />
+          </div>
+          <div style={{ marginTop: "-15%" }}>
+            <Roadmap />
+          </div>
+          <img
+            src="/assets/00_star-white.PNG"
+            alt=""
+            className="star"
+            style={{
+              bottom: "-10%",
+              left: "15%",
+            }}
+          />
+          <img
+            src="/assets/00_star-yellow.PNG"
+            alt=""
+            className="star"
+            style={{
+              bottom: "-15%",
+              left: "35%",
+              width: "10%",
+              height: "auto",
+            }}
+          />
+          <img
+            src="/assets/00_star-yellow.PNG"
+            alt=""
+            className="star"
+            style={{
+              bottom: "-10%",
+              right: "5%",
+              width: "5%",
+              height: "auto",
+            }}
+          />
+          <img
+            src="/assets/00_star-white.PNG"
+            alt=""
+            className="star"
+            style={{
+              bottom: "-14%",
+              right: "35%",
+            }}
+          />
+          <img
+            src="/assets/00_star-reds.PNG"
+            alt=""
+            className="star"
+            style={{
+              bottom: "-15%",
+              right: "15%",
+            }}
+          />
         </div>
         <div id="team"></div>
         <div style={{ marginTop: "30%" }}>
@@ -414,9 +625,54 @@ export function HomeScreen() {
           </div>
           <FAQ />
         </div>
-        <div id="enter"></div>
-        <div style={{ marginTop: "0%" }}>
-          <Join join={content.find((x) => x.key === "JOIN_TEAM")} />
+        <div
+          style={{
+            position: "relative",
+            // overflow: "hidden",
+          }}
+        >
+          <div id="enter"></div>
+          <img
+            src="/assets/00_star-reds.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "20%",
+              left: "10%",
+            }}
+          />
+          <img
+            src="/assets/00_star-white.PNG"
+            alt=""
+            className="star"
+            style={{
+              bottom: "10%",
+              left: "20%",
+            }}
+          />
+          <img
+            src="/assets/00_star-yellow.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "20%",
+              right: "20%",
+              width: "5%",
+              height: "auto",
+            }}
+          />
+          <img
+            src="/assets/00_star-white.PNG"
+            alt=""
+            className="star"
+            style={{
+              top: "60%",
+              right: "5%",
+            }}
+          />
+          <div style={{ marginTop: "0%" }}>
+            <Join join={content.find((x) => x.key === "JOIN_TEAM")} />
+          </div>
         </div>
         {/* <div style={{ marginTop: "10%" }}>
           <ArtWorkBack

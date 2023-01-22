@@ -5,7 +5,7 @@ import { collection } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { database } from "../../store/firebase";
 
-export function FAQ() {
+export default function FAQ() {
   const [items, setItems] = useState<any[]>([]);
   const [value, loading] = useCollection(collection(database, "faq"), {
     snapshotListenOptions: { includeMetadataChanges: true },
