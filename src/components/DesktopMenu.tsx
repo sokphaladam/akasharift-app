@@ -50,7 +50,7 @@ export default function DesktopMenu() {
       <ul>
         {leftTab.map((x) => {
           return (
-            <li key={x.link}>
+            <li key={x.link} style={{ marginTop: '2%' }}>
               <Link href={x.link}>
                 <a>{x.text}</a>
               </Link>
@@ -58,7 +58,7 @@ export default function DesktopMenu() {
           );
         })}
       </ul>
-      <div>
+      <div style={{ marginTop: '0%' }}>
         <Link href="#">
           <a>
             {setting.value ? (
@@ -80,7 +80,7 @@ export default function DesktopMenu() {
       <ul>
         {rightTab.map((x) => {
           return (
-            <li key={x.link}>
+            <li key={x.link} style={{ marginTop: '2%' }}>
               <Link href={x.link}>
                 <a>{x.text}</a>
               </Link>
