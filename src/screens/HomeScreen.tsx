@@ -97,6 +97,27 @@ export function HomeScreen() {
   }
 
   return (
+    <div
+      style={{
+        height,
+        width,
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+        }}
+      >
+        <h5>Under Construction</h5>
+      </div>
+    </div>
+  );
+
+  return (
     <Layout>
       {/* <ArtWorkBack
         artworkBack={setting.loading ? "" : setting.value.background[0]}
@@ -309,7 +330,7 @@ export function HomeScreen() {
         <div style={{ marginTop: "10%" }}>
           <ArtWorkBack
             width={width}
-            height={width/2}
+            height={width / 2}
             artworkBack={setting.loading ? "" : setting.value.background[1]}
             allBorderRadius={true}
             sizeinher
@@ -348,8 +369,8 @@ export function HomeScreen() {
         <div style={{ marginTop: "10%" }}>
           <ArtWorkBack
             width={width}
-            height={width-150}
-            artworkBack={'/assets/04_roadmap-art.PNG'}
+            height={width - 150}
+            artworkBack={"/assets/04_roadmap-art.PNG"}
             allBorderRadius={true}
             sizeinher
           />
