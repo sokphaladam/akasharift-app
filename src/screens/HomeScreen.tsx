@@ -40,6 +40,7 @@ const Join = dynamic(() => import("../components/artwork/Join"), {
 });
 
 export default function HomeScreen() {
+  const construction = false;
   const { setting } = useContext(SettingContext);
   const [content, setContent] = useState<any[]>([]);
   const [value, loading, error] = useCollection(
@@ -97,6 +98,29 @@ export default function HomeScreen() {
         >
           <h5>Under Construction</h5>
           <p>Allow to view in desktop screen only.</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!!construction) {
+    return (
+      <div
+        style={{
+          height,
+          width,
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+          }}
+        >
+          <h5>Under Construction</h5>
         </div>
       </div>
     );
