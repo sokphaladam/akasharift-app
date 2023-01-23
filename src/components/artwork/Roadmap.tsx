@@ -170,14 +170,22 @@ export default function Roadmap() {
 
   return (
     <div ref={refDiv} className="roadmap">
-      <img
-        src="/assets/IMG_3461.PNG"
+      <div
         style={{
-          width: width > 0 ? width : "100%",
-          height: 650,
+          width: width > 0 ? width - 137 : "100%",
+          margin: "auto",
         }}
-        alt=""
-      />
+      >
+        <img
+          src="/assets/IMG_3461.PNG"
+          style={{
+            width: "100%",
+            height: 650,
+            objectFit: "cover",
+          }}
+          alt=""
+        />
+      </div>
       <div
         style={{
           width: width > 0 ? width - 137 : "100%",
