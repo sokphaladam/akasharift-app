@@ -40,7 +40,7 @@ const Join = dynamic(() => import("../components/artwork/Join"), {
 });
 
 export default function HomeScreen() {
-  const construction = true;
+  const construction = false;
   const { setting } = useContext(SettingContext);
   const [content, setContent] = useState<any[]>([]);
   const [value, loading, error] = useCollection(
