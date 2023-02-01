@@ -43,8 +43,10 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
           }}
         />
       </div> */}
-      {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
-      <div className="content">{props.children}</div>
+      <div className="content">
+        {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
+        {props.children}
+      </div>
       <footer className={styles.footer}>
         <div>
           <a href="#" target="_blank" rel="noopener noreferrer">

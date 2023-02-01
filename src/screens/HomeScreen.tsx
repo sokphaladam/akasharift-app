@@ -126,6 +126,12 @@ export default function HomeScreen() {
     );
   }
 
+  // return (
+  //   <Layout>
+  //     <div></div>
+  //   </Layout>
+  // );
+
   return (
     <Layout>
       <div style={{ position: "relative" }}>
@@ -138,7 +144,7 @@ export default function HomeScreen() {
             backgroundRepeat: "no-repeat",
             backgroundSize: "100% 100%",
             position: "absolute",
-            top: "32%",
+            top: "40%",
             left: "50%",
             transform: "translate(-50%, -32%)",
             height: "40%",
@@ -162,11 +168,12 @@ export default function HomeScreen() {
           </div>
         </div>
         <img
+          // two hands
           src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FAR_0_hands.png?alt=media&token=27cc17e3-1829-4799-9181-21b435af9a6f"
           alt=""
           style={{
             position: "absolute",
-            top: "70%",
+            top: "75%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             width: "95%",
@@ -174,13 +181,14 @@ export default function HomeScreen() {
         />
         <div className="moon">
           <img
+            // moon
             src="/assets/00-orb-white.PNG"
             style={{
               width: "150%",
               height: "150%",
               objectFit: "cover",
               position: "absolute",
-              top: "-17%",
+              top: "-12%",
               left: "-26%",
             }}
             alt=""
@@ -253,13 +261,14 @@ export default function HomeScreen() {
           }}
         />
         <img
+          // curtain
           src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FAR_0_Curtain.png?alt=media&token=b3a36bfc-9671-4feb-af81-8d2f89b866b1"
           alt=""
           style={{
             width: "100%",
             objectFit: "fill",
             height: "150%",
-            marginTop: "-9%",
+            marginTop: "0%",
             position: "sticky",
           }}
         />
@@ -269,7 +278,7 @@ export default function HomeScreen() {
           style={{
             position: "absolute",
             zIndex: 999,
-            top: "10%",
+            top: "19%",
             left: "40%",
             width: "20%",
           }}
