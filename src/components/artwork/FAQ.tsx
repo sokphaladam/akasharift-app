@@ -5,7 +5,7 @@ import { collection } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { database } from "../../store/firebase";
 
-export function FAQ() {
+export default function FAQ() {
   const [items, setItems] = useState<any[]>([]);
   const [value, loading] = useCollection(collection(database, "faq"), {
     snapshotListenOptions: { includeMetadataChanges: true },
@@ -38,13 +38,22 @@ export function FAQ() {
                 key={i}
                 style={{ backgroundColor: "transparent" }}
               >
-                <Accordion.Header style={{ backgroundColor: "transparent" }}>
+                <Accordion.Header
+                  style={{
+                    backgroundColor: "transparent",
+                    fontFamily: "martelsan",
+                  }}
+                >
                   {x.question}
                 </Accordion.Header>
                 <Accordion.Body>
                   <div
                     dangerouslySetInnerHTML={{ __html: x.answer }}
-                    style={{ color: "#fff", textAlign: "left" }}
+                    style={{
+                      color: "#fff",
+                      textAlign: "left",
+                      fontFamily: "martelsan",
+                    }}
                   />
                 </Accordion.Body>
               </Accordion.Item>

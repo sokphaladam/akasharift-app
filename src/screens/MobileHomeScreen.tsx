@@ -1,15 +1,30 @@
 import { useContext } from "react";
-import ArtWorkBack from "../components/artwork/ArtWorkBack";
-import Charater from "../components/artwork/Character";
-import { FAQ } from "../components/artwork/FAQ";
-import { Join } from "../components/artwork/Join";
-import Roadmap from "../components/artwork/Roadmap";
 import { Story } from "../components/artwork/Story";
 import { BlockContent } from "../components/BlockContent";
-import Layout from "../components/Layout";
 import TeamComponent from "../components/TeamComponent";
 import { SettingContext } from "../context/SettingContext";
 import { useWindowSize } from "../hook/useWindowSize";
+import dynamic from "next/dynamic";
+
+const Layout = dynamic(() => import("../components/Layout"), {
+  ssr: false,
+});
+
+const ArtWorkBack = dynamic(() => import("../components/artwork/ArtWorkBack"), {
+  ssr: false,
+});
+
+const Charater = dynamic(() => import("../components/artwork/Character"), {
+  ssr: false,
+});
+
+const FAQ = dynamic(() => import("../components/artwork/FAQ"), {
+  ssr: false,
+});
+
+const Join = dynamic(() => import("../components/artwork/Join"), {
+  ssr: false,
+});
 
 export function MobileHomeScreen({
   content,

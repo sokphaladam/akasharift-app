@@ -140,10 +140,17 @@ const customizedContent: any = (item: any) => {
 
 export default function Roadmap() {
   const refDiv = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
   const [items, setItems] = useState<any[]>([]);
   const [value, loading] = useCollection(collection(database, "roadmap"), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
+
+  useEffect(() => {
+    if (refDiv.current) {
+      setWidth(refDiv.current.offsetWidth);
+    }
+  }, [refDiv]);
 
   useEffect(() => {
     if (!loading && value && items.length === 0) {
@@ -163,17 +170,25 @@ export default function Roadmap() {
 
   return (
     <div ref={refDiv} className="roadmap">
-      <img
-        src="/assets/IMG_3461.PNG"
-        style={{
-          width: refDiv.current ? refDiv.current.offsetWidth : "100%",
-          height: 400,
-        }}
-        alt=""
-      />
       <div
         style={{
-          width: refDiv.current ? refDiv.current.offsetWidth - 137 : "100%",
+          width: width > 0 ? width - 137 : "100%",
+          margin: "auto",
+        }}
+      >
+        <img
+          src="/assets/IMG_3461.PNG"
+          style={{
+            width: "100%",
+            height: 650,
+            objectFit: "cover",
+          }}
+          alt=""
+        />
+      </div>
+      <div
+        style={{
+          width: width > 0 ? width - 137 : "100%",
           backgroundColor: "#F6DEC2",
           padding: "1rem 3.5rem",
           margin: "auto",
@@ -186,7 +201,7 @@ export default function Roadmap() {
                 key={index + 1}
                 style={{ display: "flex", marginBottom: "2rem" }}
               >
-                <div style={{ marginRight: "1rem" }}>
+                <div style={{ marginRight: "2.5rem" }}>
                   <h6
                     className="title"
                     style={{ color: "#000", fontSize: "20pt" }}
@@ -221,7 +236,7 @@ export default function Roadmap() {
                 </div>
                 <img
                   src={item.thumbnail}
-                  style={{ width: 250, height: 300 }}
+                  style={{ width: 250, height: "auto", objectFit: "contain" }}
                   alt=""
                 />
               </div>
@@ -235,10 +250,10 @@ export default function Roadmap() {
             >
               <img
                 src={item.thumbnail}
-                style={{ width: 250, height: 300 }}
+                style={{ width: 250, height: "auto", objectFit: "contain" }}
                 alt=""
               />
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "2.5rem" }}>
                 <h6
                   className="title"
                   style={{ color: "#000", fontSize: "20pt" }}
@@ -278,24 +293,39 @@ export default function Roadmap() {
       <div
         style={{
           backgroundColor: "#F6DEC2",
-          width: refDiv.current ? refDiv.current.offsetWidth - 100 : "100%",
-          height: 210,
+          width: width > 0 ? width - 137 : "100%",
+          height: 310,
           margin: "auto",
           position: "relative",
         }}
       >
         <div
           style={{
-            width: refDiv.current ? refDiv.current.offsetWidth + 100 : "100%",
-            height: refDiv.current ? refDiv.current.offsetWidth / 2 : 500,
-            backgroundImage: "url(/assets/04_roadmap_cloud.PNG)",
+            width: width > 0 ? width : "100%",
+            height: width > 0 ? width / 2 : 500,
+            backgroundImage: "url(/assets/IMG_3471.PNG)",
             // backgroundSize: refDiv.current ? `${refDiv.current.offsetWidth+100}px ${refDiv.current ? refDiv.current.offsetWidth/2.5 : 500}px` : '100%',
             backgroundRepeat: "no-repeat",
             objectFit: "contain",
             position: "absolute",
             left: "50%",
-            top: "-20%",
+            top: "30%",
             transform: "translate(-50%, -20%)",
+            backgroundSize: "100%",
+          }}
+        ></div>
+        <div
+          style={{
+            width: width > 0 ? width / 6 : 301,
+            height: width > 0 ? width / 6 : 301,
+            backgroundImage: "url(/assets/IMG_3472.PNG)",
+            // backgroundSize: refDiv.current ? `${refDiv.current.offsetWidth+100}px ${refDiv.current ? refDiv.current.offsetWidth/2.5 : 500}px` : '100%',
+            backgroundRepeat: "no-repeat",
+            objectFit: "contain",
+            position: "absolute",
+            left: "50%",
+            bottom: "-75%",
+            transform: "translateX(-50%)",
             backgroundSize: "100%",
           }}
         ></div>

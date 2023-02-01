@@ -18,7 +18,7 @@ export const mapTab = [
     type: "tab",
   },
   {
-    text: "Character",
+    text: "Characters",
     link: "#character",
     type: "tab",
   },
@@ -47,85 +47,86 @@ export default function DesktopMenu() {
           "url(https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FAR_0_Navigator.png?alt=media&token=71c8c0b3-a5e7-40c8-8c19-a512af6dfccc)",
       }}
     >
-      <ul>
-        {leftTab.map((x) => {
-          return (
-            <li key={x.link} style={{ marginTop: '2%' }}>
-              <Link href={x.link}>
-                <a>{x.text}</a>
+      <div className="menu">
+        <ul>
+          {leftTab.map((x) => {
+            return (
+              <li key={x.link}>
+                <Link href={x.link}>
+                  <a>{x.text}</a>
+                </Link>
+              </li>
+            );
+          })}
+          <li>
+            <div style={{ marginTop: "0%" }}>
+              <Link href="#">
+                <a>
+                  {setting.value ? (
+                    <img
+                      src={setting.value.logo}
+                      style={{
+                        width: 70,
+                        height: "auto",
+                        objectFit: "contain",
+                      }}
+                    />
+                  ) : (
+                    "LOGO"
+                  )}
+                </a>
               </Link>
-            </li>
-          );
-        })}
-      </ul>
-      <div style={{ marginTop: '0%' }}>
-        <Link href="#">
-          <a>
-            {setting.value ? (
-              <img
-                src={setting.value.logo}
+            </div>
+          </li>
+          {rightTab.map((x) => {
+            return (
+              <li key={x.link}>
+                <Link href={x.link}>
+                  <a>{x.text}</a>
+                </Link>
+              </li>
+            );
+          })}
+          <li>
+            <Link href={setting.value.link.twitter} target="_blank">
+              <a
                 style={{
-                  width: 75,
-                  height: 30,
-                  objectFit: "cover",
-                  marginTop: "1rem",
+                  borderStyle: "solid",
+                  borderWidth: 0.5,
+                  borderRadius: 4,
+                  height: 35,
+                  width: 35,
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  backgroundColor: "#fff",
                 }}
-              />
-            ) : (
-              "LOGO"
-            )}
-          </a>
-        </Link>
+              >
+                <TiSocialTwitter color="#666" />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href={setting.value.link.discord} target="_blank">
+              <a
+                style={{
+                  borderStyle: "solid",
+                  borderWidth: 0.5,
+                  borderRadius: 4,
+                  height: 35,
+                  width: 35,
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  backgroundColor: "#fff",
+                }}
+              >
+                <FaDiscord color="#666" />
+              </a>
+            </Link>
+          </li>
+        </ul>
       </div>
-      <ul>
-        {rightTab.map((x) => {
-          return (
-            <li key={x.link} style={{ marginTop: '2%' }}>
-              <Link href={x.link}>
-                <a>{x.text}</a>
-              </Link>
-            </li>
-          );
-        })}
-        <li>
-          <Link href={setting.value.link.twitter} target="_blank">
-            <a
-              style={{
-                borderStyle: "solid",
-                borderWidth: 0.5,
-                borderRadius: 4,
-                height: 35,
-                width: 35,
-                alignItems: "center",
-                display: "flex",
-                justifyContent: "center",
-                backgroundColor: "#fff",
-              }}
-            >
-              <TiSocialTwitter color="#666" />
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href={setting.value.link.discord} target="_blank">
-            <a
-              style={{
-                borderStyle: "solid",
-                borderWidth: 0.5,
-                borderRadius: 4,
-                height: 35,
-                width: 35,
-                alignItems: "center",
-                display: "flex",
-                justifyContent: "center",
-                backgroundColor: "#fff",
-              }}
-            >
-              <FaDiscord color="#666" />
-            </a>
-          </Link>
-        </li>
-      </ul>
     </div>
   );
 }
