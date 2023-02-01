@@ -37,7 +37,8 @@ export function Story({ story }: { story: any }) {
           marginTop: "4.5rem",
           textAlign: "justify",
           padding: innerWidth > 1000 ? "0" : "20px 0px",
-          textJustify: 'inter-word'
+          textJustify: "inter-word",
+          fontFamily: "martelsan",
         }}
         dangerouslySetInnerHTML={{ __html: story.content + "" }}
       ></h4>

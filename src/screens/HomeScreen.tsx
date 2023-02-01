@@ -161,7 +161,7 @@ export default function HomeScreen() {
               alignItems: "center",
             }}
           >
-            <h4 style={{ width: "55%" }}>
+            <h4 style={{ width: "55%", fontFamily: "martelsan" }}>
               Welcome to Terrenwat, a distant realm where our dreams converge.
               Be free to embark on and adventurius journey in the Akasha Rift.
             </h4>
@@ -201,6 +201,7 @@ export default function HomeScreen() {
           style={{
             bottom: "7%",
             left: "20%",
+            objectFit: "contain",
           }}
         />
         <img
@@ -210,6 +211,7 @@ export default function HomeScreen() {
           style={{
             bottom: "-5%",
             left: "13%",
+            objectFit: "contain",
           }}
         />
         <img
@@ -217,11 +219,12 @@ export default function HomeScreen() {
           alt=""
           className="star"
           style={{
-            bottom: "-48%",
+            bottom: "-41%",
             left: "15%",
             width: "20%",
             height: "auto",
             zIndex: 1,
+            objectFit: "contain",
           }}
         />
         <img
@@ -231,6 +234,7 @@ export default function HomeScreen() {
           style={{
             bottom: "7%",
             right: "20%",
+            objectFit: "contain",
           }}
         />
         <img
@@ -240,6 +244,7 @@ export default function HomeScreen() {
           style={{
             bottom: "-5%",
             right: "13%",
+            objectFit: "contain",
           }}
         />
         <img
@@ -249,6 +254,7 @@ export default function HomeScreen() {
           style={{
             bottom: "-10%",
             right: "20%",
+            objectFit: "contain",
           }}
         />
         <img
@@ -258,6 +264,7 @@ export default function HomeScreen() {
           style={{
             bottom: "-25%",
             right: "30%",
+            objectFit: "contain",
           }}
         />
         <img
@@ -316,6 +323,7 @@ export default function HomeScreen() {
                 margin: "auto",
                 marginBottom: "5rem",
                 marginTop: "4.5rem",
+                fontFamily: "martelsan",
               }}
               dangerouslySetInnerHTML={{
                 __html: logo.content,
@@ -362,6 +370,7 @@ export default function HomeScreen() {
                 margin: "auto",
                 marginBottom: "5rem",
                 marginTop: "4.5rem",
+                fontFamily: "martelsan",
               }}
             >
               Our NFTs are the ticket to our world. This character is you. Now
@@ -388,6 +397,7 @@ export default function HomeScreen() {
             style={{
               top: "15%",
               left: "13%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -397,6 +407,7 @@ export default function HomeScreen() {
             style={{
               top: "30%",
               left: "5%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -406,6 +417,7 @@ export default function HomeScreen() {
             style={{
               top: "10%",
               right: "20%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -415,6 +427,7 @@ export default function HomeScreen() {
             style={{
               top: "-10%",
               right: "10%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -424,19 +437,30 @@ export default function HomeScreen() {
             style={{
               top: "30%",
               right: "15%",
+              objectFit: "contain",
             }}
           />
           <div style={{ marginTop: "0" }}>
             <Charater character={content.find((x) => x.key === "CHARACTER")} />
           </div>
           <div style={{ marginTop: "10%" }}>
-            <ArtWorkBack
+            <img
+              src={setting.loading ? "" : setting.value.background[1]}
+              alt=""
+              style={{
+                width,
+                height: "auto",
+                objectFit: "contain",
+                marginLeft: "-3%",
+              }}
+            />
+            {/* <ArtWorkBack
               width={width}
               height={width / 2}
               artworkBack={setting.loading ? "" : setting.value.background[1]}
               allBorderRadius={true}
               sizeinher
-            />
+            /> */}
           </div>
         </div>
         <div style={{ position: "relative" }}>
@@ -450,6 +474,7 @@ export default function HomeScreen() {
               width: "10%",
               height: "auto",
               left: "15%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -459,6 +484,7 @@ export default function HomeScreen() {
             style={{
               top: "50%",
               left: "13%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -468,6 +494,7 @@ export default function HomeScreen() {
             style={{
               top: "20%",
               left: "5%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -477,6 +504,7 @@ export default function HomeScreen() {
             style={{
               top: "10%",
               right: "20%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -486,6 +514,7 @@ export default function HomeScreen() {
             style={{
               top: "-10%",
               right: "30%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -495,6 +524,7 @@ export default function HomeScreen() {
             style={{
               top: "50%",
               right: "15%",
+              objectFit: "contain",
             }}
           />
           <div style={{ marginTop: "0%" }}>
@@ -540,13 +570,23 @@ export default function HomeScreen() {
             }}
           />
           <div style={{ marginTop: "0%" }}>
-            <ArtWorkBack
+            <img
+              src="/assets/04_roadmap-art.PNG"
+              alt=""
+              style={{
+                width,
+                height: "auto",
+                objectFit: "contain",
+                marginLeft: "-3%",
+              }}
+            />
+            {/* <ArtWorkBack
               width={width}
-              height={width / 2}
+              height={"auto"}
               artworkBack={"/assets/04_roadmap-art.PNG"}
               allBorderRadius={true}
               sizeinher
-            />
+            /> */}
           </div>
           <div style={{ marginTop: "-15%" }}>
             <Roadmap />
@@ -558,6 +598,7 @@ export default function HomeScreen() {
             style={{
               bottom: "-10%",
               left: "15%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -569,6 +610,7 @@ export default function HomeScreen() {
               left: "35%",
               width: "10%",
               height: "auto",
+              objectFit: "contain",
             }}
           />
           <img
@@ -580,6 +622,7 @@ export default function HomeScreen() {
               right: "5%",
               width: "5%",
               height: "auto",
+              objectFit: "contain",
             }}
           />
           <img
@@ -589,6 +632,7 @@ export default function HomeScreen() {
             style={{
               bottom: "-14%",
               right: "35%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -598,6 +642,7 @@ export default function HomeScreen() {
             style={{
               bottom: "-15%",
               right: "15%",
+              objectFit: "contain",
             }}
           />
         </div>
@@ -672,6 +717,7 @@ export default function HomeScreen() {
             style={{
               top: "20%",
               left: "10%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -681,6 +727,7 @@ export default function HomeScreen() {
             style={{
               bottom: "10%",
               left: "20%",
+              objectFit: "contain",
             }}
           />
           <img
@@ -692,6 +739,7 @@ export default function HomeScreen() {
               right: "20%",
               width: "5%",
               height: "auto",
+              objectFit: "contain",
             }}
           />
           <img
@@ -701,6 +749,7 @@ export default function HomeScreen() {
             style={{
               top: "60%",
               right: "5%",
+              objectFit: "contain",
             }}
           />
           <div style={{ marginTop: "0%" }}>

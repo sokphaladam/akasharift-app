@@ -35,10 +35,10 @@ export default function Join({ join }: { join: any }) {
             margin: "auto",
           }}
         >
-          <p style={{ color: "#000", fontWeight: "bold" }}>
+          <p style={{ color: "#000", fontWeight: "bold", fontSize: "20pt" }}>
             The show is about to start. <br /> And you are about to be rifted to
           </p>
-          <h2 className="title" style={{ color: "#000", fontSize: "45pt" }}>
+          <h2 className="title" style={{ color: "#000", fontSize: "90pt" }}>
             TERREWAT
           </h2>
           <div
@@ -53,7 +53,7 @@ export default function Join({ join }: { join: any }) {
           <br />
           <h6
             style={{
-              fontSize: "25pt",
+              fontSize: "50pt",
               fontWeight: "bolder",
               textShadow: "0px 2px 4px #d0aca2",
             }}

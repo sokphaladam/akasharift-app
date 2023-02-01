@@ -201,7 +201,7 @@ export default function Roadmap() {
                 key={index + 1}
                 style={{ display: "flex", marginBottom: "2rem" }}
               >
-                <div style={{ marginRight: "1rem" }}>
+                <div style={{ marginRight: "2.5rem" }}>
                   <h6
                     className="title"
                     style={{ color: "#000", fontSize: "20pt" }}
@@ -236,7 +236,7 @@ export default function Roadmap() {
                 </div>
                 <img
                   src={item.thumbnail}
-                  style={{ width: 250, height: 300 }}
+                  style={{ width: 250, height: "auto", objectFit: "contain" }}
                   alt=""
                 />
               </div>
@@ -250,10 +250,10 @@ export default function Roadmap() {
             >
               <img
                 src={item.thumbnail}
-                style={{ width: 250, height: 300 }}
+                style={{ width: 250, height: "auto", objectFit: "contain" }}
                 alt=""
               />
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "2.5rem" }}>
                 <h6
                   className="title"
                   style={{ color: "#000", fontSize: "20pt" }}

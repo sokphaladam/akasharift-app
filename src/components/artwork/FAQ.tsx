@@ -38,13 +38,22 @@ export default function FAQ() {
                 key={i}
                 style={{ backgroundColor: "transparent" }}
               >
-                <Accordion.Header style={{ backgroundColor: "transparent" }}>
+                <Accordion.Header
+                  style={{
+                    backgroundColor: "transparent",
+                    fontFamily: "martelsan",
+                  }}
+                >
                   {x.question}
                 </Accordion.Header>
                 <Accordion.Body>
                   <div
                     dangerouslySetInnerHTML={{ __html: x.answer }}
-                    style={{ color: "#fff", textAlign: "left" }}
+                    style={{
+                      color: "#fff",
+                      textAlign: "left",
+                      fontFamily: "martelsan",
+                    }}
                   />
                 </Accordion.Body>
               </Accordion.Item>

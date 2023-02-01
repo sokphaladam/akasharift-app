@@ -17,6 +17,7 @@
   z-index: 1000;
   padding-left: 19%;
   padding-right: 15%;
+  font-family: asul !important;
 
   .menu {
     display: flex;
@@ -25,6 +26,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-family: asul !important;
+
     // position: sticky;
     // top: 0;
     // justify-content: space-between;
@@ -39,6 +42,8 @@
       text-align: center;
       //   width: calc(100% / 2.5);
       width: 100%;
+      font-family: asul !important;
+
 
       li {
         color: #fff;
@@ -47,6 +52,8 @@
         font-size: 14pt;
         font-weight: bold;
         text-transform: uppercase;
+          font-family: asul !important;
+
       }
     }
   }

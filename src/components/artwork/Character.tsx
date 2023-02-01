@@ -82,6 +82,32 @@ function CharacterImage({
 
   if (!!main) {
     return (
+      <div
+        style={{
+          width: width ? width : "auto",
+          height: height ? height : "auto",
+          backgroundImage: `url(/assets/02_chara.PNG)`,
+          margin,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          paddingBottom: "5%",
+        }}
+        id="char"
+      >
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src={image}
+            alt=""
+            style={{
+              width: width ? 215.5 : "auto",
+              height: "auto",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+      </div>
+    );
+    return (
       <Container
         style={{
           width: width ? width : "auto",
@@ -112,7 +138,7 @@ function CharacterImage({
   return (
     <Container
       style={{
-        width: main ? 180.5: width,
+        width: main ? 180.5 : width,
         height,
         backgroundImage: `url(${image})`,
         // transform: props.xys.interpolate(trans),
@@ -122,7 +148,7 @@ function CharacterImage({
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
     ></Container>
-  ); 
+  );
 }
 
 export default function Charater({ character }: { character: any }) {
@@ -189,7 +215,13 @@ export default function Charater({ character }: { character: any }) {
               </div>
             </BlockContent>
             <br />
-            <div style={{ width: innerWidth, paddingRight: "1rem", backgroundImage: `url(/assets/02_chara_panel.PNG)` }}>
+            <div
+              style={{
+                width: innerWidth,
+                paddingRight: "1rem",
+                backgroundImage: `url(/assets/02_chara_panel.PNG)`,
+              }}
+            >
               <Slider
                 {...setting}
                 // vertical={true}
@@ -243,14 +275,24 @@ export default function Charater({ character }: { character: any }) {
         >
           <div style={{}}>
             <CharacterImage
-              width={75 * 5 + 30}
+              width={80 * 5 + 30}
               height={80 * 5 + 30}
               image={leftCharacter[indexl].bgImage}
               // margin={"0 0 0 1rem"}
               main={true}
             />
             <br />
-            <div style={{ width: 410, paddingLeft: '1rem', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: '410px 100px', backgroundImage: `url(/assets/02_chara_panel.PNG)` }}>
+            <div
+              style={{
+                width: 325,
+                padding: "0.5rem 0.5rem 0.5rem 1.5rem",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "325px 100px",
+                backgroundImage: `url(/assets/02_chara_panel.PNG)`,
+                margin: "auto",
+              }}
+            >
               <Slider
                 {...setting}
                 // vertical={true}
@@ -263,11 +305,11 @@ export default function Charater({ character }: { character: any }) {
                 {leftCharacter.map((x, i) => {
                   return (
                     <CharacterImage
-                      width={75}
-                      height={75}
+                      width={70}
+                      height={70}
                       image={x.image}
                       key={i}
-                      margin={"1rem"}
+                      margin={"0.3rem"}
                     />
                   );
                 })}
@@ -282,14 +324,24 @@ export default function Charater({ character }: { character: any }) {
             }}
           >
             <CharacterImage
-              width={75 * 5 + 30}
+              width={80 * 5 + 30}
               height={80 * 5 + 30}
               image={rightCharacter[indexr].bgImage}
               margin={"0 2rem 0 0"}
               main={true}
             />
             <br />
-            <div style={{ width: 410, paddingLeft: '1rem', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: '410px 100px', backgroundImage: `url(/assets/02_chara_panel.PNG)` }}>
+            <div
+              style={{
+                width: 325,
+                padding: "0.5rem 0.5rem 0.5rem 1.5rem",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "325px 100px",
+                backgroundImage: `url(/assets/02_chara_panel.PNG)`,
+                margin: "auto",
+              }}
+            >
               <Slider
                 {...setting}
                 slidesToShow={3}
@@ -300,11 +352,11 @@ export default function Charater({ character }: { character: any }) {
                 {rightCharacter.map((x, i) => {
                   return (
                     <CharacterImage
-                      width={75}
-                      height={75}
+                      width={70}
+                      height={70}
                       image={x.image}
                       key={i}
-                      margin={"1rem"}
+                      margin={"0.3rem"}
                     />
                   );
                 })}

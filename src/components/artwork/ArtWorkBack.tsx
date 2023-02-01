@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 interface Props {
   artworkBack: string;
   width: number;
-  height?: number;
+  height?: any;
   allBorderRadius?: boolean;
   sizeinher?: Boolean;
 }

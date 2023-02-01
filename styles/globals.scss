@@ -13,11 +13,16 @@
   src: url("/assets/font/asul-bold.ttf");
 }
 
+@font-face {
+  font-family: martelsan;
+  src: url("/assets/font/martelsans-regular.ttf");
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Asul", sans-serif;
+  font-family: asul;
   color: white;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -138,8 +143,8 @@ a {
 }
 
 #char {
-  max-height: 375px;
-  height: 100%;
+  // max-height: 375px;
+  // height: 100%;
   border-radius: 0;
   background-position: center;
   background-repeat: no-repeat;
@@ -205,4 +210,11 @@ a:hover {
 
 .roadmap .title {
   font-family: farout !important;
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: transparent !important;
+  outline: 0;
+  box-shadow: none !important;
 }
