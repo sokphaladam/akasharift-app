@@ -43,20 +43,26 @@ export default function HomeScreen() {
   const construction = false;
   const { setting } = useContext(SettingContext);
   const [content, setContent] = useState<any[]>([]);
+  const [width, setWidth] = useState(process.browser ? window.innerWidth : 0);
+  const [height, setHeight] = useState(
+    process.browser ? window.innerHeight : 0
+  );
   const [value, loading, error] = useCollection(
     collection(database, "content_block"),
     {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
-  const width = process.browser ? window.innerWidth : 0;
-  const height = process.browser ? window.innerHeight : 0;
-  const doc = document.body.scrollTop;
   const isMobile = useMediaQuery({ query: `(max-width: 1000px)` });
 
   useEffect(() => {
     getHomeData().then((data) => console.log(data));
-  });
+
+    window.addEventListener("resize", () => {
+      setWidth(process.browser ? window.innerWidth : 0);
+      setHeight(process.browser ? window.innerHeight : 0);
+    });
+  }, []);
 
   useEffect(() => {
     if (!loading && value && content.length === 0) {
@@ -220,13 +226,14 @@ export default function HomeScreen() {
           alt=""
           className="star"
           style={{
-            // bottom: "-41%",
-            bottom: height / 3,
-            left: "15%",
+            bottom: "-33%",
+            // bottom: height / 3,
+            left: "20%",
             width: "20%",
             height: "auto",
             zIndex: 1,
             objectFit: "contain",
+            transform: "translate(-20%, 33%)",
             // position: "fixed",
           }}
         />
