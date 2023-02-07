@@ -87,7 +87,7 @@ export default function DesktopMenu() {
               </li>
             );
           })}
-          <li>
+          <li className="btn-link">
             <Link href={setting.value.link.twitter} target="_blank">
               <a
                 style={{
@@ -106,7 +106,7 @@ export default function DesktopMenu() {
               </a>
             </Link>
           </li>
-          <li>
+          <li className="btn-link">
             <Link href={setting.value.link.discord} target="_blank">
               <a
                 style={{

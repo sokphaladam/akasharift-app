@@ -51,6 +51,7 @@ export default function HomeScreen() {
   );
   const width = process.browser ? window.innerWidth : 0;
   const height = process.browser ? window.innerHeight : 0;
+  const doc = document.body.scrollTop;
   const isMobile = useMediaQuery({ query: `(max-width: 1000px)` });
 
   useEffect(() => {
@@ -219,12 +220,14 @@ export default function HomeScreen() {
           alt=""
           className="star"
           style={{
-            bottom: "-41%",
+            // bottom: "-41%",
+            bottom: height / 3,
             left: "15%",
             width: "20%",
             height: "auto",
             zIndex: 1,
             objectFit: "contain",
+            // position: "fixed",
           }}
         />
         <img

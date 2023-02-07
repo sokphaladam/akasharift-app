@@ -17,13 +17,13 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
   const { setting } = useContext(SettingContext);
   const { innerWidth } = useWindowSize();
   return (
-    <div
-      style={{
-        overflow: "auto",
-        height: window.innerHeight,
-        scrollBehavior: "smooth",
-      }}
-      id="main"
+    <
+      // style={{
+      //   overflow: "auto",
+      //   height: window.innerHeight,
+      //   scrollBehavior: "smooth",
+      // }}
+      // id="main"
     >
       <Head>
         <title>{props.title ? props.title : "Akasha Rift"}</title>
@@ -69,6 +69,6 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
         </div>
       </footer>
       <Popbutton />
-    </div>
+    </>
   );
 }
