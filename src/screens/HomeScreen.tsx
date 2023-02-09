@@ -47,6 +47,7 @@ export default function HomeScreen() {
   const [height, setHeight] = useState(
     process.browser ? window.innerHeight : 0
   );
+  const [loadings, setLoading] = useState(true);
   const [value, loading, error] = useCollection(
     collection(database, "content_block"),
     {
@@ -57,6 +58,8 @@ export default function HomeScreen() {
 
   useEffect(() => {
     getHomeData().then((data) => console.log(data));
+
+    document.getElementById("main")?.scrollTo({ top: 0 });
 
     window.addEventListener("resize", () => {
       setWidth(process.browser ? window.innerWidth : 0);
@@ -74,6 +77,9 @@ export default function HomeScreen() {
           };
         })
       );
+      setTimeout(() => {
+        setLoading(false)
+      }, 2000)
     }
   }, [content, loading, value]);
 
@@ -167,17 +173,21 @@ export default function HomeScreen() {
               alignItems: "center",
             }}
           >
-            <h4
+            {
+              !loadings && <h4
               style={{
                 width: "55%",
                 fontFamily: "martelsan",
                 textAlign: "justify",
                 textAlignLast: "center",
               }}
+
+              className="animation_slide_up"
             >
               Welcome to Terrenwat, a distant realm where our dreams converge.
               Be free to embark on and adventurius journey in the Akasha Rift.
             </h4>
+            }
           </div>
         </div>
         <img

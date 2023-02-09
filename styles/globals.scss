@@ -211,4 +211,17 @@ button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled)
   cursor: url('/assets/cursor/3.png'), auto !important;
 }
 
+.animation_slide_up {
+  animation: slide_up 0.9s cubic-bezier(0.65,0,0.35,1) both;
+}
+
+@keyframes slide_up {
+  0%{
+    transform: translateY(100px)
+  }
+  100% {
+   transform: translateY(0) 
+  }
+}
+
 @import './cardhover.scss';

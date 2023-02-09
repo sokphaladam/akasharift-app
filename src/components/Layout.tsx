@@ -5,7 +5,7 @@ import DesktopMenu from "./DesktopMenu";
 import styles from "../../styles/Home.module.scss";
 import Image from "next/image";
 import { Popbutton } from "./Popbutton";
-import { SettingContext } from "../context/SettingContext";
+import { SettingContext, TriggerClick } from "../context/SettingContext";
 import { useWindowSize } from "../hook/useWindowSize";
 import { MobileMenu } from "./MobileMenu";
 
@@ -51,10 +51,12 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
         }}
         id="main"
       >
+        {/* <TriggerClick.Provider > */}
         <div className="content">
           {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
           {props.children}
         </div>
+        {/* </TriggerClick.Provider> */}
         <footer className={styles.footer}>
           <div>
             <a href="#" target="_blank" rel="noopener noreferrer">

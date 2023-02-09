@@ -1,27 +1,36 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BlockContent } from "../BlockContent";
 
 export default function Join({ join }: { join: any }) {
   const ref = useRef<HTMLDivElement | any>(null);
+  const [width, setWidth] = useState(process.browser ? window.innerWidth : 0);
+  const [height, setHeight] = useState(
+    process.browser ? window.innerHeight : 0
+  );
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidth(process.browser ? window.innerWidth : 0);
+      setHeight(process.browser ? window.innerHeight : 0);
+    });
+  }, []);
+
+  if(!process.browser) return <></>
 
   return (
     <div style={{ margin: "0 7rem 7rem 7rem" }}>
       <div
         ref={ref}
         style={{
-          width: ref.current ? ref.current.offsetWidth : "100%",
-          height: ref.current ? ref.current.offsetWidth - 200 : 1140,
+          width: "100%",
+          height: 1140,
           backgroundImage: `url(/assets/07-join.PNG)`,
           backgroundRepeat: "no-repeat",
           objectFit: "contain",
           position: "relative",
-          backgroundSize: ref.current
-            ? `${ref.current.offsetWidth}px ${
-                ref.current ? ref.current.offsetWidth - 200 : 1140
-              }px`
-            : "100%",
+          backgroundSize: "contain",
         }}
         className="roadmap"
       >
@@ -29,16 +38,16 @@ export default function Join({ join }: { join: any }) {
           style={{
             position: "absolute",
             left: "50%",
-            top: "60%",
-            transform: "translate(-50%, -60%)",
+            top: "25%",
+            transform: "translate(-50%, 25%)",
             textAlign: "center",
             margin: "auto",
           }}
         >
-          <p style={{ color: "#000", fontWeight: "bold", fontSize: "20pt" }}>
+          <p style={{ color: "#000", fontWeight: "bold", fontSize: 20 }}>
             The show is about to start. <br /> And you are about to be rifted to
           </p>
-          <h2 className="title" style={{ color: "#000", fontSize: "90pt" }}>
+          <h2 className="title" style={{ color: "#000", fontSize: 90 }}>
             TERREWAT
           </h2>
           <div
@@ -53,7 +62,7 @@ export default function Join({ join }: { join: any }) {
           <br />
           <h6
             style={{
-              fontSize: "50pt",
+              fontSize: 50,
               fontWeight: "bolder",
               textShadow: "0px 2px 4px #d0aca2",
             }}

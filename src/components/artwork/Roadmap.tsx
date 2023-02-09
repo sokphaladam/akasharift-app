@@ -294,7 +294,7 @@ export default function Roadmap() {
         style={{
           backgroundColor: "#F6DEC2",
           width: width > 0 ? width - 137 : "100%",
-          height: 410,
+          height: 250,
           margin: "auto",
           position: "relative",
         }}
@@ -309,7 +309,7 @@ export default function Roadmap() {
             objectFit: "contain",
             position: "absolute",
             left: "50%",
-            top: "9%",
+            top: "-9%",
             transform: "translate(-50%, -9%)",
             backgroundSize: "100%",
           }}
@@ -324,7 +324,7 @@ export default function Roadmap() {
             objectFit: "contain",
             position: "absolute",
             left: "50%",
-            bottom: "-58%",
+            bottom: "-75%",
             transform: "translateX(-50%)",
             backgroundSize: "100%",
           }}
