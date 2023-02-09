@@ -56,13 +56,11 @@ a {
   }
 }
 
-.neucha_font {
-  // font-family: 'Asul', sans-serif;
-}
-
 .content {
   // padding: "1.4rem";
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
 }
 
 .accordion-item {
@@ -93,10 +91,6 @@ a {
   // background-color: black;
 }
 
-.team:hover {
-  // box-shadow: 0 0 28px white;
-  // transform: rotateY(179deg);
-}
 .team .content,
 .team .front,
 .team .back {
@@ -112,15 +106,6 @@ a {
   align-items: center;
   backface-visibility: hidden;
   position: absolute;
-}
-
-.team .front h1,
-.team .back h1 {
-  // transform: translateZ(70px);
-}
-
-.team .back {
-  // transform: rotateY(179deg);
 }
 
 .team::before,
@@ -139,11 +124,6 @@ a {
   // border-radius: 20px;
 }
 
-.team::after {
-  // background-image: url("https://img.freepik.com/free-photo/3d-rendering-modern-digital-studio-background-futuristic-empty-space-with-abstract-light-effects_181624-59270.jpg?w=1060&t=st=1662436260~exp=1662436860~hmac=cbced8beac6b3e8d8ff4231e0f11b7861efbac1e5e6f8ce6a8b82ea59b694772");
-  // transform: rotateY(179deg) translateZ(2px);
-}
-
 #char {
   // max-height: 375px;
   // height: 100%;
@@ -158,9 +138,6 @@ a {
   // transform: translateX(-50%);
 }
 
-#char:hover {
-  // box-shadow: 0px 0px 20px 10px #ffa22370;
-}
 
 .left {
   transform: translateY(10px);
@@ -220,3 +197,18 @@ a:hover {
   outline: 0;
   box-shadow: none !important;
 }
+
+.accordion-button {
+  cursor: url('/assets/cursor/3.png'), auto !important;
+}
+
+.accordion-button::after {
+  background-image: none !important;
+  cursor: url('/assets/cursor/3.png'), auto !important;
+}
+
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+  cursor: url('/assets/cursor/3.png'), auto !important;
+}
+
+@import './cardhover.scss';

@@ -39,6 +39,7 @@ export function Story({ story }: { story: any }) {
           padding: innerWidth > 1000 ? "0" : "20px 0px",
           textJustify: "inter-word",
           fontFamily: "martelsan",
+          textAlignLast: "center",
         }}
         dangerouslySetInnerHTML={{ __html: story.content + "" }}
       ></h4>

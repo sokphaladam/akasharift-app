@@ -9,7 +9,13 @@ export function Popbutton() {
 
   return (
     <button
-      style={{ position: "fixed", bottom: 10, right: 25, zIndex: 999 }}
+      style={{
+        position: "fixed",
+        bottom: 10,
+        right: 25,
+        zIndex: 999,
+        cursor: `url('/assets/cursor/3.png'), auto !important`,
+      }}
       className="btn btn-light"
       onClick={onClick}
     >

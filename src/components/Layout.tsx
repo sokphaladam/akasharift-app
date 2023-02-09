@@ -43,16 +43,24 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
           }}
         />
       </div> */}
-      <div className="content">
-        {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
-        {props.children}
-      </div>
-      <footer className={styles.footer}>
-        <div>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            Under Construction
-          </a>
-          {/* {!setting.loading && (
+      <div
+        style={{
+          overflow: "auto",
+          height: window.innerHeight,
+          scrollBehavior: "smooth",
+        }}
+        id="main"
+      >
+        <div className="content">
+          {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
+          {props.children}
+        </div>
+        <footer className={styles.footer}>
+          <div>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Under Construction
+            </a>
+            {/* {!setting.loading && (
             <p
               style={{
                 width: "55%",
@@ -66,8 +74,9 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
               }}
             ></p>
           )} */}
-        </div>
-      </footer>
+          </div>
+        </footer>
+      </div>
       <Popbutton />
     </>
   );

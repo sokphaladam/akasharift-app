@@ -25,42 +25,47 @@ export default function FAQ() {
   }, [value, loading, items]);
 
   return (
-    <BlockContent title="" id="faq">
-      <div style={{ marginTop: 25 }}>
-        <Accordion
-          defaultActiveKey="-1"
-          style={{ backgroundColor: "transparent" }}
-        >
-          {items.map((x, i) => {
-            return (
-              <Accordion.Item
-                eventKey={i + ""}
-                key={i}
-                style={{ backgroundColor: "transparent" }}
+    <div
+      style={{
+        marginTop: 25,
+        padding: innerWidth < 1500 ? "0rem 5%" : "0rem 10%",
+      }}
+    >
+      <Accordion
+        defaultActiveKey="-1"
+        style={{ backgroundColor: "transparent" }}
+      >
+        {items.map((x, i) => {
+          return (
+            <Accordion.Item
+              eventKey={i + ""}
+              key={i}
+              style={{ backgroundColor: "transparent" }}
+            >
+              <Accordion.Header
+                style={{
+                  backgroundColor: "transparent",
+                  fontFamily: "martelsan",
+                }}
               >
-                <Accordion.Header
+                <span style={{ fontSize: "18pt" }}>{x.question}</span>
+              </Accordion.Header>
+              <Accordion.Body>
+                <div
+                  dangerouslySetInnerHTML={{ __html: x.answer }}
                   style={{
-                    backgroundColor: "transparent",
+                    color: "#fff",
+                    textAlign: "left",
                     fontFamily: "martelsan",
+                    paddingLeft: "1.5rem",
+                    fontSize: "14pt",
                   }}
-                >
-                  {x.question}
-                </Accordion.Header>
-                <Accordion.Body>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: x.answer }}
-                    style={{
-                      color: "#fff",
-                      textAlign: "left",
-                      fontFamily: "martelsan",
-                    }}
-                  />
-                </Accordion.Body>
-              </Accordion.Item>
-            );
-          })}
-        </Accordion>
-      </div>
-    </BlockContent>
+                />
+              </Accordion.Body>
+            </Accordion.Item>
+          );
+        })}
+      </Accordion>
+    </div>
   );
 }

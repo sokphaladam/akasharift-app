@@ -227,7 +227,7 @@ export default function Roadmap() {
                   <div>
                     {item.lists.map((x, i) => {
                       return (
-                        <p key={i} style={{ color: "#666", marginBottom: 10 }}>
+                        <p key={i} style={{ color: "#666", marginBottom: 0 }}>
                           + {x}
                         </p>
                       );
@@ -279,7 +279,7 @@ export default function Roadmap() {
                 <div>
                   {item.lists.map((x, i) => {
                     return (
-                      <p key={i} style={{ color: "#666", marginBottom: 10 }}>
+                      <p key={i} style={{ color: "#666", marginBottom: 0 }}>
                         + {x}
                       </p>
                     );
@@ -294,7 +294,7 @@ export default function Roadmap() {
         style={{
           backgroundColor: "#F6DEC2",
           width: width > 0 ? width - 137 : "100%",
-          height: 310,
+          height: 410,
           margin: "auto",
           position: "relative",
         }}
@@ -309,8 +309,8 @@ export default function Roadmap() {
             objectFit: "contain",
             position: "absolute",
             left: "50%",
-            top: "30%",
-            transform: "translate(-50%, -20%)",
+            top: "9%",
+            transform: "translate(-50%, -9%)",
             backgroundSize: "100%",
           }}
         ></div>
@@ -324,7 +324,7 @@ export default function Roadmap() {
             objectFit: "contain",
             position: "absolute",
             left: "50%",
-            bottom: "-75%",
+            bottom: "-58%",
             transform: "translateX(-50%)",
             backgroundSize: "100%",
           }}

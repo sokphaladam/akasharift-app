@@ -33,49 +33,6 @@ export function BlockContent(props: React.PropsWithChildren<Props>) {
             position: "relative",
           }}
         >
-          <div
-            id={props.id + ""}
-            style={{ position: "absolute", top: -50 }}
-          ></div>
-          <div
-            style={{
-              backgroundColor: "transparent",
-              position: "absolute",
-              width: "100%",
-              height: 50,
-              borderRadius: 5,
-              top: -25,
-              left: "50%",
-              transform: "translate(-50%, 0)",
-              textAlign: "center",
-              alignItems: "center",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            {/* <ButtonAninme title={props.title} /> */}
-            <h3 style={{ fontSize: "40pt", textShadow: "0px 2px 4px #d0aca2" }}>
-              {props.title}
-            </h3>
-          </div>
-          {/* <div
-          style={{
-            backgroundColor: "#737374",
-            position: "absolute",
-            width: 250,
-            height: 50,
-            borderRadius: 5,
-            top: -25,
-            left: "50%",
-            transform: "translate(-50%, 0)",
-            textAlign: "center",
-            alignItems: "center",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <h3 style={{ margin: 0 }}>{props.title}</h3>
-        </div> */}
           {props.children}
         </div>
       </div>

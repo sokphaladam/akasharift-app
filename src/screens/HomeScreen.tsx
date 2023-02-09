@@ -146,10 +146,9 @@ export default function HomeScreen() {
           style={{
             backgroundImage:
               "url(https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F01_Intro%20Stars.PNG?alt=media&token=7b88ac9f-6186-40df-83bc-24c25cf4890a)",
-
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            backgroundSize: "100% 100%",
+            backgroundSize: "cover",
             position: "absolute",
             top: "40%",
             left: "50%",
@@ -168,7 +167,14 @@ export default function HomeScreen() {
               alignItems: "center",
             }}
           >
-            <h4 style={{ width: "55%", fontFamily: "martelsan" }}>
+            <h4
+              style={{
+                width: "55%",
+                fontFamily: "martelsan",
+                textAlign: "justify",
+                textAlignLast: "center",
+              }}
+            >
               Welcome to Terrenwat, a distant realm where our dreams converge.
               Be free to embark on and adventurius journey in the Akasha Rift.
             </h4>
@@ -299,6 +305,7 @@ export default function HomeScreen() {
             left: "40%",
             width: "20%",
           }}
+          className="logohover"
         />
       </div>
       <div style={{ padding: "0rem 3rem", marginTop: "-2%" }}>
@@ -334,6 +341,8 @@ export default function HomeScreen() {
                 marginBottom: "5rem",
                 marginTop: "4.5rem",
                 fontFamily: "martelsan",
+                textAlign: "justify",
+                textAlignLast: "center",
               }}
               dangerouslySetInnerHTML={{
                 __html: logo.content,
@@ -381,6 +390,8 @@ export default function HomeScreen() {
                 marginBottom: "5rem",
                 marginTop: "4.5rem",
                 fontFamily: "martelsan",
+                textAlign: "justify",
+                textAlignLast: "center",
               }}
             >
               Our NFTs are the ticket to our world. This character is you. Now
@@ -451,6 +462,17 @@ export default function HomeScreen() {
             }}
           />
           <div style={{ marginTop: "0" }}>
+            <div
+              id="character"
+              style={{
+                backgroundColor: "transparent",
+                width,
+                height: 50,
+                marginTop: "0%",
+                position: "absolute",
+                top: "-30%",
+              }}
+            ></div>
             <Charater character={content.find((x) => x.key === "CHARACTER")} />
           </div>
           <div style={{ marginTop: "10%" }}>
@@ -474,7 +496,17 @@ export default function HomeScreen() {
           </div>
         </div>
         <div style={{ position: "relative" }}>
-          <div id="story"></div>
+          <div
+            id="story"
+            style={{
+              backgroundColor: "transparent",
+              width,
+              height: 50,
+              marginTop: "0%",
+              position: "absolute",
+              top: "-30%",
+            }}
+          ></div>
           <img
             src="/assets/00_star-yellow.PNG"
             alt=""
@@ -645,6 +677,7 @@ export default function HomeScreen() {
               objectFit: "contain",
             }}
           />
+
           <img
             src="/assets/00_star-reds.PNG"
             alt=""
@@ -656,8 +689,8 @@ export default function HomeScreen() {
             }}
           />
         </div>
-        <div id="team"></div>
-        <div style={{ marginTop: "30%" }}>
+
+        <div style={{ marginTop: "30%", position: "relative" }}>
           <div
             style={{
               textAlign: "center",
@@ -666,6 +699,17 @@ export default function HomeScreen() {
               alignItems: "center",
             }}
           >
+            <div
+              id="team"
+              style={{
+                backgroundColor: "transparent",
+                width,
+                height: 50,
+                marginTop: "0%",
+                position: "absolute",
+                top: "-30%",
+              }}
+            ></div>
             <h3
               style={{
                 fontSize: "40pt",

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../../styles/Home.module.scss";
 import { BlockContent } from "../components/BlockContent";
 import DesktopMenu from "../components/DesktopMenu";
+import { CardHover } from "../components/CardHover";
 
 const Layout = dynamic(() => import("../components/Layout"), {
   ssr: false,
@@ -45,6 +46,9 @@ export function PlaygroundScreen() {
     <div>
       <DesktopMenu />
       <Curtain />
+      <div style={{ width: 200, height: "auto" }}>
+        <CardHover />
+      </div>
     </div>
   );
 }

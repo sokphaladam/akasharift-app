@@ -8,18 +8,13 @@ import { SettingContext } from "../context/SettingContext";
 
 export const mapTab = [
   {
-    text: "Join",
-    link: "#enter",
+    text: "Characters",
+    link: "#character",
     type: "tab",
   },
   {
     text: "Story",
     link: "#story",
-    type: "tab",
-  },
-  {
-    text: "Characters",
-    link: "#character",
     type: "tab",
   },
   {
@@ -30,6 +25,11 @@ export const mapTab = [
   {
     text: "Team",
     link: "#team",
+    type: "tab",
+  },
+  {
+    text: "Join",
+    link: "#enter",
     type: "tab",
   },
 ];
@@ -61,7 +61,14 @@ export default function DesktopMenu() {
           <li>
             <div style={{ marginTop: "0%" }}>
               <Link href="#">
-                <a>
+                <a
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    document
+                      .getElementById("main")
+                      ?.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
                   {setting.value ? (
                     <img
                       src={setting.value.logo}
@@ -70,6 +77,7 @@ export default function DesktopMenu() {
                         height: "auto",
                         objectFit: "contain",
                       }}
+                      className="logohover"
                     />
                   ) : (
                     "LOGO"

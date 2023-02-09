@@ -5,6 +5,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { useWindowSize } from "../hook/useWindowSize";
 import { database } from "../store/firebase";
 import { BlockContent } from "./BlockContent";
+import { CardHover } from "./CardHover";
 
 function AvatarUser({ data }: { data: any }) {
   console.log(data);
@@ -114,6 +115,12 @@ export default function TeamComponent({ team }: { team: any }) {
           }}
         >
           {items.map((x, i) => {
+            return (
+              <div key={i}>
+                <CardHover data={x} />
+                <p style={{ textAlign: "left", marginLeft: 10 }}>{x.name}</p>
+              </div>
+            );
             return <AvatarUser key={i} data={x} />;
           })}
         </div>

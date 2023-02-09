@@ -327,7 +327,7 @@ export default function Charater({ character }: { character: any }) {
               width={80 * 5 + 30}
               height={80 * 5 + 30}
               image={rightCharacter[indexr].bgImage}
-              margin={"0 2rem 0 0"}
+              // margin={"0 2rem 0 0"}
               main={true}
             />
             <br />
