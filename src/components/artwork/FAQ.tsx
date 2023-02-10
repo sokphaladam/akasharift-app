@@ -48,7 +48,11 @@ export default function FAQ() {
                   fontFamily: "martelsan",
                 }}
               >
-                <span style={{ fontSize: "18pt" }}>{x.question}</span>
+                <span
+                  style={{ fontSize: "18pt", color: "rgba(255,255,255,0.5)" }}
+                >
+                  {x.question}
+                </span>
               </Accordion.Header>
               <Accordion.Body>
                 <div
