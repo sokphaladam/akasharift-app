@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: farout;
+  src: url("/assets/font/far-out.ttf");
+}
+
+@font-face {
+  font-family: asul;
+  src: url("/assets/font/asul-bold.ttf");
+}
+
+@font-face {
+  font-family: martelsan;
+  src: url("/assets/font/martelsans-regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  cursor: url('/assets/cursor/3.png'), auto;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.text-asul {
+  font-family: asul;
+}
+
+.text-farout {
+  font-family: farout;
+}
+
+.text-martelsan {
+  font-family: martelsan;
+}

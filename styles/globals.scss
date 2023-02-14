@@ -2,7 +2,7 @@
 @import "./button.scss";
 @import "./desktopmenu.scss";
 @import url("https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap");
-@import './curtain.scss';
+@import "./curtain.scss";
 
 @font-face {
   font-family: farout;
@@ -38,9 +38,7 @@ a {
 
 * {
   box-sizing: border-box;
-  cursor: url('/assets/cursor/3.png'), auto;
-  // cursor: url("https://i.imgur.com/vllSGoU.png"), auto;
-  // font-family: 'Asul', sans-serif;
+  cursor: url("/assets/cursor/3.png"), auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -138,7 +136,6 @@ a {
   // transform: translateX(-50%);
 }
 
-
 .left {
   transform: translateY(10px);
 }
@@ -199,29 +196,32 @@ a:hover {
 }
 
 .accordion-button {
-  cursor: url('/assets/cursor/3.png'), auto !important;
+  cursor: url("/assets/cursor/3.png"), auto !important;
 }
 
 .accordion-button::after {
   background-image: none !important;
-  cursor: url('/assets/cursor/3.png'), auto !important;
+  cursor: url("/assets/cursor/3.png"), auto !important;
 }
 
-button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
-  cursor: url('/assets/cursor/3.png'), auto !important;
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+  cursor: url("/assets/cursor/3.png"), auto !important;
 }
 
 .animation_slide_up {
-  animation: slide_up 0.9s cubic-bezier(0.65,0,0.35,1) both;
+  animation: slide_up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
 }
 
 @keyframes slide_up {
-  0%{
-    transform: translateY(100px)
+  0% {
+    transform: translateY(100px);
   }
   100% {
-   transform: translateY(0) 
+    transform: translateY(0);
   }
 }
 
-@import './cardhover.scss';
+@import "./cardhover.scss";

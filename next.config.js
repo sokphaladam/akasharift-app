@@ -9,4 +9,13 @@ module.exports = {
   images: {
     domains: ['act.hoyoverse.com', 'static.wikia.nocookie.net', 'firebasestorage.googleapis.com'],
   },
+  async redirects(){
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      }
+    ]
+  }
 }
