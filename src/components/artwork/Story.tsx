@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useWindowSize } from "../../hook/useWindowSize";
 import { BlockContent } from "../BlockContent";
+import { motion } from "framer-motion";
 
 export function Story({ story }: { story: any }) {
   const { innerWidth } = useWindowSize();
@@ -27,7 +28,11 @@ export function Story({ story }: { story: any }) {
           />
         </span>
       )} */}
-      <h4
+      <motion.h4
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 2.5 }}
         style={{
           width: innerWidth > 1000 ? "55%" : "100%",
           color: "#f3f3f3",
@@ -42,7 +47,7 @@ export function Story({ story }: { story: any }) {
           textAlignLast: "center",
         }}
         dangerouslySetInnerHTML={{ __html: story.content + "" }}
-      ></h4>
+      ></motion.h4>
       {/* {innerWidth >= 1900 && (
         <span
           style={{

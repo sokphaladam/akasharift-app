@@ -38,3 +38,21 @@ html, body {
 .text-martelsan {
   font-family: martelsan;
 }
+
+@layer components {
+  .menuitem {
+    @apply text-white transition-all
+  }
+
+  .menuitem:hover {
+    text-shadow: 0px 2px 4px #d0aca2;
+  }
+
+  .menuitem img:hover {
+    filter: drop-shadow(0 0 0.75rem rgba(208,172,162,0.75));
+  }
+
+  .menuitemicon {
+    @apply transition transition-all p-1 hover:rounded-md hover:bg-white hover:text-gray-600
+  }
+}

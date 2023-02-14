@@ -52,16 +52,36 @@ export default function DesktopMenu() {
           {leftTab.map((x) => {
             return (
               <li key={x.link}>
-                <Link href={x.link}>
-                  <a>{x.text}</a>
-                </Link>
+                <Link href={x.link}>{x.text}</Link>
               </li>
             );
           })}
           <li>
             <div style={{ marginTop: "0%" }}>
-              <Link href="#">
-                <a
+              <Link
+                href="#home"
+                // onClick={() => {
+                //   window.scrollTo({ top: 0, behavior: "smooth" });
+                //   document
+                //     .getElementById("main")
+                //     ?.scrollTo({ top: 0, behavior: "smooth" });
+                // }}
+              >
+                {setting.value ? (
+                  <img
+                    src={setting.value.logo}
+                    style={{
+                      width: 70,
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
+                    className="logohover"
+                  />
+                ) : (
+                  "LOGO"
+                )}
+
+                {/* <a
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                     document
@@ -69,68 +89,54 @@ export default function DesktopMenu() {
                       ?.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                 >
-                  {setting.value ? (
-                    <img
-                      src={setting.value.logo}
-                      style={{
-                        width: 70,
-                        height: "auto",
-                        objectFit: "contain",
-                      }}
-                      className="logohover"
-                    />
-                  ) : (
-                    "LOGO"
-                  )}
-                </a>
+                  
+                </a> */}
               </Link>
             </div>
           </li>
           {rightTab.map((x) => {
             return (
               <li key={x.link}>
-                <Link href={x.link}>
-                  <a>{x.text}</a>
-                </Link>
+                <Link href={x.link}>{x.text}</Link>
               </li>
             );
           })}
           <li className="btn-link">
-            <Link href={setting.value.link.twitter} target="_blank">
-              <a
-                style={{
-                  borderStyle: "solid",
-                  borderWidth: 0.5,
-                  borderRadius: 4,
-                  height: 35,
-                  width: 35,
-                  alignItems: "center",
-                  display: "flex",
-                  justifyContent: "center",
-                  backgroundColor: "#fff",
-                }}
-              >
-                <TiSocialTwitter color="#666" />
-              </a>
+            <Link
+              href={setting.value.link.twitter}
+              target="_blank"
+              style={{
+                borderStyle: "solid",
+                borderWidth: 0.5,
+                borderRadius: 4,
+                height: 35,
+                width: 35,
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+                backgroundColor: "#fff",
+              }}
+            >
+              <TiSocialTwitter color="#666" />
             </Link>
           </li>
           <li className="btn-link">
-            <Link href={setting.value.link.discord} target="_blank">
-              <a
-                style={{
-                  borderStyle: "solid",
-                  borderWidth: 0.5,
-                  borderRadius: 4,
-                  height: 35,
-                  width: 35,
-                  alignItems: "center",
-                  display: "flex",
-                  justifyContent: "center",
-                  backgroundColor: "#fff",
-                }}
-              >
-                <FaDiscord color="#666" />
-              </a>
+            <Link
+              href={setting.value.link.discord}
+              target="_blank"
+              style={{
+                borderStyle: "solid",
+                borderWidth: 0.5,
+                borderRadius: 4,
+                height: 35,
+                width: 35,
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+                backgroundColor: "#fff",
+              }}
+            >
+              <FaDiscord color="#666" />
             </Link>
           </li>
         </ul>

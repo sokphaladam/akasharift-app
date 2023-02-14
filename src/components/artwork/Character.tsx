@@ -99,7 +99,7 @@ function CharacterImage({
             src={image}
             alt=""
             style={{
-              width: width ? 215.5 : "auto",
+              width: width ? 300 : "auto",
               height: "auto",
               objectFit: "contain",
             }}
@@ -275,8 +275,8 @@ export default function Charater({ character }: { character: any }) {
         >
           <div style={{}}>
             <CharacterImage
-              width={80 * 5 + 30}
-              height={80 * 5 + 30}
+              width={600}
+              height={600}
               image={leftCharacter[indexl].bgImage}
               // margin={"0 0 0 1rem"}
               main={true}
@@ -284,11 +284,11 @@ export default function Charater({ character }: { character: any }) {
             <br />
             <div
               style={{
-                width: 325,
-                padding: "0.5rem 0.5rem 0.5rem 1.5rem",
+                width: 450,
+                padding: "0.5rem 0.5rem 0.5rem 3rem",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "325px 100px",
+                backgroundSize: "450px 120px",
                 backgroundImage: `url(/assets/02_chara_panel.PNG)`,
                 margin: "auto",
               }}
@@ -305,11 +305,11 @@ export default function Charater({ character }: { character: any }) {
                 {leftCharacter.map((x, i) => {
                   return (
                     <CharacterImage
-                      width={70}
-                      height={70}
+                      width={90}
+                      height={90}
                       image={x.image}
                       key={i}
-                      margin={"0.3rem"}
+                      margin={"0"}
                     />
                   );
                 })}
@@ -324,8 +324,8 @@ export default function Charater({ character }: { character: any }) {
             }}
           >
             <CharacterImage
-              width={80 * 5 + 30}
-              height={80 * 5 + 30}
+              width={600}
+              height={600}
               image={rightCharacter[indexr].bgImage}
               // margin={"0 2rem 0 0"}
               main={true}
@@ -333,11 +333,11 @@ export default function Charater({ character }: { character: any }) {
             <br />
             <div
               style={{
-                width: 325,
-                padding: "0.5rem 0.5rem 0.5rem 1.5rem",
+                width: 450,
+                padding: "0.5rem 0.5rem 0.5rem 3rem",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "325px 100px",
+                backgroundSize: "450px 120px",
                 backgroundImage: `url(/assets/02_chara_panel.PNG)`,
                 margin: "auto",
               }}
@@ -352,11 +352,11 @@ export default function Charater({ character }: { character: any }) {
                 {rightCharacter.map((x, i) => {
                   return (
                     <CharacterImage
-                      width={70}
-                      height={70}
+                      width={90}
+                      height={90}
                       image={x.image}
                       key={i}
-                      margin={"0.3rem"}
+                      margin={"0"}
                     />
                   );
                 })}

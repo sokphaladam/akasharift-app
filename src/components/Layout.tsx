@@ -44,18 +44,19 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
         />
       </div> */}
       <div
-        style={{
-          overflow: "auto",
-          height: window.innerHeight,
-          scrollBehavior: "smooth",
-        }}
+        // style={{
+        //   overflow: "auto",
+        //   height: window.innerHeight,
+        //   scrollBehavior: "smooth",
+        // }}
+        className="w-screen h-screen"
         id="main"
       >
         {/* <TriggerClick.Provider > */}
-        <div className="content">
-          {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
-          {props.children}
-        </div>
+        {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
+        {/* <div className="content">
+        </div> */}
+        {props.children}
         {/* </TriggerClick.Provider> */}
         <footer className={styles.footer}>
           <div>

@@ -17,7 +17,7 @@ export default function Join({ join }: { join: any }) {
     });
   }, []);
 
-  if(!process.browser) return <></>
+  if (!process.browser) return <></>;
 
   return (
     <div style={{ margin: "0 7rem 7rem 7rem" }}>
@@ -43,6 +43,7 @@ export default function Join({ join }: { join: any }) {
             textAlign: "center",
             margin: "auto",
           }}
+          className="snap-center"
         >
           <p style={{ color: "#000", fontWeight: "bold", fontSize: 20 }}>
             The show is about to start. <br /> And you are about to be rifted to
@@ -73,7 +74,10 @@ export default function Join({ join }: { join: any }) {
         {/* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quisquam officiis aliquid ex necessitatibus temporibus in magni error molestiae illum vitae enim, perspiciatis suscipit deleniti aliquam architecto dolores ducimus? Consequatur? */}
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{ display: "flex", justifyContent: "center" }}
+        className="snap-center"
+      >
         <img
           style={{ width: 150, height: 100, marginRight: "5rem" }}
           src="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FLogo_Akasha-Rift_A-Black-removebg-preview.png?alt=media&token=94029238-260a-4551-a6e4-7fd05d8cd78f"

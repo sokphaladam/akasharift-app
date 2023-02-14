@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useContext, useState } from "react";
@@ -32,27 +33,25 @@ export function MobileMenu() {
         }}
       >
         <div className="container-fluid">
-          <Link href="#">
-            <a
-              className="navbar-brand"
-              style={{
-                width: 83,
-                height: 50,
-                margin: 0,
-                alignItems: "center",
-                display: "flex",
-                padding: 0,
-              }}
-            >
-              {setting.value ? (
-                <img
-                  src={setting.value.logo}
-                  style={{ width: 73, height: 50, objectFit: "cover" }}
-                />
-              ) : (
-                "LOGO"
-              )}
-            </a>
+          <Link
+            href="#"
+            style={{
+              width: 83,
+              height: 50,
+              margin: 0,
+              alignItems: "center",
+              display: "flex",
+              padding: 0,
+            }}
+          >
+            {setting.value ? (
+              <img
+                src={setting.value.logo}
+                style={{ width: 73, height: 50, objectFit: "cover" }}
+              />
+            ) : (
+              "LOGO"
+            )}
           </Link>
           <div
             className="justify-content-end"
@@ -109,9 +108,7 @@ export function MobileMenu() {
                     onClick={() => setShow(false)}
                   >
                     <hr style={{ margin: "4px 0" }} />
-                    <Link href={tab.link}>
-                      <a className="nav-link">{tab.text}</a>
-                    </Link>
+                    <Link href={tab.link}>{tab.text}</Link>
                   </li>
                 );
               })}
@@ -125,62 +122,42 @@ export function MobileMenu() {
                 marginBottom: 20,
               }}
             >
-              <Link href={setting.value.link.twitter} target="_blank">
-                <a
-                  className="nav-link"
-                  style={{
-                    borderStyle: "solid",
-                    borderWidth: 0.5,
-                    borderRadius: 5,
-                    height: 35,
-                    width: 35,
-                    alignItems: "center",
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                  }}
-                >
-                  <TiSocialTwitter />
-                </a>
+              <Link
+                href={setting.value.link.twitter}
+                target="_blank"
+                className="nav-link"
+                style={{
+                  borderStyle: "solid",
+                  borderWidth: 0.5,
+                  borderRadius: 5,
+                  height: 35,
+                  width: 35,
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                }}
+              >
+                <TiSocialTwitter />
               </Link>
-              <Link href={setting.value.link.discord} target="_blank">
-                <a
-                  className="nav-link"
-                  style={{
-                    borderStyle: "solid",
-                    borderWidth: 0.5,
-                    borderRadius: 5,
-                    height: 35,
-                    width: 35,
-                    alignItems: "center",
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    margin: "0 15px",
-                  }}
-                >
-                  <FaDiscord />
-                </a>
-              </Link>
-              <Link href={setting.value.link.cardano} target="_blank">
-                <a
-                  className="nav-link"
-                  style={{
-                    borderStyle: "solid",
-                    borderWidth: 0.5,
-                    borderRadius: 5,
-                    height: 35,
-                    width: 35,
-                    alignItems: "center",
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                  }}
-                >
-                  {/* <img 
-                    src="https://ucarecdn.com/1958a2aa-cf35-4aa3-a4b6-ed34b726c3de/-/format/webp/-/resize/1000/" 
-                  /> */}
-                </a>
+              <Link
+                href={setting.value.link.discord}
+                target="_blank"
+                className="nav-link"
+                style={{
+                  borderStyle: "solid",
+                  borderWidth: 0.5,
+                  borderRadius: 5,
+                  height: 35,
+                  width: 35,
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  margin: "0 15px",
+                }}
+              >
+                <FaDiscord />
               </Link>
             </div>
             <div
