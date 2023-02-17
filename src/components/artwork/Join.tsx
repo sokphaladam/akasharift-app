@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useRef, useState } from "react";
 import { BlockContent } from "../BlockContent";
+import Image from "next/image";
 
 export default function Join({ join }: { join: any }) {
   const ref = useRef<HTMLDivElement | any>(null);
@@ -18,6 +19,43 @@ export default function Join({ join }: { join: any }) {
   }, []);
 
   if (!process.browser) return <></>;
+
+  return (
+    <div>
+      <div className="snap-center">
+        <div className="h-screen w-screen flex flex-col justify-center items-center relative">
+          <Image
+            src={"/assets/07-join.PNG"}
+            fill
+            alt=""
+            className="w-2/4 h-2/4 object-contain absolute z-0"
+          />
+          <div className="w-2/4 h-2/4 z-1 items-center justify-center flex flex-col mt-[5%]">
+            <p style={{ color: "#000", fontWeight: "bold", fontSize: 20 }}>
+              The show is about to start. <br /> And you are about to be rifted
+              to
+            </p>
+            <h2 className="title" style={{ color: "#000", fontSize: 90 }}>
+              TERREWAT
+            </h2>
+            <h6
+              style={{
+                fontSize: 50,
+                fontWeight: "bolder",
+                textShadow: "0px 2px 4px #d0aca2",
+              }}
+              className="logohover"
+            >
+              Enter the rift
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div className="snap-center">
+        <div className="w-screen h-1/3"></div>
+      </div>
+    </div>
+  );
 
   return (
     <div style={{ margin: "0 7rem 7rem 7rem" }}>

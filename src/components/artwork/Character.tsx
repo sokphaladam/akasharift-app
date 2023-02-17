@@ -307,7 +307,7 @@ export default function Charater({ character }: { character: any }) {
                     <CharacterImage
                       width={90}
                       height={90}
-                      image={x.image}
+                      image={x.bgImage}
                       key={i}
                       margin={"0"}
                     />
@@ -354,7 +354,7 @@ export default function Charater({ character }: { character: any }) {
                     <CharacterImage
                       width={90}
                       height={90}
-                      image={x.image}
+                      image={x.bgImage}
                       key={i}
                       margin={"0"}
                     />

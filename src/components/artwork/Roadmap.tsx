@@ -172,27 +172,29 @@ export default function Roadmap() {
     <div ref={refDiv} className="roadmap">
       <div
         style={{
-          width: width > 0 ? width - 137 : "100%",
+          width: width > 0 ? 1425 : "100%",
           margin: "auto",
         }}
+        className="snap-center"
       >
         <img
           src="/assets/IMG_3461.PNG"
           style={{
             width: "100%",
             height: 650,
-            objectFit: "cover",
+            objectFit: "contain",
           }}
           alt=""
         />
       </div>
       <div
         style={{
-          width: width > 0 ? width - 137 : "100%",
+          width: width > 0 ? 1317 : "100%",
           backgroundColor: "#F6DEC2",
           padding: "1rem 3.5rem",
-          margin: "auto",
+          margin: "-5% auto auto",
         }}
+        className="snap-start"
       >
         {roadmaps.map((item, index) => {
           if ((index + 1) % 2 === 0) {
@@ -293,11 +295,12 @@ export default function Roadmap() {
       <div
         style={{
           backgroundColor: "#F6DEC2",
-          width: width > 0 ? width - 137 : "100%",
+          width: width > 0 ? 1317 : "100%",
           height: 250,
           margin: "auto",
           position: "relative",
         }}
+        className="snap-center"
       >
         <div
           style={{
@@ -324,8 +327,8 @@ export default function Roadmap() {
             objectFit: "contain",
             position: "absolute",
             left: "50%",
-            bottom: "-75%",
-            transform: "translateX(-50%)",
+            bottom: "-70%",
+            transform: "translate(-50%, 70%)",
             backgroundSize: "100%",
           }}
         ></div>

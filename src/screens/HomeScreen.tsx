@@ -185,11 +185,11 @@ export default function HomeScreen() {
                 {!loadings && (
                   <motion.h4
                     initial={{
-                      x: -2000,
+                      y: 2000,
                       opacity: 0,
                     }}
                     animate={{
-                      x: 0,
+                      y: 0,
                       opacity: 1,
                     }}
                     transition={{ duration: 2.5 }}
@@ -220,7 +220,13 @@ export default function HomeScreen() {
                 width: "95%",
               }}
             />
-            <img
+            <motion.img
+              initial={{
+                opacity: 0,
+              }}
+              transition={{ duration: 2.5 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
               // moon
               src="/assets/00-orb-white.PNG"
               className="w-[150px] h-[150px] object-cover absolute bottom-[11%] left-[50%] -translate-x-[50%] -translate-y-[15%]"
@@ -366,9 +372,9 @@ export default function HomeScreen() {
                 <div
                   style={{
                     borderStyle: "solid",
-                    borderColor: "red",
+                    borderColor: "#6c1111",
                     width: 100,
-                    borderBottomWidth: 0,
+                    borderBottomWidth: 3,
                   }}
                 ></div>
               </div>
@@ -426,9 +432,9 @@ export default function HomeScreen() {
                 <div
                   style={{
                     borderStyle: "solid",
-                    borderColor: "red",
+                    borderColor: "#6c1111",
                     width: 100,
-                    borderBottomWidth: 0,
+                    borderBottomWidth: 3,
                   }}
                 ></div>
               </div>
@@ -656,13 +662,15 @@ export default function HomeScreen() {
                 <div
                   style={{
                     borderStyle: "solid",
-                    borderColor: "red",
+                    borderColor: "#6c1111",
                     width: 100,
-                    borderBottomWidth: 0,
+                    borderBottomWidth: 3,
                   }}
                 ></div>
               </div>
-              <Story story={content.find((x) => x.key === "STORY")} />
+              <div style={{ margin: "1.5rem auto 5rem" }}>
+                <Story story={content.find((x) => x.key === "STORY")} />
+              </div>
             </div>
           </div>
           <div style={{ position: "relative" }} className="snap-start">
@@ -780,9 +788,9 @@ export default function HomeScreen() {
               <div
                 style={{
                   borderStyle: "solid",
-                  borderColor: "red",
+                  borderColor: "#6c1111",
                   width: 100,
-                  borderBottomWidth: 0,
+                  borderBottomWidth: 3,
                 }}
               ></div>
             </div>
@@ -808,9 +816,9 @@ export default function HomeScreen() {
               <div
                 style={{
                   borderStyle: "solid",
-                  borderColor: "red",
+                  borderColor: "#6c1111",
                   width: 100,
-                  borderBottomWidth: 0,
+                  borderBottomWidth: 3,
                 }}
               ></div>
             </div>
