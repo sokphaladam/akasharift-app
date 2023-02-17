@@ -16,9 +16,9 @@ export function CardHover({ data }: any) {
         </span> */}
         {/* <span className="cardsthree__circle"></span> */}
         <ul className="cardsthree__list flex flex-row top-[30%] -translate-y-[30%]">
-          <li className="flex flex-row justify-center items-center">
+          {/* <li className="flex flex-row justify-center items-center">
             <FaFacebookF />
-          </li>
+          </li> */}
           <li className="flex flex-row justify-center items-center">
             <FaTwitter />
           </li>
