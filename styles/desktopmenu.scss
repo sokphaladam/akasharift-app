@@ -60,31 +60,31 @@
           text-shadow: 0px 2px 4px #d0aca2
         }
       }
+    }
+  }
+}
 
-      .btn-link {
-        transition: all .5s;
-        a {
-          border-style: solid;
-          border-width: 0.5;
-          border-radius: 4;
-          height: 35;
-          width: 35;
-          align-items: center;
-          display: flex;
-          justify-content: center;
-          background-color: #fff;
+.btn-link {
+  transition: all .5s;
+  a {
+    border-style: solid;
+    border-width: 0.5;
+    border-radius: 4;
+    height: 35;
+    width: 35;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
 
-          &:hover{
-            box-shadow: 0px 0px 1px 1px rgba(208,172,162,0.75);
-          }
+    &:hover{
+      box-shadow: 0px 0px 1px 1px rgba(208,172,162,0.75);
+    }
 
-          img {
-            transition: all .5s;
-            &:hover{
-              filter: drop-shadow(0 0 0.75rem rgba(208,172,162,0.75));
-            }
-          }
-        }
+    img {
+      transition: all .5s;
+      &:hover{
+        filter: drop-shadow(0 0 0.75rem rgba(208,172,162,0.75));
       }
     }
   }

@@ -58,27 +58,6 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
         </div> */}
         {props.children}
         {/* </TriggerClick.Provider> */}
-        <footer className={styles.footer}>
-          <div>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              Under Construction
-            </a>
-            {/* {!setting.loading && (
-            <p
-              style={{
-                width: "55%",
-                color: "#f3f3f3",
-                margin: "auto",
-                marginTop: "0.2rem",
-                textAlign: "center",
-              }}
-              dangerouslySetInnerHTML={{
-                __html: setting.value.footer.content + "",
-              }}
-            ></p>
-          )} */}
-          </div>
-        </footer>
       </div>
       <Popbutton />
     </>

@@ -24,6 +24,49 @@ export default function FAQ() {
     }
   }, [value, loading, items]);
 
+  // return (
+  //   <div className="h-screen w-screen items-center flex flex-col justify-center">
+  //     <div
+  //       style={{
+  //         textAlign: "center",
+  //         display: "flex",
+  //         flexDirection: "column",
+  //         alignItems: "center",
+  //       }}
+  //     >
+  //       <h3
+  //         style={{
+  //           fontSize: "40pt",
+  //           textShadow: "0px 2px 4px #d0aca2",
+  //         }}
+  //       >
+  //         FAQ
+  //       </h3>
+  //       <div
+  //         style={{
+  //           borderStyle: "solid",
+  //           borderColor: "#6c1111",
+  //           width: 100,
+  //           borderBottomWidth: 3,
+  //         }}
+  //       ></div>
+  //     </div>
+  //     <div className="max-w-[70%]" style={{ fontFamily: "asul" }}>
+  //       {items.map((x, i) => {
+  //         return (
+  //           <details className="p-4 rounded-lg" key={i}>
+  //             <summary className="font-semibold text-2xl">{x.question}</summary>
+  //             <div
+  //               className=""
+  //               dangerouslySetInnerHTML={{ __html: x.answer }}
+  //             ></div>
+  //           </details>
+  //         );
+  //       })}
+  //     </div>
+  //   </div>
+  // );
+
   return (
     <div
       style={{
@@ -49,22 +92,32 @@ export default function FAQ() {
                 }}
               >
                 <span
-                  style={{ fontSize: "18pt", color: "rgba(255,255,255,0.5)" }}
+                  style={{
+                    fontSize: "18pt",
+                    color: "rgba(255,255,255,0.5)",
+                    fontFamily: "asul",
+                  }}
+                  className="logohover"
                 >
                   {x.question}
                 </span>
               </Accordion.Header>
               <Accordion.Body>
-                <div
-                  dangerouslySetInnerHTML={{ __html: x.answer }}
+                <span
                   style={{
-                    color: "#fff",
                     textAlign: "left",
-                    fontFamily: "martelsan",
+                    fontFamily: "asul",
                     paddingLeft: "1.5rem",
                     fontSize: "14pt",
                   }}
-                />
+                  className="text-slate-50 flex flex-col items-start justify-start"
+                >
+                  <div
+                    style={{ textAlignLast: "left" }}
+                    className="text-slate-50 text-justify"
+                    dangerouslySetInnerHTML={{ __html: x.answer }}
+                  />
+                </span>
               </Accordion.Body>
             </Accordion.Item>
           );

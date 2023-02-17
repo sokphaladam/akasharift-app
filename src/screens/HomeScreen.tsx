@@ -15,6 +15,7 @@ import { SettingContext } from "../context/SettingContext";
 import { database } from "../store/firebase";
 import { MobileHomeScreen } from "./MobileHomeScreen";
 import { motion } from "framer-motion";
+import { Footer } from "../components/artwork/Footer";
 
 const Layout = dynamic(() => import("../components/Layout"), {
   ssr: false,
@@ -372,7 +373,7 @@ export default function HomeScreen() {
                 <div
                   style={{
                     borderStyle: "solid",
-                    borderColor: "#6c1111",
+                    borderColor: "#b93a36",
                     width: 100,
                     borderBottomWidth: 3,
                   }}
@@ -432,7 +433,7 @@ export default function HomeScreen() {
                 <div
                   style={{
                     borderStyle: "solid",
-                    borderColor: "#6c1111",
+                    borderColor: "#b93a36",
                     width: 100,
                     borderBottomWidth: 3,
                   }}
@@ -662,7 +663,7 @@ export default function HomeScreen() {
                 <div
                   style={{
                     borderStyle: "solid",
-                    borderColor: "#6c1111",
+                    borderColor: "#b93a36",
                     width: 100,
                     borderBottomWidth: 3,
                   }}
@@ -788,7 +789,7 @@ export default function HomeScreen() {
               <div
                 style={{
                   borderStyle: "solid",
-                  borderColor: "#6c1111",
+                  borderColor: "#b93a36",
                   width: 100,
                   borderBottomWidth: 3,
                 }}
@@ -876,6 +877,21 @@ export default function HomeScreen() {
             <div style={{ marginTop: "0%" }}>
               <Join join={content.find((x) => x.key === "JOIN_TEAM")} />
             </div>
+          </div>
+          <div className="snap-center">
+            <Footer />
+          </div>
+          <div className="snap-center">
+            <footer className={styles.footer}>
+              <div>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  Power by{" "}
+                  <span className="capitalize ml-1">
+                    code<span className="capitalize">hub</span>
+                  </span>
+                </a>
+              </div>
+            </footer>
           </div>
           {/* <div style={{ marginTop: "10%" }}>
           <ArtWorkBack

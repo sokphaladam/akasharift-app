@@ -118,7 +118,25 @@ export default function TeamComponent({ team }: { team: any }) {
             return (
               <div key={i}>
                 <CardHover data={x} />
-                <p style={{ textAlign: "left", marginLeft: 10 }}>{x.name}</p>
+                <p
+                  style={{
+                    textAlign: "left",
+                    marginLeft: 10,
+                    marginBottom: 0,
+                    fontFamily: "asul",
+                  }}
+                >
+                  <b>{x.name}</b>
+                </p>
+                <p
+                  style={{
+                    textAlign: "left",
+                    marginLeft: 10,
+                    fontFamily: "martelsan",
+                  }}
+                >
+                  Team Member
+                </p>
               </div>
             );
             return <AvatarUser key={i} data={x} />;

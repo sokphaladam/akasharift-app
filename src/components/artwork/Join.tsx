@@ -31,20 +31,43 @@ export default function Join({ join }: { join: any }) {
             className="w-2/4 h-2/4 object-contain absolute z-0"
           />
           <div className="w-2/4 h-2/4 z-1 items-center justify-center flex flex-col mt-[5%]">
-            <p style={{ color: "#000", fontWeight: "bold", fontSize: 20 }}>
+            <p
+              style={{
+                color: "#000",
+                fontWeight: "bold",
+                fontSize: 20,
+                textAlignLast: "center",
+              }}
+              className="sm:text-lg md:text-xl text-justify"
+            >
               The show is about to start. <br /> And you are about to be rifted
               to
             </p>
-            <h2 className="title" style={{ color: "#000", fontSize: 90 }}>
-              TERREWAT
-            </h2>
+            <div>
+              <h2
+                className="title sm:text-7xl md:text-8xl"
+                style={{ color: "#000", fontFamily: "farout" }}
+              >
+                TERREWAT
+              </h2>
+              <div
+                style={{
+                  borderStyle: "solid",
+                  borderColor: "#b93a36",
+                  width: 100,
+                  borderBottomWidth: 3,
+                  margin: "auto",
+                }}
+              ></div>
+            </div>
             <h6
               style={{
                 fontSize: 50,
                 fontWeight: "bolder",
                 textShadow: "0px 2px 4px #d0aca2",
+                fontFamily: "asul",
               }}
-              className="logohover"
+              className="logohover md:text-4xl sm:text-2xl mt-4 uppercase"
             >
               Enter the rift
             </h6>
