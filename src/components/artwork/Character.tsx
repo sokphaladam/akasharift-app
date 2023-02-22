@@ -68,12 +68,14 @@ function CharacterImage({
   image,
   margin,
   main,
+  focus,
 }: {
   width?: number;
   height?: any;
   image: string;
   margin?: string | number;
   main?: boolean;
+  focus?: boolean;
 }) {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
@@ -143,6 +145,7 @@ function CharacterImage({
         backgroundImage: `url(${image})`,
         // transform: props.xys.interpolate(trans),
         margin,
+        border: focus ? "solid 1px" : "",
       }}
       id="char"
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
@@ -348,6 +351,7 @@ export default function Charater({ character }: { character: any }) {
                 beforeChange={(current, next) => {
                   setIndexR(next);
                 }}
+                focusOnSelect={true}
               >
                 {rightCharacter.map((x, i) => {
                   return (
@@ -357,6 +361,7 @@ export default function Charater({ character }: { character: any }) {
                       image={x.bgImage}
                       key={i}
                       margin={"0"}
+                      focus={indexr === i}
                     />
                   );
                 })}

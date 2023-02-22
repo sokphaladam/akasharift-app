@@ -29,7 +29,7 @@ export function Footer() {
             world known as "Terrewat," alongside expressive and soulful art.`}
           </div>
           <div className="mt-12 mb-5">
-            @2023 Akasha Rift, ALL RIGHTS RESERVED.
+            ©2023 Akasha Rift, ALL RIGHTS RESERVED.
           </div>
         </div>
         <div className="uppercase">

@@ -6,6 +6,7 @@ import { useWindowSize } from "../hook/useWindowSize";
 import { database } from "../store/firebase";
 import { BlockContent } from "./BlockContent";
 import { CardHover } from "./CardHover";
+import { ModalTeam } from "./ModalTeam";
 
 function AvatarUser({ data }: { data: any }) {
   console.log(data);
@@ -71,10 +72,12 @@ function AvatarUser({ data }: { data: any }) {
 
 export default function TeamComponent({ team }: { team: any }) {
   const [items, setItems] = useState<any[]>([]);
+  const [show, setShow] = useState(false);
   const { innerWidth } = useWindowSize();
   const [value, loading] = useCollection(collection(database, "team"), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
+  const [member, setMember] = useState(null);
 
   useEffect(() => {
     if (!loading && value && items.length === 0) {
@@ -95,6 +98,7 @@ export default function TeamComponent({ team }: { team: any }) {
 
   return (
     <BlockContent title="">
+      <ModalTeam show={show} onHide={() => setShow(false)} member={member} />
       <div
         style={{
           marginTop: "5%",
@@ -116,7 +120,13 @@ export default function TeamComponent({ team }: { team: any }) {
         >
           {items.map((x, i) => {
             return (
-              <div key={i}>
+              <div
+                key={i}
+                onClick={() => {
+                  setMember(x);
+                  setShow(true);
+                }}
+              >
                 <CardHover data={x} />
                 <p
                   style={{

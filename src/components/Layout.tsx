@@ -58,8 +58,8 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
         </div> */}
         {props.children}
         {/* </TriggerClick.Provider> */}
+        <Popbutton />
       </div>
-      <Popbutton />
     </>
   );
 }

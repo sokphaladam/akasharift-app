@@ -156,7 +156,7 @@ export default function HomeScreen() {
 
   return (
     <Layout>
-      <div className="w-screen h-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden scroll-smooth">
+      <div className="w-screen h-screen snap-normal overflow-scroll overflow-x-hidden scroll-smooth">
         <section className="snap-start" id="home">
           <div style={{ position: "relative" }}>
             <div

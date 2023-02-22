@@ -206,17 +206,19 @@ export default function Roadmap() {
                 <div style={{ marginRight: "2.5rem" }}>
                   <h6
                     className="title"
-                    style={{ color: "#000", fontSize: "20pt" }}
+                    style={{ color: "#000", fontSize: "30pt" }}
                   >
                     CHAPTER {index + 1}
                   </h6>
                   <h3
                     className="title"
-                    style={{ color: "#D24649", fontSize: "30pt" }}
+                    style={{ color: "#D24649", fontSize: "60pt" }}
                   >
                     {item.title}
                   </h3>
-                  <p style={{ color: "#000" }}>{item.description}</p>
+                  <p style={{ color: "#000", fontSize: "20pt" }}>
+                    {item.description}
+                  </p>
                   <div
                     style={{
                       borderColor: "#D24649",
@@ -229,7 +231,14 @@ export default function Roadmap() {
                   <div>
                     {item.lists.map((x, i) => {
                       return (
-                        <p key={i} style={{ color: "#666", marginBottom: 0 }}>
+                        <p
+                          key={i}
+                          style={{
+                            color: "#666",
+                            marginBottom: 0,
+                            fontSize: "16pt",
+                          }}
+                        >
                           + {x}
                         </p>
                       );
@@ -238,7 +247,7 @@ export default function Roadmap() {
                 </div>
                 <img
                   src={item.thumbnail}
-                  style={{ width: 250, height: "auto", objectFit: "contain" }}
+                  style={{ width: 330, height: "auto", objectFit: "contain" }}
                   alt=""
                 />
               </div>
@@ -252,23 +261,25 @@ export default function Roadmap() {
             >
               <img
                 src={item.thumbnail}
-                style={{ width: 250, height: "auto", objectFit: "contain" }}
+                style={{ width: 330, height: "auto", objectFit: "contain" }}
                 alt=""
               />
               <div style={{ marginLeft: "2.5rem" }}>
                 <h6
                   className="title"
-                  style={{ color: "#000", fontSize: "20pt" }}
+                  style={{ color: "#000", fontSize: "30pt" }}
                 >
                   CHAPTER {index + 1}
                 </h6>
                 <h3
                   className="title"
-                  style={{ color: "#D24649", fontSize: "30pt" }}
+                  style={{ color: "#D24649", fontSize: "60pt" }}
                 >
                   {item.title}
                 </h3>
-                <p style={{ color: "#000" }}>{item.description}</p>
+                <p style={{ color: "#000", fontSize: "20pt" }}>
+                  {item.description}
+                </p>
                 <div
                   style={{
                     borderColor: "#D24649",
@@ -281,7 +292,14 @@ export default function Roadmap() {
                 <div>
                   {item.lists.map((x, i) => {
                     return (
-                      <p key={i} style={{ color: "#666", marginBottom: 0 }}>
+                      <p
+                        key={i}
+                        style={{
+                          color: "#666",
+                          marginBottom: 0,
+                          fontSize: "16pt",
+                        }}
+                      >
                         + {x}
                       </p>
                     );
