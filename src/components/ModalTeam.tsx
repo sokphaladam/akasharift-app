@@ -32,14 +32,18 @@ export function ModalTeam({ show, onHide, member }: Props) {
           className="flex flex-row justify-between"
           style={{ fontFamily: "asul" }}
         >
-          <div className="w-[35%] h-[30rem] relative">
+          <div className="w-[35%] h-[31rem] relative">
             <img
               src={member.profile}
               alt=""
-              className="w-[100%] h-[30rem] object-cover blur-sm"
+              className="w-[100%] h-full object-cover"
+              style={{
+                borderTopLeftRadius: "0.5rem",
+                borderBottomLeftRadius: "0.5rem",
+              }}
             />
           </div>
-          <div
+          {/* <div
             className="rounded-full w-[90px] h-[90px] absolute top-[10%] left-1/3 -translate-x-1/3"
             style={{
               backgroundImage: `url(${member.profile})`,
@@ -47,18 +51,21 @@ export function ModalTeam({ show, onHide, member }: Props) {
               backgroundSize: "contain",
               border: "6px solid white",
             }}
-          ></div>
+          ></div> */}
           <div className="text-justify p-7 w-[60%]">
             <div
               className="text-[#412322] font-bold text-base pb-5"
-              style={{ textAlignLast: "end" }}
+              style={{ textAlignLast: "end", fontFamily: "martelsan" }}
             >
               Team Member
             </div>
             <h2 className="text-[#412322]" style={{ textAlignLast: "end" }}>
               {member.name}
             </h2>
-            <div className="text-[#4e2e2d]" style={{ textAlignLast: "start" }}>
+            <div
+              className="text-[#4e2e2d] font-normal"
+              style={{ textAlignLast: "start", fontFamily: "martelsan" }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
               placeat laborum, vel voluptas accusantium culpa blanditiis, vero
               reiciendis, fuga obcaecati quisquam dignissimos iusto. Modi
@@ -69,7 +76,8 @@ export function ModalTeam({ show, onHide, member }: Props) {
                 href="https://twitter.com/AkashaRiftNFTs"
                 rel="noopener"
                 target="_blank"
-                className="py-1 text-[#4e2e2d] flex flex-row items-center"
+                className="py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
+                style={{ fontFamily: "martelsan" }}
               >
                 <span className="text-[#4e2e2d] pr-1">@AkashaRiftNFTs</span>
                 <FaTwitter color="#4e2e2d" />
@@ -78,17 +86,11 @@ export function ModalTeam({ show, onHide, member }: Props) {
                 href="https://t.co/Da8o3ayybC"
                 rel="noopener"
                 target="_blank"
-                className="py-1 text-[#4e2e2d]  flex flex-row items-center"
+                className="py-1 text-[#4e2e2d]  flex flex-row items-center font-bold"
+                style={{ fontFamily: "martelsan" }}
               >
                 <span className="text-[#4e2e2d] pr-1">Akasha Rift</span>
                 <FaDiscord color="#4e2e2d" />
-              </a>
-              <a
-                href="#"
-                className="py-1 text-[#4e2e2d]  flex flex-row items-center"
-              >
-                <span className="text-[#4e2e2d] pr-1">+885 28 918 293</span>
-                <GiRotaryPhone color="#4e2e2d" />
               </a>
             </div>
           </div>

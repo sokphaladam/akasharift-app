@@ -313,9 +313,15 @@ $color-box-7 : #de8b3e;
         }
       }
       
-      .cardsthree__list {        
+      .cardsthree__list {  
         li {
+          // display: none;
           transform: translateX(0) !important;
+
+          &:hover {
+            transform: scale(1.1) !important;
+            filter: drop-shadow(0 0 0.75rem rgba(139, 62, 40, 0.75));
+          }
         }
       }
     }

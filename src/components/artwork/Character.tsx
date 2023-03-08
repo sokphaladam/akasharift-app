@@ -145,7 +145,7 @@ function CharacterImage({
         backgroundImage: `url(${image})`,
         // transform: props.xys.interpolate(trans),
         margin,
-        border: focus ? "solid 1px" : "",
+        // border: focus ? "solid 1px" : "",
       }}
       id="char"
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
@@ -304,6 +304,7 @@ export default function Charater({ character }: { character: any }) {
                 beforeChange={(current, next) => {
                   setIndexL(next);
                 }}
+                focusOnSelect={true}
               >
                 {leftCharacter.map((x, i) => {
                   return (

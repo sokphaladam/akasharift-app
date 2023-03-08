@@ -28,6 +28,7 @@ export function Footer() {
             plays a significant role in sharing their adventurous tales in our
             world known as "Terrewat," alongside expressive and soulful art.`}
           </div>
+          <div className="mt-5 mb-5">{`"Collab CodeHub"`}</div>
           <div className="mt-12 mb-5">
             ©2023 Akasha Rift, ALL RIGHTS RESERVED.
           </div>
