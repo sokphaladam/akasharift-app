@@ -280,6 +280,7 @@ $color-box-7 : #de8b3e;
     z-index: 10 !important;
     
     &:hover {
+      filter: drop-shadow(0 0 0.2rem rgba(208,172,162,0.75));
       .cardsthree__rect-1 {
         left: 10% !important;
         
@@ -319,7 +320,7 @@ $color-box-7 : #de8b3e;
           transform: translateX(0) !important;
 
           &:hover {
-            transform: scale(1.1) !important;
+            // transform: scale(1.1) !important;
             filter: drop-shadow(0 0 0.75rem rgba(139, 62, 40, 0.75));
           }
         }

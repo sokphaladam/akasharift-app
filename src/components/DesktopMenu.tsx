@@ -74,6 +74,7 @@ export default function DesktopMenu() {
                       width: 70,
                       height: "auto",
                       objectFit: "contain",
+                      marginRight: "4px",
                     }}
                     className="logohover"
                   />
