@@ -57,7 +57,10 @@ export default function DesktopMenu() {
             );
           })}
           <li>
-            <div style={{ marginTop: "0%" }}>
+            <div
+              style={{ marginTop: "0%" }}
+              className="flex text-justify justify-center items-center"
+            >
               <Link
                 href="#home"
                 // onClick={() => {
@@ -74,7 +77,6 @@ export default function DesktopMenu() {
                       width: 70,
                       height: "auto",
                       objectFit: "contain",
-                      marginRight: "4px",
                     }}
                     className="logohover"
                   />
@@ -102,43 +104,47 @@ export default function DesktopMenu() {
               </li>
             );
           })}
-          <li className="btn-link">
-            <Link
-              href={setting.value.link.twitter}
-              target="_blank"
-              style={{
-                borderStyle: "solid",
-                borderWidth: 0.5,
-                borderRadius: 4,
-                height: 35,
-                width: 35,
-                alignItems: "center",
-                display: "flex",
-                justifyContent: "center",
-                backgroundColor: "#fff",
-              }}
-            >
-              <TiSocialTwitter color="#666" />
-            </Link>
-          </li>
-          <li className="btn-link">
-            <Link
-              href={setting.value.link.discord}
-              target="_blank"
-              style={{
-                borderStyle: "solid",
-                borderWidth: 0.5,
-                borderRadius: 4,
-                height: 35,
-                width: 35,
-                alignItems: "center",
-                display: "flex",
-                justifyContent: "center",
-                backgroundColor: "#fff",
-              }}
-            >
-              <FaDiscord color="#666" />
-            </Link>
+          <li>
+            <div className="flex text-center justify-center items-center">
+              <div className="btn-link mr-5">
+                <Link
+                  href={setting.value.link.twitter}
+                  target="_blank"
+                  style={{
+                    borderStyle: "solid",
+                    borderWidth: 0.5,
+                    borderRadius: 4,
+                    height: 35,
+                    width: 35,
+                    alignItems: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    backgroundColor: "#fff",
+                  }}
+                >
+                  <TiSocialTwitter color="#666" />
+                </Link>
+              </div>
+              <div className="btn-link">
+                <Link
+                  href={setting.value.link.discord}
+                  target="_blank"
+                  style={{
+                    borderStyle: "solid",
+                    borderWidth: 0.5,
+                    borderRadius: 4,
+                    height: 35,
+                    width: 35,
+                    alignItems: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    backgroundColor: "#fff",
+                  }}
+                >
+                  <FaDiscord color="#666" />
+                </Link>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
