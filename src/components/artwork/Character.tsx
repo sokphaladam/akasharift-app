@@ -175,12 +175,13 @@ export default function Charater({ character }: { character: any }) {
       leftCharacter.length === 0 &&
       rightCharacter.length === 0
     ) {
+      console.log(value.docs);
       const data = value.docs.map((x) => {
         return {
           id: x.id,
-          name: x.data().name,
-          image: x.data().profile,
-          bgImage: x.data().bg_profile,
+          name: x.data().filename,
+          image: x.data().url,
+          bgImage: x.data().url,
         };
       });
 

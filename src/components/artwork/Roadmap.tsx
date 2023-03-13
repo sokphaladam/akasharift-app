@@ -154,15 +154,22 @@ export default function Roadmap() {
 
   useEffect(() => {
     if (!loading && value && items.length === 0) {
-      const data = value.docs.map((x) => {
-        return {
-          id: x.id,
-          status: x.data().title,
-          thumnail: x.data().thumnail,
-          date: new Date(),
-          description: x.data().description,
-        };
-      });
+      const data = value.docs
+        .sort((a, b) =>
+          a.data().index > b.data().index
+            ? 1
+            : b.data().index > a.data().index
+            ? -1
+            : 0
+        )
+        .map((x) => {
+          return {
+            title: x.data().title,
+            thumbnail: x.data().file,
+            description: x.data().description,
+            lists: x.data().list,
+          };
+        });
 
       setItems([...data]);
     }
@@ -196,7 +203,7 @@ export default function Roadmap() {
         }}
         className="snap-start"
       >
-        {roadmaps.map((item, index) => {
+        {items.map((item, index) => {
           if ((index + 1) % 2 === 0) {
             return (
               <div
@@ -229,20 +236,21 @@ export default function Roadmap() {
                   ></div>
                   <br />
                   <div>
-                    {item.lists.map((x, i) => {
-                      return (
-                        <p
-                          key={i}
-                          style={{
-                            color: "#666",
-                            marginBottom: 0,
-                            fontSize: "16pt",
-                          }}
-                        >
-                          + {x}
-                        </p>
-                      );
-                    })}
+                    {item.lists &&
+                      item.lists.map((x: any, i: number) => {
+                        return (
+                          <p
+                            key={i}
+                            style={{
+                              color: "#666",
+                              marginBottom: 0,
+                              fontSize: "16pt",
+                            }}
+                          >
+                            + {x}
+                          </p>
+                        );
+                      })}
                   </div>
                 </div>
                 <img
@@ -290,20 +298,21 @@ export default function Roadmap() {
                 ></div>
                 <br />
                 <div>
-                  {item.lists.map((x, i) => {
-                    return (
-                      <p
-                        key={i}
-                        style={{
-                          color: "#666",
-                          marginBottom: 0,
-                          fontSize: "16pt",
-                        }}
-                      >
-                        + {x}
-                      </p>
-                    );
-                  })}
+                  {item.lists &&
+                    item.lists.map((x: any, i: number) => {
+                      return (
+                        <p
+                          key={i}
+                          style={{
+                            color: "#666",
+                            marginBottom: 0,
+                            fontSize: "16pt",
+                          }}
+                        >
+                          + {x}
+                        </p>
+                      );
+                    })}
                 </div>
               </div>
             </div>

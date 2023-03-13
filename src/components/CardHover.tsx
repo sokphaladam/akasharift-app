@@ -19,12 +19,20 @@ export function CardHover({ data }: any) {
           {/* <li className="flex flex-row justify-center items-center">
             <FaFacebookF />
           </li> */}
-          <li className="flex flex-row justify-center items-center">
-            <FaTwitter />
-          </li>
-          <li className="flex flex-row justify-center items-center">
-            <FaDiscord />
-          </li>
+          {data.link && (
+            <>
+              {data.link.twitter && (
+                <li className="flex flex-row justify-center items-center">
+                  <FaTwitter />
+                </li>
+              )}
+              {data.link.discord && (
+                <li className="flex flex-row justify-center items-center">
+                  <FaDiscord />
+                </li>
+              )}
+            </>
+          )}
         </ul>
       </div>
     </div>

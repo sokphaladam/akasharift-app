@@ -83,12 +83,22 @@ export default function TeamComponent({ team }: { team: any }) {
     if (!loading && value && items.length === 0) {
       const data = value.docs.map((x) => {
         return {
-          profile: x.data().profile,
-          profile_back: x.data().profile_back,
+          profile: x.data().file,
+          profile_back: x.data().file,
           name: x.data().name,
           id: x.id,
-          info: x.data().info,
-          link: x.data().link,
+          info: x.data().description,
+          position: x.data().position,
+          link: {
+            twitter: {
+              name: x.data().twittername.trim(),
+              link: x.data().twitterlink.trim(),
+            },
+            discord: {
+              name: x.data().discordname.trim(),
+              link: x.data().discordlink.trim(),
+            },
+          },
         };
       });
 
@@ -145,7 +155,7 @@ export default function TeamComponent({ team }: { team: any }) {
                     fontFamily: "martelsan",
                   }}
                 >
-                  Team Member
+                  {x.position}
                 </p>
               </div>
             );

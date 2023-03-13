@@ -57,7 +57,7 @@ export function ModalTeam({ show, onHide, member }: Props) {
               className="text-[#412322] font-bold text-base pb-5"
               style={{ textAlignLast: "end", fontFamily: "martelsan" }}
             >
-              Team Member
+              {member.position}
             </div>
             <h2 className="text-[#412322]" style={{ textAlignLast: "end" }}>
               {member.name}
@@ -66,33 +66,40 @@ export function ModalTeam({ show, onHide, member }: Props) {
               className="text-[#4e2e2d] font-normal"
               style={{ textAlignLast: "start", fontFamily: "martelsan" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
-              placeat laborum, vel voluptas accusantium culpa blanditiis, vero
-              reiciendis, fuga obcaecati quisquam dignissimos iusto. Modi
-              impedit, temporibus labore aspernatur perferendis tenetur.
+              {member.info}
             </div>
-            <div className="w-[100%] flex flex-col justify-center items-end pt-5 text-sm">
-              <a
-                href="https://twitter.com/AkashaRiftNFTs"
-                rel="noopener"
-                target="_blank"
-                className="py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
-                style={{ fontFamily: "martelsan" }}
-              >
-                <span className="text-[#4e2e2d] pr-1">@AkashaRiftNFTs</span>
-                <FaTwitter color="#4e2e2d" />
-              </a>
-              <a
-                href="https://t.co/Da8o3ayybC"
-                rel="noopener"
-                target="_blank"
-                className="py-1 text-[#4e2e2d]  flex flex-row items-center font-bold"
-                style={{ fontFamily: "martelsan" }}
-              >
-                <span className="text-[#4e2e2d] pr-1">Akasha Rift</span>
-                <FaDiscord color="#4e2e2d" />
-              </a>
-            </div>
+            {member.link && (
+              <div className="w-[100%] flex flex-col justify-center items-end pt-5 text-sm">
+                {member.link.twitter.link && (
+                  <a
+                    href={member.link.twitter.link}
+                    rel="noopener"
+                    target="_blank"
+                    className="py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
+                    style={{ fontFamily: "martelsan" }}
+                  >
+                    <span className="text-[#4e2e2d] pr-1">
+                      {member.link.twitter.name}
+                    </span>
+                    <FaTwitter color="#4e2e2d" />
+                  </a>
+                )}
+                {member.link.discord.link && (
+                  <a
+                    href={member.link.discord.link}
+                    rel="noopener"
+                    target="_blank"
+                    className="py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
+                    style={{ fontFamily: "martelsan" }}
+                  >
+                    <span className="text-[#4e2e2d] pr-1">
+                      {member.link.discord.name}
+                    </span>
+                    <FaDiscord color="#4e2e2d" />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}
