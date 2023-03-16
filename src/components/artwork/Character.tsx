@@ -175,7 +175,6 @@ export default function Charater({ character }: { character: any }) {
       leftCharacter.length === 0 &&
       rightCharacter.length === 0
     ) {
-      console.log(value.docs);
       const data = value.docs.map((x) => {
         return {
           id: x.id,

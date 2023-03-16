@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import { collection } from "firebase/firestore";
+import { collection, doc } from "firebase/firestore";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
-import { useCollection } from "react-firebase-hooks/firestore";
+import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { useMediaQuery } from "react-responsive";
 import { getHomeData } from "../../pages/api/home";
 import styles from "../../styles/Home.module.scss";
@@ -41,6 +41,68 @@ const Join = dynamic(() => import("../components/artwork/Join"), {
   ssr: false,
 });
 
+function RenderStory({ image }: { image: boolean }) {
+  const [width, setWidth] = useState(process.browser ? window.innerWidth : 0);
+  const [value, loading, error] = useDocument(
+    doc(database, "custom_page", "story-layout"),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+
+  if (loading) return <></>;
+
+  if (!!image) {
+    return (
+      <div style={{ marginTop: "10%" }} className="snap-center">
+        <img
+          src={loading ? "" : (value?.data() as any).file}
+          alt=""
+          className={`w-[${width}px] h-auto object-contain`}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ marginTop: "0%" }}>
+      <div
+        style={{
+          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+        className="snap-center"
+      >
+        <motion.h3
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5 }}
+          style={{
+            fontSize: "40pt",
+            textShadow: "0px 2px 4px #d0aca2",
+          }}
+        >
+          {(value?.data() as any).title}
+        </motion.h3>
+        <div
+          style={{
+            borderStyle: "solid",
+            borderColor: "#b93a36",
+            width: 100,
+            borderBottomWidth: 3,
+          }}
+        ></div>
+      </div>
+      <div style={{ margin: "1.5rem auto 5rem" }}>
+        <Story story={{}} />
+      </div>
+    </div>
+  );
+}
+
 export default function HomeScreen() {
   const construction = false;
   const { setting } = useContext(SettingContext);
@@ -56,6 +118,9 @@ export default function HomeScreen() {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
+  const [page] = useDocument(doc(database, "custom_page", "first-layout"), {
+    snapshotListenOptions: { includeMetadataChanges: true },
+  });
   const isMobile = useMediaQuery({ query: `(max-width: 1000px)` });
 
   useEffect(() => {
@@ -161,8 +226,7 @@ export default function HomeScreen() {
           <div style={{ position: "relative" }}>
             <div
               style={{
-                backgroundImage:
-                  "url(https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F01_Intro%20Stars.PNG?alt=media&token=7b88ac9f-6186-40df-83bc-24c25cf4890a)",
+                backgroundImage: `url(${(page?.data() as any).file})`,
                 position: "absolute",
                 top: "40%",
                 left: "50%",
@@ -202,9 +266,7 @@ export default function HomeScreen() {
                     }}
                     // className="animation_slide_up"
                   >
-                    Welcome to Terrenwat, a distant realm where our dreams
-                    converge. Be free to embark on and adventurius journey in
-                    the Akasha Rift.
+                    {(page?.data() as any).description}
                   </motion.h4>
                 )}
               </div>
@@ -368,7 +430,7 @@ export default function HomeScreen() {
                     textShadow: "0px 2px 4px #d0aca2",
                   }}
                 >
-                  ENTER THE PLAY
+                  {(page?.data() as any).article[0].title}
                 </motion.h3>
                 <div
                   style={{
@@ -385,7 +447,7 @@ export default function HomeScreen() {
                 viewport={{ once: true }}
                 transition={{ duration: 2.5 }}
                 style={{
-                  width: "70%",
+                  width: "100%",
                   color: "#f3f3f3",
                   margin: "auto",
                   marginBottom: "5rem",
@@ -394,10 +456,28 @@ export default function HomeScreen() {
                   textAlign: "justify",
                   textAlignLast: "center",
                 }}
-                dangerouslySetInnerHTML={{
-                  __html: logo.content,
-                }}
-              ></motion.h4>
+                className="flex flex-col justify-center items-center"
+              >
+                {(page?.data() as any).article[0].description.split("\n")
+                  .length > 1
+                  ? (page?.data() as any).article[0].description
+                      .split("\n")
+                      .map((x: any, i: number) => {
+                        return (
+                          <p
+                            key={i}
+                            className="mb-3 max-w-[70%] text-justify"
+                            style={{
+                              textAlignLast: "center",
+                              fontFamily: "martelsan",
+                            }}
+                          >
+                            {x}
+                          </p>
+                        );
+                      })
+                  : (page?.data() as any).article[0].description}
+              </motion.h4>
             </BlockContent>
           </div>
           <div
@@ -428,7 +508,7 @@ export default function HomeScreen() {
                     textShadow: "0px 2px 4px #d0aca2",
                   }}
                 >
-                  WHO WILL YOU BE?
+                  {(page?.data() as any).article[1].title}
                 </motion.h3>
                 <div
                   style={{
@@ -454,11 +534,27 @@ export default function HomeScreen() {
                   textAlign: "justify",
                   textAlignLast: "center",
                 }}
+                className="flex flex-col justify-center items-center"
               >
-                Our NFTs are the ticket to our world. This character is you. Now
-                step into our world and dare be creative, artistic, and
-                audacious to seek out your own tale with the same-minded
-                community.
+                {(page?.data() as any).article[1].description.split("\n")
+                  .length > 1
+                  ? (page?.data() as any).article[1].description
+                      .split("\n")
+                      .map((x: any, i: number) => {
+                        return (
+                          <p
+                            key={i}
+                            className="mb-3 max-w-[70%] text-justify"
+                            style={{
+                              textAlignLast: "center",
+                              fontFamily: "martelsan",
+                            }}
+                          >
+                            {x}
+                          </p>
+                        );
+                      })
+                  : (page?.data() as any).article[1].description}
               </motion.h4>
             </BlockContent>
           </div>
@@ -541,26 +637,7 @@ export default function HomeScreen() {
             ></div>
             <Charater character={content.find((x) => x.key === "CHARACTER")} />
           </div>
-          <div style={{ marginTop: "10%" }} className="snap-center">
-            <img
-              src={setting.loading ? "" : setting.value.background[1]}
-              alt=""
-              // style={{
-              //   width,
-              //   height: "auto",
-              //   objectFit: "contain",
-              //   marginLeft: "-3%",
-              // }}
-              className={`w-[${width}px] h-auto object-contain`}
-            />
-            {/* <ArtWorkBack
-              width={width}
-              height={width / 2}
-              artworkBack={setting.loading ? "" : setting.value.background[1]}
-              allBorderRadius={true}
-              sizeinher
-            /> */}
-          </div>
+          <RenderStory image={true} />
         </div>
 
         <div>
@@ -638,41 +715,8 @@ export default function HomeScreen() {
                 objectFit: "contain",
               }}
             />
-            <div style={{ marginTop: "0%" }}>
-              <div
-                style={{
-                  textAlign: "center",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-                className="snap-center"
-              >
-                <motion.h3
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.5 }}
-                  style={{
-                    fontSize: "40pt",
-                    textShadow: "0px 2px 4px #d0aca2",
-                  }}
-                >
-                  STORY
-                </motion.h3>
-                <div
-                  style={{
-                    borderStyle: "solid",
-                    borderColor: "#b93a36",
-                    width: 100,
-                    borderBottomWidth: 3,
-                  }}
-                ></div>
-              </div>
-              <div style={{ margin: "1.5rem auto 5rem" }}>
-                <Story story={content.find((x) => x.key === "STORY")} />
-              </div>
-            </div>
+            {/* //--Stroy */}
+            <RenderStory image={false} />
           </div>
           <div style={{ position: "relative" }} className="snap-start">
             <div id="roadmap"></div>

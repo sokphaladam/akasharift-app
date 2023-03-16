@@ -3,31 +3,23 @@ import React, { useEffect, useState } from "react";
 import { useWindowSize } from "../../hook/useWindowSize";
 import { BlockContent } from "../BlockContent";
 import { motion } from "framer-motion";
+import { useDocument } from "react-firebase-hooks/firestore";
+import { doc } from "firebase/firestore";
+import { database } from "../../store/firebase";
 
 export function Story({ story }: { story: any }) {
   const { innerWidth } = useWindowSize();
+  const [value, loading, error] = useDocument(
+    doc(database, "custom_page", "story-layout"),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+
+  if (loading) return <></>;
 
   return (
     <BlockContent title="">
-      {/* {innerWidth >= 1900 && (
-        <span
-          style={{
-            position: "absolute",
-            left: "-15%",
-            top: "-40%",
-          }}
-        >
-          <Image
-            src={story.artwork_left}
-            alt="Vercel Logo"
-            style={{
-              objectFit: "cover",
-            }}
-            width={650}
-            height={550}
-          />
-        </span>
-      )} */}
       <motion.h4
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -46,27 +38,20 @@ export function Story({ story }: { story: any }) {
           fontFamily: "martelsan",
           textAlignLast: "center",
         }}
-        dangerouslySetInnerHTML={{ __html: story.content + "" }}
-      ></motion.h4>
-      {/* {innerWidth >= 1900 && (
-        <span
-          style={{
-            position: "absolute",
-            right: "-15%",
-            top: "-40%",
-          }}
-        >
-          <Image
-            src={story.artwork_right}
-            alt="Vercel Logo"
-            style={{
-              objectFit: "cover",
-            }}
-            width={650}
-            height={650}
-          />
-        </span>
-      )} */}
+        // dangerouslySetInnerHTML={{ __html: story.content + "" }}
+      >
+        {(value?.data() as any).description.split("\n").length > 1
+          ? (value?.data() as any).description
+              .split("\n")
+              .map((x: any, i: number) => {
+                return (
+                  <p key={i} className="mb-6">
+                    {x}
+                  </p>
+                );
+              })
+          : (value?.data() as any).description}
+      </motion.h4>
     </BlockContent>
   );
 }
