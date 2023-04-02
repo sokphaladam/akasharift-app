@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaTwitter, FaDiscord } from "react-icons/fa";
 export function CardHover({ data }: any) {
@@ -23,12 +24,20 @@ export function CardHover({ data }: any) {
             <>
               {data.link.twitter && (
                 <li className="flex flex-row justify-center items-center">
-                  <FaTwitter />
+                  <Link href={data.link.twitter.link} legacyBehavior>
+                    <a>
+                      <FaTwitter />
+                    </a>
+                  </Link>
                 </li>
               )}
               {data.link.discord && (
                 <li className="flex flex-row justify-center items-center">
-                  <FaDiscord />
+                  <Link href={data.link.discord.link} legacyBehavior>
+                    <a>
+                      <FaDiscord />
+                    </a>
+                  </Link>
                 </li>
               )}
             </>

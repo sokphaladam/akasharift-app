@@ -50,6 +50,19 @@ function RenderStory({ image }: { image: boolean }) {
     }
   );
 
+  useEffect(() => {
+    document.addEventListener("contextmenu", (event) => {
+      // event.preventDefault();
+      return event;
+    });
+
+    // document.addEventListener("keydown", (event: any) => {
+    //   if (event.key === "F12") {
+    //     event.preventDefault();
+    //   }
+    // });
+  }, []);
+
   if (loading) return <></>;
 
   if (!!image) {

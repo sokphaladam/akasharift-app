@@ -339,8 +339,8 @@ export default function Roadmap() {
             objectFit: "contain",
             position: "absolute",
             left: "50%",
-            top: "-9%",
-            transform: "translate(-50%, -9%)",
+            top: "-5%",
+            transform: "translate(-50%, -5%)",
             backgroundSize: "100%",
           }}
         ></div>
