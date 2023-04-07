@@ -5,6 +5,9 @@ import React, { useContext } from "react";
 import { TiSocialFacebook, TiSocialTwitter } from "react-icons/ti";
 import { FaDiscord } from "react-icons/fa";
 import { SettingContext } from "../context/SettingContext";
+import { useDocument } from "react-firebase-hooks/firestore";
+import { database } from "../store/firebase";
+import { doc } from "firebase/firestore";
 
 export const mapTab = [
   {
@@ -38,6 +41,13 @@ export default function DesktopMenu() {
   const { setting } = useContext(SettingContext);
   const leftTab = mapTab.filter((_, i) => i < 3);
   const rightTab = mapTab.filter((_, i) => i >= 3);
+
+  const [value, loading, error] = useDocument(
+    doc(database, "custom_page", "footer-layout"),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
 
   return (
     <div
@@ -108,7 +118,7 @@ export default function DesktopMenu() {
             <div className="flex text-center justify-center items-center">
               <div className="btn-link mr-5">
                 <Link
-                  href={setting.value.link.twitter}
+                  href={loading ? "#" : (value?.data() as any).twitter.url + ""}
                   target="_blank"
                   style={{
                     borderStyle: "solid",
@@ -127,7 +137,7 @@ export default function DesktopMenu() {
               </div>
               <div className="btn-link">
                 <Link
-                  href={setting.value.link.discord}
+                  href={loading ? "#" : (value?.data() as any).discord.url + ""}
                   target="_blank"
                   style={{
                     borderStyle: "solid",

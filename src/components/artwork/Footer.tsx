@@ -4,9 +4,20 @@ import React, { useContext } from "react";
 import { TiSocialTwitter } from "react-icons/ti";
 import { SettingContext } from "../../context/SettingContext";
 import { FaDiscord } from "react-icons/fa";
+import { useDocument } from "react-firebase-hooks/firestore";
+import { doc } from "firebase/firestore";
+import { database } from "../../store/firebase";
 
 export function Footer() {
-  const { setting } = useContext(SettingContext);
+  const [value, loading, error] = useDocument(
+    doc(database, "custom_page", "footer-layout"),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+
+  if (loading) return <></>;
+
   return (
     <div className="w-screen h-2/5 flex justify-center flex-col ">
       <div
@@ -16,7 +27,7 @@ export function Footer() {
       <div className="w-[80%] ml-auto mr-auto flex flex-row justify-center items-end">
         <div className="text-xl uppercase">
           <img
-            src="/assets/6.png"
+            src={loading ? "" : (value?.data() as any).file}
             alt=""
             className="object-cover w-40 h-20 logohover"
           />
@@ -24,21 +35,21 @@ export function Footer() {
             className="w-[40%] text-justify"
             style={{ textAlignLast: "start" }}
           >
-            {`Akasha Rift is a story-driven NFTs project in which our community
-            plays a significant role in sharing their adventurous tales in our
-            world known as "Terrewat," alongside expressive and soulful art.`}
+            {loading ? "" : (value?.data() as any).description}
           </div>
           <div className="mt-5 mb-5">{`"Collab CodeHub"`}</div>
           <div className="mt-12 mb-5">
-            ©2023 Akasha Rift, ALL RIGHTS RESERVED.
+            {loading ? "" : (value?.data() as any).copyright}
           </div>
         </div>
         <div className="uppercase">
-          <div className="text-xl">info@AKASHARIFT.COM</div>
+          <div className="text-xl">
+            {loading ? "" : (value?.data() as any).title}
+          </div>
           <div className="flex flex-row justify-end mt-12 mb-5">
             <span className="btn-link">
               <Link
-                href={setting.value.link.twitter}
+                href={loading ? "#" : (value?.data() as any).twitter.url + ""}
                 target="_blank"
                 style={{
                   borderStyle: "solid",
@@ -58,7 +69,7 @@ export function Footer() {
             </span>
             <span className="btn-link">
               <Link
-                href={setting.value.link.discord}
+                href={loading ? "#" : (value?.data() as any).discord.url + ""}
                 target="_blank"
                 style={{
                   borderStyle: "solid",
