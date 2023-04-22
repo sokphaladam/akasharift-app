@@ -6,7 +6,11 @@ import { useWindowSize } from "../hook/useWindowSize";
 import { database } from "../store/firebase";
 import { BlockContent } from "./BlockContent";
 import { CardHover } from "./CardHover";
-import { ModalTeam } from "./ModalTeam";
+import dynamic from "next/dynamic";
+
+const ModalTeam = dynamic(() => import("./ModalTeam"), {
+  ssr: false,
+});
 
 function AvatarUser({ data }: { data: any }) {
   console.log(data);

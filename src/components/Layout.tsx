@@ -54,6 +54,7 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
       >
         {/* <TriggerClick.Provider > */}
         {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
+        {/* <DesktopMenu /> */}
         {/* <div className="content">
         </div> */}
         {props.children}

@@ -181,11 +181,12 @@ export default function Charater({ character }: { character: any }) {
           name: x.data().filename,
           image: x.data().url,
           bgImage: x.data().url,
+          position: x.data().position,
         };
       });
 
-      setLeftCharacter([...data]);
-      setRightCharacter([...data.reverse()]);
+      setLeftCharacter([...data.filter((x) => x.position === "LEFT")]);
+      setRightCharacter([...data.filter((x) => x.position === "RIGHT")]);
     }
   }, [value, loading, leftCharacter, rightCharacter]);
 

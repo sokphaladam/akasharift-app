@@ -17,7 +17,7 @@ const bg = [
   "https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F03_story.PNG?alt=media&token=e7722d9d-bb98-40fb-879d-4bd28eaae6bd",
 ];
 
-export function ModalTeam({ show, onHide, member }: Props) {
+export default function ModalTeam({ show, onHide, member }: Props) {
   return (
     <Modal animation={true} show={show} onHide={onHide} size="lg" centered>
       <style>
@@ -29,14 +29,15 @@ export function ModalTeam({ show, onHide, member }: Props) {
       </style>
       {member && (
         <div
-          className="flex flex-row justify-between"
+          id="modal-akasha-team"
+          className="flex flex-row justify-between h-full"
           style={{ fontFamily: "asul" }}
         >
-          <div className="w-[35%] h-[31rem] relative">
+          <div className="w-[35%] relative">
             <img
               src={member.profile}
               alt=""
-              className="w-[100%] h-full object-cover"
+              className={`w-[100%] h-full object-cover`}
               style={{
                 borderTopLeftRadius: "0.5rem",
                 borderBottomLeftRadius: "0.5rem",
@@ -75,7 +76,7 @@ export function ModalTeam({ show, onHide, member }: Props) {
                     href={member.link.twitter.link}
                     rel="noopener"
                     target="_blank"
-                    className="py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
+                    className="texthover py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
                     style={{ fontFamily: "martelsan" }}
                   >
                     <span className="text-[#4e2e2d] pr-1">
@@ -89,7 +90,7 @@ export function ModalTeam({ show, onHide, member }: Props) {
                     href={member.link.discord.link}
                     rel="noopener"
                     target="_blank"
-                    className="py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
+                    className="texthover py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
                     style={{ fontFamily: "martelsan" }}
                   >
                     <span className="text-[#4e2e2d] pr-1">

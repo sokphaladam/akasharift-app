@@ -241,3 +241,10 @@ button:not(:disabled),
 }
 
 @import "./cardhover.scss" ;
+
+.texthover {
+  transition: all .5s;
+  &:hover{
+    filter: drop-shadow(0 0 0.75rem #4e2e2d);
+  }
+}

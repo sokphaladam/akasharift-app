@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import { TiSocialTwitter } from "react-icons/ti";
 import { SettingContext } from "../../context/SettingContext";
-import { FaDiscord } from "react-icons/fa";
+import { FaDiscord, FaTelegram } from "react-icons/fa";
 import { useDocument } from "react-firebase-hooks/firestore";
 import { doc } from "firebase/firestore";
 import { database } from "../../store/firebase";
@@ -82,8 +82,28 @@ export function Footer() {
                   justifyContent: "center",
                   backgroundColor: "#fff",
                 }}
+                className="mr-5"
               >
                 <FaDiscord color="#666" />
+              </Link>
+            </span>
+            <span className="btn-link">
+              <Link
+                href={loading ? "#" : (value?.data() as any).telegram.url + ""}
+                target="_blank"
+                style={{
+                  borderStyle: "solid",
+                  borderWidth: 0.5,
+                  borderRadius: 4,
+                  height: 35,
+                  width: 35,
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  backgroundColor: "#fff",
+                }}
+              >
+                <FaTelegram color="#666" />
               </Link>
             </span>
           </div>

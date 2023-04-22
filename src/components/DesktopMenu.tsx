@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useContext } from "react";
 import { TiSocialFacebook, TiSocialTwitter } from "react-icons/ti";
-import { FaDiscord } from "react-icons/fa";
+import { FaDiscord, FaTelegram } from "react-icons/fa";
 import { SettingContext } from "../context/SettingContext";
 import { useDocument } from "react-firebase-hooks/firestore";
 import { database } from "../store/firebase";
@@ -135,7 +135,7 @@ export default function DesktopMenu() {
                   <TiSocialTwitter color="#666" />
                 </Link>
               </div>
-              <div className="btn-link">
+              <div className="btn-link mr-5">
                 <Link
                   href={loading ? "#" : (value?.data() as any).discord.url + ""}
                   target="_blank"
@@ -152,6 +152,27 @@ export default function DesktopMenu() {
                   }}
                 >
                   <FaDiscord color="#666" />
+                </Link>
+              </div>
+              <div className="btn-link">
+                <Link
+                  href={
+                    loading ? "#" : (value?.data() as any).telegram.url + ""
+                  }
+                  target="_blank"
+                  style={{
+                    borderStyle: "solid",
+                    borderWidth: 0.5,
+                    borderRadius: 4,
+                    height: 35,
+                    width: 35,
+                    alignItems: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    backgroundColor: "#fff",
+                  }}
+                >
+                  <FaTelegram color="#666" />
                 </Link>
               </div>
             </div>
