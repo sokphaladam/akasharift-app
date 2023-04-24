@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import { TiSocialTwitter } from "react-icons/ti";
 import { SettingContext } from "../../context/SettingContext";
-import { FaDiscord, FaTelegram } from "react-icons/fa";
+import { FaDiscord, FaInstagram } from "react-icons/fa";
 import { useDocument } from "react-firebase-hooks/firestore";
 import { doc } from "firebase/firestore";
 import { database } from "../../store/firebase";
@@ -103,7 +103,7 @@ export function Footer() {
                   backgroundColor: "#fff",
                 }}
               >
-                <FaTelegram color="#666" />
+                <FaInstagram color="#666" />
               </Link>
             </span>
           </div>

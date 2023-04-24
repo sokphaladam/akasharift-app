@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useContext } from "react";
 import { TiSocialFacebook, TiSocialTwitter } from "react-icons/ti";
-import { FaDiscord, FaTelegram } from "react-icons/fa";
+import { FaDiscord, FaInstagram } from "react-icons/fa";
 import { SettingContext } from "../context/SettingContext";
 import { useDocument } from "react-firebase-hooks/firestore";
 import { database } from "../store/firebase";
@@ -172,7 +172,7 @@ export default function DesktopMenu() {
                     backgroundColor: "#fff",
                   }}
                 >
-                  <FaTelegram color="#666" />
+                  <FaInstagram color="#666" />
                 </Link>
               </div>
             </div>
