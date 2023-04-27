@@ -100,8 +100,7 @@
 }
 
 .mobile_menu {
-  background-color: transparent;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }

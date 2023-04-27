@@ -49,11 +49,11 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
         //   height: window.innerHeight,
         //   scrollBehavior: "smooth",
         // }}
-        className="w-screen h-screen"
+        className="w-screen h-screen relative"
         id="main"
       >
         {/* <TriggerClick.Provider > */}
-        {innerWidth > 1000 ? <DesktopMenu /> : <MobileMenu />}
+        {innerWidth > 500 ? <DesktopMenu /> : <MobileMenu />}
         {/* <DesktopMenu /> */}
         {/* <div className="content">
         </div> */}

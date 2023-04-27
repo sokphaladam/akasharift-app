@@ -155,10 +155,9 @@ function CharacterImage({
 }
 
 export default function Charater({ character }: { character: any }) {
-  const leftList = useRef(null);
-  const rightList = useRef(null);
   const [indexl, setIndexL] = useState<number>(0);
   const [indexr, setIndexR] = useState<number>(0);
+  const [indexall, setIndexAll] = useState<number>(0);
   const { innerWidth } = useWindowSize();
 
   const [value, loading] = useCollection(collection(database, "character"), {
@@ -167,6 +166,7 @@ export default function Charater({ character }: { character: any }) {
 
   const [leftCharacter, setLeftCharacter] = useState<any[]>([]);
   const [rightCharacter, setRightCharacter] = useState<any[]>([]);
+  const [allCharacter, setAllCharacter] = useState<any[]>([]);
 
   useEffect(() => {
     if (
@@ -187,69 +187,84 @@ export default function Charater({ character }: { character: any }) {
 
       setLeftCharacter([...data.filter((x) => x.position === "LEFT")]);
       setRightCharacter([...data.filter((x) => x.position === "RIGHT")]);
+      setAllCharacter(data);
     }
   }, [value, loading, leftCharacter, rightCharacter]);
 
-  if (innerWidth < 1000) {
+  if (innerWidth < 500) {
     return (
       <div>
-        {leftCharacter.length > 0 && (
-          <>
-            <BlockContent title="" id="character">
-              <div style={{ position: "relative" }}>
-                <p
-                  style={{
-                    width: "55%",
-                    color: "#f3f3f3",
-                    margin: "auto",
-                    marginBottom: "5rem",
-                    marginTop: "4.5rem",
-                  }}
-                  dangerouslySetInnerHTML={{ __html: character.content_one }}
-                ></p>
-                <div>
-                  <CharacterImage
-                    width={innerWidth - 100}
-                    height={innerWidth - 100}
-                    image={leftCharacter[indexl].bgImage}
-                    margin={"0"}
-                    main
+        {allCharacter.length > 0 && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              width: "100%",
+              padding: "0 6%",
+            }}
+          >
+            <div style={{}}>
+              <div
+                style={{
+                  width: innerWidth - 78,
+                  height: "447px",
+                  backgroundImage: `url(/assets/02_chara.PNG)`,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  paddingBottom: "5%",
+                  margin: "auto",
+                }}
+                id="char"
+              >
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <img
+                    src={allCharacter[indexl].bgImage}
+                    alt=""
+                    style={{
+                      width: innerWidth - 203,
+                      height: "250px",
+                      objectFit: "contain",
+                    }}
                   />
                 </div>
               </div>
-            </BlockContent>
-            <br />
-            <div
-              style={{
-                width: innerWidth,
-                paddingRight: "1rem",
-                backgroundImage: `url(/assets/02_chara_panel.PNG)`,
-              }}
-            >
-              <Slider
-                {...setting}
-                // vertical={true}
-                // verticalSwiping={true}
-                slidesToShow={Math.round(innerWidth / 100)}
-                beforeChange={(current, next) => {
-                  setIndexL(next);
+              <br />
+              <div
+                style={{
+                  width: 450,
+                  padding: "0.5rem 0.5rem 0.5rem 3rem",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "450px 120px",
+                  backgroundImage: `url(/assets/02_chara_panel.PNG)`,
+                  margin: "auto",
                 }}
               >
-                {leftCharacter.map((x, i) => {
-                  return (
-                    <CharacterImage
-                      width={75}
-                      height={75}
-                      image={x.image}
-                      key={i}
-                      margin={"0"}
-                    />
-                  );
-                })}
-              </Slider>
+                <Slider
+                  {...setting}
+                  // vertical={true}
+                  // verticalSwiping={true}
+                  slidesToShow={3}
+                  beforeChange={(current, next) => {
+                    setIndexAll(next);
+                  }}
+                  focusOnSelect={true}
+                >
+                  {allCharacter.map((x, i) => {
+                    return (
+                      <CharacterImage
+                        width={90}
+                        height={90}
+                        image={x.bgImage}
+                        key={i}
+                        margin={"0"}
+                      />
+                    );
+                  })}
+                </Slider>
+              </div>
             </div>
-            <br />
-          </>
+          </div>
         )}
       </div>
     );

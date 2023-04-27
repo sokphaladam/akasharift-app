@@ -137,7 +137,7 @@ export default function HomeScreen() {
   const [page] = useDocument(doc(database, "custom_page", "first-layout"), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
-  const isMobile = useMediaQuery({ query: `(max-width: 1000px)` });
+  const isMobile = useMediaQuery({ query: `(max-width: 500px)` });
 
   useEffect(() => {
     getHomeData().then((data) => console.log(data));
@@ -173,9 +173,9 @@ export default function HomeScreen() {
   if (!logo) return <div></div>;
 
   if (isMobile) {
-    // if (content && logo) {
-    //   return <MobileHomeScreen content={content} logo={logo} />;
-    // }
+    if (content && logo) {
+      return <MobileHomeScreen content={content} logo={logo} />;
+    }
     return (
       <div
         style={{
