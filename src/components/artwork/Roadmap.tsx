@@ -7,6 +7,7 @@ import { BlockContent } from "../BlockContent";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { collection } from "firebase/firestore";
 import { database } from "../../store/firebase";
+import { useWindowSize } from "../../hook/useWindowSize";
 
 const customizedMarker = (item: any) => {
   return (
@@ -69,6 +70,7 @@ const customizedContent: any = (item: any) => {
 
 export default function Roadmap() {
   const refDiv = useRef<HTMLDivElement>(null);
+  const { innerWidth } = useWindowSize();
   const [width, setWidth] = useState(0);
   const [items, setItems] = useState<any[]>([]);
   const [value, loading] = useCollection(collection(database, "roadmap"), {
@@ -104,7 +106,7 @@ export default function Roadmap() {
     }
   }, [value, loading, items]);
 
-  if (width < 500) {
+  if (innerWidth < 500) {
     return (
       <div className="roadmap">
         <img

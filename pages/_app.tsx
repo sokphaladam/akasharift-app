@@ -68,10 +68,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <script src="https://unpkg.com/primereact/core/core.min.js"></script>
         <script src="https://unpkg.com/primereact/slider/slider.min.js"></script>
-        {/* <script
+        <script
           disable-devtool-auto
           src="https://cdn.jsdelivr.net/npm/disable-devtool"
-        ></script> */}
+        ></script>
       </Head>
       <Component {...pageProps} />
     </SettingContext.Provider>
