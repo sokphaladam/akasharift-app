@@ -104,6 +104,147 @@ export default function Roadmap() {
     }
   }, [value, loading, items]);
 
+  if (width < 500) {
+    return (
+      <div className="roadmap">
+        <img
+          src="/assets/04_roadmap-art.PNG"
+          alt=""
+          className="object-contain"
+        />
+        <img src="/assets/IMG_3461.PNG" className="object-contain" alt="" />
+        <div
+          className="w-full"
+          style={{ paddingLeft: "4%", paddingRight: "4%" }}
+        >
+          <div className="bg-[#F6DEC2] w-full p-2">
+            {items.map((item, index) => {
+              if ((index + 1) % 2 === 0) {
+                return (
+                  <div key={index + 1} className="mb-4">
+                    <img
+                      src={item.thumbnail}
+                      className="object-contain w-[100px] float-right ml-4"
+                      alt=""
+                    />
+                    <div>
+                      <h6
+                        className="title"
+                        style={{ color: "#000", fontSize: "14px" }}
+                      >
+                        CHAPTER {index + 1}
+                      </h6>
+                      <h3
+                        className="title"
+                        style={{ color: "#D24649", fontSize: "30px" }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p style={{ color: "#000", fontSize: "9px" }}>
+                        {item.description}
+                      </p>
+                      <div
+                        style={{
+                          borderColor: "#D24649",
+                          backgroundColor: "#D24649",
+                          borderBottomWidth: 1,
+                          borderStyle: "solid",
+                        }}
+                      ></div>
+                      <br />
+                      <div>
+                        {item.lists &&
+                          item.lists.map((x: any, i: number) => {
+                            return (
+                              <p
+                                key={i}
+                                style={{
+                                  color: "#666",
+                                  marginBottom: 0,
+                                  fontSize: "9px",
+                                }}
+                              >
+                                + {x}
+                              </p>
+                            );
+                          })}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <div key={index + 1} className="mb-4">
+                  <img
+                    src={item.thumbnail}
+                    className="object-contain w-[100px] float-left mr-4"
+                    alt=""
+                  />
+                  <div>
+                    <h6
+                      className="title"
+                      style={{ color: "#000", fontSize: "14px" }}
+                    >
+                      CHAPTER {index + 1}
+                    </h6>
+                    <h3
+                      className="title"
+                      style={{ color: "#D24649", fontSize: "30px" }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p style={{ color: "#000", fontSize: "9px" }}>
+                      {item.description}
+                    </p>
+                    <div
+                      style={{
+                        borderColor: "#D24649",
+                        backgroundColor: "#D24649",
+                        borderBottomWidth: 1,
+                        borderStyle: "solid",
+                      }}
+                    ></div>
+                    <br />
+                    <div>
+                      {item.lists &&
+                        item.lists.map((x: any, i: number) => {
+                          return (
+                            <p
+                              key={i}
+                              style={{
+                                color: "#666",
+                                marginBottom: 0,
+                                fontSize: "9px",
+                              }}
+                            >
+                              + {x}
+                            </p>
+                          );
+                        })}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="relative">
+            <div className="bg-[#F6DEC2] w-full h-[30px]"></div>
+            <img
+              src="/assets/IMG_3471.PNG"
+              className="object-contain scale-125 -mt-[15%]"
+              alt=""
+            />
+            <img
+              src="/assets/IMG_3472.PNG"
+              alt=""
+              className="object-contain w-[85px] ml-auto mr-auto scale-100 -mt-[20%]"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div ref={refDiv} className="roadmap">
       <div

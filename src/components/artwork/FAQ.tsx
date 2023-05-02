@@ -4,8 +4,10 @@ import { Accordion } from "react-bootstrap";
 import { collection } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { database } from "../../store/firebase";
+import { useWindowSize } from "../../hook/useWindowSize";
 
 export default function FAQ() {
+  const { innerWidth } = useWindowSize();
   const [items, setItems] = useState<any[]>([]);
   const [value, loading] = useCollection(collection(database, "faq"), {
     snapshotListenOptions: { includeMetadataChanges: true },
@@ -93,7 +95,7 @@ export default function FAQ() {
               >
                 <span
                   style={{
-                    fontSize: "18pt",
+                    fontSize: innerWidth < 500 ? "18px" : "18pt",
                     color: "rgba(255,255,255,0.5)",
                     fontFamily: "asul",
                   }}
@@ -108,7 +110,7 @@ export default function FAQ() {
                     textAlign: "left",
                     fontFamily: "asul",
                     paddingLeft: "1.5rem",
-                    fontSize: "14pt",
+                    fontSize: innerWidth < 500 ? "14px" : "14pt",
                   }}
                   className="text-slate-50 flex flex-col items-start justify-start"
                 >

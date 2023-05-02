@@ -5,6 +5,7 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { GiRotaryPhone } from "react-icons/gi";
+import { useWindowSize } from "../hook/useWindowSize";
 
 interface Props {
   show: boolean;
@@ -17,9 +18,87 @@ const bg = [
   "https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F03_story.PNG?alt=media&token=e7722d9d-bb98-40fb-879d-4bd28eaae6bd",
 ];
 
-export default function ModalTeam({ show, onHide, member }: Props) {
+function MobileMember({ member }: Props) {
   return (
-    <Modal animation={true} show={show} onHide={onHide} size="lg" centered>
+    <div className="p-2">
+      <img
+        src={member.profile}
+        alt=""
+        className="object-contain w-[100px] float-left mr-4 mb-4"
+        style={{
+          borderRadius: "0.5rem",
+        }}
+      />
+      <div>
+        <div
+          className="text-[#412322] font-bold text-base pb-1 text-end"
+          style={{
+            fontFamily: "martelsan",
+            fontSize: "10px",
+          }}
+        >
+          {member.position}
+        </div>
+        <h2 className="text-[#412322] text-end" style={{ fontSize: "14px" }}>
+          {member.name}
+        </h2>
+        <div
+          className="text-[#4e2e2d] font-normal"
+          style={{
+            fontFamily: "martelsan",
+            fontSize: "12px",
+          }}
+        >
+          {member.info}
+        </div>
+        {member.link && (
+          <div className="w-[100%] flex flex-col justify-center items-end pt-5 text-sm">
+            {member.link.twitter.link && (
+              <a
+                href={member.link.twitter.link}
+                rel="noopener"
+                target="_blank"
+                className="texthover py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
+                style={{ fontFamily: "martelsan" }}
+              >
+                <span className="text-[#4e2e2d] pr-1">
+                  {member.link.twitter.name}
+                </span>
+                <FaTwitter color="#4e2e2d" />
+              </a>
+            )}
+            {member.link.discord.link && (
+              <a
+                href={member.link.discord.link}
+                rel="noopener"
+                target="_blank"
+                className="texthover py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
+                style={{ fontFamily: "martelsan" }}
+              >
+                <span className="text-[#4e2e2d] pr-1">
+                  {member.link.discord.name}
+                </span>
+                <FaDiscord color="#4e2e2d" />
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function ModalTeam({ show, onHide, member }: Props) {
+  const { innerWidth } = useWindowSize();
+
+  return (
+    <Modal
+      animation={true}
+      show={show}
+      onHide={onHide}
+      size={innerWidth < 500 ? "sm" : "lg"}
+      centered
+    >
       <style>
         {`
           .modal-content {
@@ -28,80 +107,86 @@ export default function ModalTeam({ show, onHide, member }: Props) {
         `}
       </style>
       {member && (
-        <div
-          id="modal-akasha-team"
-          className="flex flex-row justify-between h-full"
-          style={{ fontFamily: "asul" }}
-        >
-          <div className="w-[35%] relative">
-            <img
-              src={member.profile}
-              alt=""
-              className={`w-[100%] h-full object-cover`}
-              style={{
-                borderTopLeftRadius: "0.5rem",
-                borderBottomLeftRadius: "0.5rem",
-              }}
-            />
-          </div>
-          {/* <div
-            className="rounded-full w-[90px] h-[90px] absolute top-[10%] left-1/3 -translate-x-1/3"
-            style={{
-              backgroundImage: `url(${member.profile})`,
-              backgroundPosition: "center",
-              backgroundSize: "contain",
-              border: "6px solid white",
-            }}
-          ></div> */}
-          <div className="text-justify p-7 w-[60%]">
+        <div>
+          {innerWidth < 500 ? (
+            <MobileMember show={show} onHide={onHide} member={member} />
+          ) : (
             <div
-              className="text-[#412322] font-bold text-base pb-5"
-              style={{ textAlignLast: "end", fontFamily: "martelsan" }}
+              id="modal-akasha-team"
+              className="flex flex-row justify-between h-full"
+              style={{ fontFamily: "asul" }}
             >
-              {member.position}
-            </div>
-            <h2 className="text-[#412322]" style={{ textAlignLast: "end" }}>
-              {member.name}
-            </h2>
-            <div
-              className="text-[#4e2e2d] font-normal"
-              style={{ textAlignLast: "start", fontFamily: "martelsan" }}
-            >
-              {member.info}
-            </div>
-            {member.link && (
-              <div className="w-[100%] flex flex-col justify-center items-end pt-5 text-sm">
-                {member.link.twitter.link && (
-                  <a
-                    href={member.link.twitter.link}
-                    rel="noopener"
-                    target="_blank"
-                    className="texthover py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
-                    style={{ fontFamily: "martelsan" }}
-                  >
-                    <span className="text-[#4e2e2d] pr-1">
-                      {member.link.twitter.name}
-                    </span>
-                    <FaTwitter color="#4e2e2d" />
-                  </a>
-                )}
-                {member.link.discord.link && (
-                  <a
-                    href={member.link.discord.link}
-                    rel="noopener"
-                    target="_blank"
-                    className="texthover py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
-                    style={{ fontFamily: "martelsan" }}
-                  >
-                    <span className="text-[#4e2e2d] pr-1">
-                      {member.link.discord.name}
-                    </span>
-                    <FaDiscord color="#4e2e2d" />
-                  </a>
+              <div className="w-[35%] relative">
+                <img
+                  src={member.profile}
+                  alt=""
+                  className={`w-[100%] h-full object-cover`}
+                  style={{
+                    borderTopLeftRadius: "0.5rem",
+                    borderBottomLeftRadius: "0.5rem",
+                  }}
+                />
+              </div>
+              {/* <div
+                className="rounded-full w-[90px] h-[90px] absolute top-[10%] left-1/3 -translate-x-1/3"
+                style={{
+                  backgroundImage: `url(${member.profile})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "contain",
+                  border: "6px solid white",
+                }}
+              ></div> */}
+              <div className="text-justify p-7 w-[60%]">
+                <div
+                  className="text-[#412322] font-bold text-base pb-5"
+                  style={{ textAlignLast: "end", fontFamily: "martelsan" }}
+                >
+                  {member.position}
+                </div>
+                <h2 className="text-[#412322]" style={{ textAlignLast: "end" }}>
+                  {member.name}
+                </h2>
+                <div
+                  className="text-[#4e2e2d] font-normal"
+                  style={{ textAlignLast: "start", fontFamily: "martelsan" }}
+                >
+                  {member.info}
+                </div>
+                {member.link && (
+                  <div className="w-[100%] flex flex-col justify-center items-end pt-5 text-sm">
+                    {member.link.twitter.link && (
+                      <a
+                        href={member.link.twitter.link}
+                        rel="noopener"
+                        target="_blank"
+                        className="texthover py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
+                        style={{ fontFamily: "martelsan" }}
+                      >
+                        <span className="text-[#4e2e2d] pr-1">
+                          {member.link.twitter.name}
+                        </span>
+                        <FaTwitter color="#4e2e2d" />
+                      </a>
+                    )}
+                    {member.link.discord.link && (
+                      <a
+                        href={member.link.discord.link}
+                        rel="noopener"
+                        target="_blank"
+                        className="texthover py-1 text-[#4e2e2d] flex flex-row items-center font-bold"
+                        style={{ fontFamily: "martelsan" }}
+                      >
+                        <span className="text-[#4e2e2d] pr-1">
+                          {member.link.discord.name}
+                        </span>
+                        <FaDiscord color="#4e2e2d" />
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       )}
     </Modal>

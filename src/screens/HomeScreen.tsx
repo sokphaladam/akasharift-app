@@ -16,9 +16,9 @@ import { database } from "../store/firebase";
 import { MobileHomeScreen } from "./MobileHomeScreen";
 import { motion } from "framer-motion";
 import { Footer } from "../components/artwork/Footer";
-import DisableDevtool from "disable-devtool";
+// import DisableDevtool from "disable-devtool";
 
-DisableDevtool();
+// DisableDevtool();
 
 const Layout = dynamic(() => import("../components/Layout"), {
   ssr: false,
@@ -53,18 +53,18 @@ function RenderStory({ image }: { image: boolean }) {
     }
   );
 
-  useEffect(() => {
-    document.addEventListener("contextmenu", (event) => {
-      event.preventDefault();
-      return event;
-    });
+  // useEffect(() => {
+  //   document.addEventListener("contextmenu", (event) => {
+  //     event.preventDefault();
+  //     return event;
+  //   });
 
-    document.addEventListener("keydown", (event: any) => {
-      if (event.key === "F12") {
-        event.preventDefault();
-      }
-    });
-  }, []);
+  //   document.addEventListener("keydown", (event: any) => {
+  //     if (event.key === "F12") {
+  //       event.preventDefault();
+  //     }
+  //   });
+  // }, []);
 
   if (loading) return <></>;
 
