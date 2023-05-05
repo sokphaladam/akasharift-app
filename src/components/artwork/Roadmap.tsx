@@ -126,7 +126,7 @@ export default function Roadmap() {
                   <div key={index + 1} className="mb-4">
                     <img
                       src={item.thumbnail}
-                      className="object-contain w-[100px] float-right ml-4"
+                      className="object-contain w-[100px] float-right ml-4 mb-4"
                       alt=""
                     />
                     <div>
@@ -179,7 +179,7 @@ export default function Roadmap() {
                 <div key={index + 1} className="mb-4">
                   <img
                     src={item.thumbnail}
-                    className="object-contain w-[100px] float-left mr-4"
+                    className="object-contain w-[100px] float-left mr-4 mb-4"
                     alt=""
                   />
                   <div>

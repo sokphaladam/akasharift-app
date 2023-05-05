@@ -25,6 +25,11 @@ function DrawNavigation() {
     }
   );
 
+  const onClose = () => {
+    setOpen(false);
+    setClick(false);
+  };
+
   return (
     <div>
       <FaBars
@@ -42,18 +47,15 @@ function DrawNavigation() {
             <h4 className="m-0" style={{ fontFamily: "asul !important" }}>
               AKASHARIFT
             </h4>
-            <FaTimes
-              onClick={() => {
-                setOpen(false);
-                setClick(false);
-              }}
-            />
+            <FaTimes onClick={onClose} />
           </div>
           <ul className="p-0 mt-3">
             {mapTab.map((x) => {
               return (
                 <li key={x.link} className="pt-2 pb-2">
-                  <Link href={x.link}>{x.text}</Link>
+                  <Link href={x.link} onClick={onClose}>
+                    {x.text}
+                  </Link>
                 </li>
               );
             })}
@@ -75,6 +77,7 @@ function DrawNavigation() {
                   justifyContent: "center",
                   backgroundColor: "#fff",
                 }}
+                onClick={onClose}
               >
                 <TiSocialTwitter color="#666" />
               </Link>
@@ -94,6 +97,7 @@ function DrawNavigation() {
                   justifyContent: "center",
                   backgroundColor: "#fff",
                 }}
+                onClick={onClose}
               >
                 <FaDiscord color="#666" />
               </Link>
@@ -113,6 +117,7 @@ function DrawNavigation() {
                   justifyContent: "center",
                   backgroundColor: "#fff",
                 }}
+                onClick={onClose}
               >
                 <FaInstagram color="#666" />
               </Link>

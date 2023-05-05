@@ -218,7 +218,7 @@ export default function Charater({ character }: { character: any }) {
               >
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <img
-                    src={allCharacter[indexl].bgImage}
+                    src={allCharacter[indexall].bgImage}
                     alt=""
                     style={{
                       width: innerWidth - 203,

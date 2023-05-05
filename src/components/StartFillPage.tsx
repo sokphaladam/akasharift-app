@@ -30,7 +30,7 @@ export function StarFillPage() {
           zIndex: 0,
         }}
       />
-      <img
+      {/* <img
         src="/assets/00_star-white.PNG"
         alt=""
         style={{
@@ -42,7 +42,7 @@ export function StarFillPage() {
           height: "90px",
           zIndex: 0,
         }}
-      />
+      /> */}
       <img
         src="/assets/00_star-yellow.PNG"
         alt=""
@@ -82,7 +82,7 @@ export function StarFillPage() {
           zIndex: 0,
         }}
       />
-      <img
+      {/* <img
         src="/assets/00_star-yellow.PNG"
         alt=""
         style={{
@@ -94,8 +94,8 @@ export function StarFillPage() {
           height: "80px",
           zIndex: 0,
         }}
-      />
-      <img
+      /> */}
+      {/* <img
         src="/assets/00_star-reds.PNG"
         alt=""
         style={{
@@ -107,7 +107,7 @@ export function StarFillPage() {
           height: "70px",
           zIndex: 0,
         }}
-      />
+      /> */}
       <img
         src="/assets/00_star-white.PNG"
         alt=""

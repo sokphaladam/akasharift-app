@@ -81,7 +81,7 @@ export default function Join({ join }: { join: any }) {
               <a href={(value?.data() as any).link.url} target="_blank">
                 <h6
                   style={{
-                    fontSize: 50,
+                    fontSize: "30px",
                     fontWeight: "bolder",
                     textShadow: "0px 2px 4px #d0aca2",
                     fontFamily: "asul",
@@ -94,7 +94,7 @@ export default function Join({ join }: { join: any }) {
             ) : (
               <h6
                 style={{
-                  fontSize: "20px",
+                  fontSize: "30px",
                   fontWeight: "bolder",
                   textShadow: "0px 2px 4px #d0aca2",
                   fontFamily: "asul",
