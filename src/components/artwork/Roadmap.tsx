@@ -278,10 +278,7 @@ export default function Roadmap() {
         {items.map((item, index) => {
           if ((index + 1) % 2 === 0) {
             return (
-              <div
-                key={index + 1}
-                style={{ display: "flex", marginBottom: "2rem" }}
-              >
+              <div key={index + 1} className="flex mb-[2rem] items-start">
                 <div style={{ marginRight: "2.5rem" }}>
                   <h6
                     className="title"
@@ -335,10 +332,7 @@ export default function Roadmap() {
           }
 
           return (
-            <div
-              key={index + 1}
-              style={{ display: "flex", marginBottom: "2rem" }}
-            >
+            <div key={index + 1} className="flex mb-[2rem] items-start">
               <img
                 src={item.thumbnail}
                 style={{ width: 330, height: "auto", objectFit: "contain" }}
