@@ -222,19 +222,6 @@ export default function HomeScreen() {
     );
   }
 
-  // return (
-  //   <Layout>
-  //     <div className="w-screen h-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden">
-  //       <section className="snap-start">
-  //         <div className="h-screen">First Screen</div>
-  //       </section>
-  //       <section className="snap-center">
-  //         <div className="h-screen">Next Screen</div>
-  //       </section>
-  //     </div>
-  //   </Layout>
-  // );
-
   return (
     <Layout>
       <div className="w-screen h-screen overflow-scroll overflow-x-hidden scroll-smooth">
@@ -242,7 +229,9 @@ export default function HomeScreen() {
           <div style={{ position: "relative" }}>
             <div
               style={{
-                backgroundImage: `url(${(page?.data() as any).file})`,
+                backgroundImage: page?.data()
+                  ? `url(${(page?.data() as any).file})`
+                  : "",
                 position: "absolute",
                 top: "40%",
                 left: "50%",
@@ -446,7 +435,7 @@ export default function HomeScreen() {
                     textShadow: "0px 2px 4px #d0aca2",
                   }}
                 >
-                  {(page?.data() as any).article[0].title}
+                  {page?.data() && (page?.data() as any).article[0].title}
                 </motion.h3>
                 <div
                   style={{
@@ -474,7 +463,8 @@ export default function HomeScreen() {
                 }}
                 className="flex flex-col justify-center items-center"
               >
-                {(page?.data() as any).article[0].description.split("\n")
+                {page?.data() &&
+                (page?.data() as any).article[0].description.split("\n")
                   .length > 1
                   ? (page?.data() as any).article[0].description
                       .split("\n")
@@ -492,7 +482,7 @@ export default function HomeScreen() {
                           </p>
                         );
                       })
-                  : (page?.data() as any).article[0].description}
+                  : ""}
               </motion.h4>
             </BlockContent>
           </div>
@@ -524,7 +514,7 @@ export default function HomeScreen() {
                     textShadow: "0px 2px 4px #d0aca2",
                   }}
                 >
-                  {(page?.data() as any).article[1].title}
+                  {page?.data() && (page?.data() as any).article[1].title}
                 </motion.h3>
                 <div
                   style={{
@@ -552,7 +542,8 @@ export default function HomeScreen() {
                 }}
                 className="flex flex-col justify-center items-center"
               >
-                {(page?.data() as any).article[1].description.split("\n")
+                {page?.data() &&
+                (page?.data() as any).article[1].description.split("\n")
                   .length > 1
                   ? (page?.data() as any).article[1].description
                       .split("\n")
@@ -570,7 +561,7 @@ export default function HomeScreen() {
                           </p>
                         );
                       })
-                  : (page?.data() as any).article[1].description}
+                  : ""}
               </motion.h4>
             </BlockContent>
           </div>

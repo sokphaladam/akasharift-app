@@ -5,9 +5,9 @@ const HomeScreen = dynamic(() => import("./HomeScreen"), {
   ssr: false,
 });
 
-export function RenderHomeScreen() {
+export default function RenderHomeScreen() {
   if (process.browser) {
-    console.log(process.env);
+    console.log(process.env.NODE_ENV);
     return <HomeScreen />;
   }
   return <div></div>;
