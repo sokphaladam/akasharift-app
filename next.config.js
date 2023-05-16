@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: false,
+  swcMinify: true,
 }
 
 module.exports = {
@@ -9,16 +9,4 @@ module.exports = {
   images: {
     domains: ['act.hoyoverse.com', 'static.wikia.nocookie.net', 'firebasestorage.googleapis.com'],
   },
-  async redirects(){
-    return [
-      {
-        source: '/home',
-        destination: 'https://akasharift.com',
-        permanent: true,
-      }
-    ]
-  },
-  compiler: {
-    removeConsole: true
-  }
 }
