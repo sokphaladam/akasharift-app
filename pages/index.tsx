@@ -1,13 +1,8 @@
 import type { NextPage } from "next";
-// import { HomeScreen } from "../src/screens/HomeScreen";
-import dynamic from "next/dynamic";
-
-const HomeScreen = dynamic(() => import("../src/screens/HomeScreen"), {
-  ssr: false,
-});
+import { RenderHomeScreen } from "../src/screens/RenderHomeScreen";
 
 const Home: NextPage = () => {
-  return <HomeScreen />;
+  return <RenderHomeScreen />;
 };
 
 export default Home;

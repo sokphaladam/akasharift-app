@@ -50,6 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           href="https://unpkg.com/primeflex@3.2.1/primeflex.min.css"
         />
+      */}
         <link
           rel="stylesheet"
           type="text/css"
@@ -59,7 +60,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        /> */}
+        />
 
         {/* <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
         <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
