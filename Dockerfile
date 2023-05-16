@@ -20,7 +20,7 @@ COPY . .
 # ENV NEXT_PUBLIC_API_ADMIN_LOGO=${NEXT_PUBLIC_API_ADMIN_LOGO}
 
 # Building app
-RUN yarn build
+# RUN yarn build
 
 # Running the app
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "dev" ]
