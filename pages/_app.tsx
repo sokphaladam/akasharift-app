@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           href="https://unpkg.com/primeicons/primeicons.css"
         />
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://unpkg.com/primereact/resources/themes/lara-light-indigo/theme.css"
         />
@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        />
+        /> */}
 
         {/* <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
         <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
@@ -68,10 +68,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <script src="https://unpkg.com/primereact/core/core.min.js"></script>
         <script src="https://unpkg.com/primereact/slider/slider.min.js"></script> */}
-        <script
+        {/* <script
           disable-devtool-auto
           src="https://cdn.jsdelivr.net/npm/disable-devtool"
-        ></script>
+        ></script> */}
       </Head>
       <Component {...pageProps} />
     </SettingContext.Provider>
