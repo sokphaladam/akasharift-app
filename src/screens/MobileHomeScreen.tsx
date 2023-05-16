@@ -72,7 +72,7 @@ function RenderStory() {
           }}
         >
           <p className="mb-3 max-w-[70%] text-justify">
-            {(value?.data() as any).title}
+            {value?.data() && (value?.data() as any).title}
           </p>
         </motion.h3>
         <div
@@ -104,7 +104,8 @@ function RenderStory() {
           }}
           className="flex flex-col justify-center items-center"
         >
-          {(value?.data() as any).description.split("\n").length > 1
+          {value?.data() &&
+          (value?.data() as any).description.split("\n").length > 1
             ? (value?.data() as any).description
                 .split("\n")
                 .map((x: any, i: number) => {
@@ -121,7 +122,7 @@ function RenderStory() {
                     </p>
                   );
                 })
-            : (value?.data() as any).description}
+            : ""}
         </motion.h4>
       </div>
     </div>
@@ -151,7 +152,7 @@ export function MobileHomeScreen({
         >
           <section className="relative w-full h-[703px] snap-start" id="home">
             <img
-              src="/assets/group_mob.png"
+              src="/assets/group_mob.webp"
               alt=""
               className="w-full h-[903px] absolute left-0 top-[-23px] object-cover z-10"
             />
@@ -177,7 +178,7 @@ export function MobileHomeScreen({
                   }}
                   className="pt-6"
                 >
-                  {(page?.data() as any).description}
+                  {page?.data() && (page?.data() as any).description}
                 </motion.h4>
               )}
             </div>
@@ -201,7 +202,7 @@ export function MobileHomeScreen({
                   textShadow: "0px 2px 4px #d0aca2",
                 }}
               >
-                {(page?.data() as any).article[0].title}
+                {page?.data() && (page?.data() as any).article[0].title}
               </motion.h3>
               <div
                 style={{
@@ -230,7 +231,8 @@ export function MobileHomeScreen({
                 }}
                 className="flex flex-col justify-center items-center"
               >
-                {(page?.data() as any).article[0].description.split("\n")
+                {page?.data() &&
+                (page?.data() as any).article[0].description.split("\n")
                   .length > 1
                   ? (page?.data() as any).article[0].description
                       .split("\n")
@@ -248,7 +250,7 @@ export function MobileHomeScreen({
                           </p>
                         );
                       })
-                  : (page?.data() as any).article[0].description}
+                  : ""}
               </motion.h4>
               <div
                 style={{
@@ -281,7 +283,7 @@ export function MobileHomeScreen({
                     textShadow: "0px 2px 4px #d0aca2",
                   }}
                 >
-                  {(page?.data() as any).article[1].title}
+                  {page?.data() && (page?.data() as any).article[1].title}
                 </motion.h3>
                 <div
                   style={{
@@ -311,7 +313,8 @@ export function MobileHomeScreen({
                 }}
                 className="flex flex-col justify-center items-center"
               >
-                {(page?.data() as any).article[1].description.split("\n")
+                {page?.data() &&
+                (page?.data() as any).article[1].description.split("\n")
                   .length > 1
                   ? (page?.data() as any).article[1].description
                       .split("\n")
@@ -329,7 +332,7 @@ export function MobileHomeScreen({
                           </p>
                         );
                       })
-                  : (page?.data() as any).article[1].description}
+                  : ""}
               </motion.h4>
             </div>
           </div>
