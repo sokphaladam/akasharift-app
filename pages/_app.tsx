@@ -61,17 +61,17 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
 
-        <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+        {/* <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
         <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script src="https://unpkg.com/react-transition-group@4.4.2/dist/react-transition-group.js"></script>
 
         <script src="https://unpkg.com/primereact/core/core.min.js"></script>
-        <script src="https://unpkg.com/primereact/slider/slider.min.js"></script>
-        {/* <script
+        <script src="https://unpkg.com/primereact/slider/slider.min.js"></script> */}
+        <script
           disable-devtool-auto
           src="https://cdn.jsdelivr.net/npm/disable-devtool"
-        ></script> */}
+        ></script>
       </Head>
       <Component {...pageProps} />
     </SettingContext.Provider>
