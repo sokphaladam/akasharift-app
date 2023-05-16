@@ -110,11 +110,11 @@ export default function Roadmap() {
     return (
       <div className="roadmap">
         <img
-          src="/assets/04_roadmap-art.PNG"
+          src="/assets/04_roadmap-art.webp"
           alt=""
           className="object-contain"
         />
-        <img src="/assets/IMG_3461.PNG" className="object-contain" alt="" />
+        <img src="/assets/IMG_3461.webp" className="object-contain" alt="" />
         <div
           className="w-full"
           style={{ paddingLeft: "4%", paddingRight: "4%" }}
@@ -232,12 +232,12 @@ export default function Roadmap() {
           <div className="relative">
             <div className="bg-[#F6DEC2] w-full h-[30px]"></div>
             <img
-              src="/assets/IMG_3471.PNG"
+              src="/assets/IMG_3471.webp"
               className="object-contain scale-125 -mt-[15%]"
               alt=""
             />
             <img
-              src="/assets/IMG_3472.PNG"
+              src="/assets/IMG_3472.webp"
               alt=""
               className="object-contain w-[85px] ml-auto mr-auto scale-100 -mt-[20%]"
             />
@@ -257,7 +257,7 @@ export default function Roadmap() {
         className="snap-center"
       >
         <img
-          src="/assets/IMG_3461.PNG"
+          src="/assets/IMG_3461.webp"
           style={{
             width: "100%",
             height: 650,
@@ -399,7 +399,7 @@ export default function Roadmap() {
           style={{
             width: width > 0 ? width : "100%",
             height: width > 0 ? width / 2 : 500,
-            backgroundImage: "url(/assets/IMG_3471.PNG)",
+            backgroundImage: "url(/assets/IMG_3471.webp)",
             // backgroundSize: refDiv.current ? `${refDiv.current.offsetWidth+100}px ${refDiv.current ? refDiv.current.offsetWidth/2.5 : 500}px` : '100%',
             backgroundRepeat: "no-repeat",
             objectFit: "contain",
@@ -414,7 +414,7 @@ export default function Roadmap() {
           style={{
             width: width > 0 ? width / 6 : 301,
             height: width > 0 ? width / 6 : 301,
-            backgroundImage: "url(/assets/IMG_3472.PNG)",
+            backgroundImage: "url(/assets/IMG_3472.webp)",
             // backgroundSize: refDiv.current ? `${refDiv.current.offsetWidth+100}px ${refDiv.current ? refDiv.current.offsetWidth/2.5 : 500}px` : '100%',
             backgroundRepeat: "no-repeat",
             objectFit: "contain",

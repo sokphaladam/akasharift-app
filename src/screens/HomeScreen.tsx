@@ -307,12 +307,12 @@ export default function HomeScreen() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               // moon
-              src="/assets/00-orb-white.PNG"
+              src="/assets/00-orb-white.webp"
               className="w-[150px] h-[150px] object-cover absolute bottom-[11%] left-[50%] -translate-x-[50%] -translate-y-[15%]"
               alt=""
             />
             <img
-              src="/assets/00_star-reds.PNG"
+              src="/assets/00_star-reds.webp"
               alt=""
               className="star"
               style={{
@@ -322,7 +322,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-white.PNG"
+              src="/assets/00_star-white.webp"
               alt=""
               className="star"
               style={{
@@ -332,7 +332,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-yellow.PNG"
+              src="/assets/00_star-yellow.webp"
               alt=""
               className="star"
               style={{
@@ -348,7 +348,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-white.PNG"
+              src="/assets/00_star-white.webp"
               alt=""
               className="star"
               style={{
@@ -358,7 +358,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-yellow.PNG"
+              src="/assets/00_star-yellow.webp"
               alt=""
               className="star"
               style={{
@@ -368,7 +368,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-white.PNG"
+              src="/assets/00_star-white.webp"
               alt=""
               className="star"
               style={{
@@ -378,7 +378,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-reds.PNG"
+              src="/assets/00_star-reds.webp"
               alt=""
               className="star"
               style={{
@@ -502,7 +502,7 @@ export default function HomeScreen() {
               margin: "0 -3% 0 -3%",
             }}
           >
-            <img src="/assets/00_lines.PNG" style={{ width: "100%" }} alt="" />
+            <img src="/assets/00_lines.webp" style={{ width: "100%" }} alt="" />
           </div>
           <div style={{ marginTop: "0%" }} className="snap-center">
             <BlockContent title="">
@@ -580,7 +580,7 @@ export default function HomeScreen() {
 
         <div style={{ position: "relative" }}>
           <img
-            src="/assets/00_star-reds.PNG"
+            src="/assets/00_star-reds.webp"
             alt=""
             className="star"
             style={{
@@ -590,7 +590,7 @@ export default function HomeScreen() {
             }}
           />
           <img
-            src="/assets/00_star-white.PNG"
+            src="/assets/00_star-white.webp"
             alt=""
             className="star"
             style={{
@@ -600,7 +600,7 @@ export default function HomeScreen() {
             }}
           />
           <img
-            src="/assets/00_star-white.PNG"
+            src="/assets/00_star-white.webp"
             alt=""
             className="star"
             style={{
@@ -610,7 +610,7 @@ export default function HomeScreen() {
             }}
           />
           <img
-            src="/assets/00_star-yellow.PNG"
+            src="/assets/00_star-yellow.webp"
             alt=""
             className="star"
             style={{
@@ -620,7 +620,7 @@ export default function HomeScreen() {
             }}
           />
           <img
-            src="/assets/00_star-white.PNG"
+            src="/assets/00_star-white.webp"
             alt=""
             className="star"
             style={{
@@ -630,7 +630,7 @@ export default function HomeScreen() {
             }}
           />
           <img
-            src="/assets/00_star-reds.PNG"
+            src="/assets/00_star-reds.webp"
             alt=""
             className="star"
             style={{
@@ -670,7 +670,7 @@ export default function HomeScreen() {
               }}
             ></div>
             <img
-              src="/assets/00_star-yellow.PNG"
+              src="/assets/00_star-yellow.webp"
               alt=""
               className="star"
               style={{
@@ -682,7 +682,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-white.PNG"
+              src="/assets/00_star-white.webp"
               alt=""
               className="star"
               style={{
@@ -692,7 +692,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-reds.PNG"
+              src="/assets/00_star-reds.webp"
               alt=""
               className="star"
               style={{
@@ -702,7 +702,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-yellow.PNG"
+              src="/assets/00_star-yellow.webp"
               alt=""
               className="star"
               style={{
@@ -712,7 +712,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-white.PNG"
+              src="/assets/00_star-white.webp"
               alt=""
               className="star"
               style={{
@@ -722,7 +722,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-reds.PNG"
+              src="/assets/00_star-reds.webp"
               alt=""
               className="star"
               style={{
@@ -738,7 +738,7 @@ export default function HomeScreen() {
             <div id="roadmap"></div>
             <div style={{ marginTop: "0%" }}>
               <img
-                src="/assets/04_roadmap-art.PNG"
+                src="/assets/04_roadmap-art.webp"
                 alt=""
                 style={{
                   width,
@@ -747,19 +747,12 @@ export default function HomeScreen() {
                   marginLeft: "-3%",
                 }}
               />
-              {/* <ArtWorkBack
-              width={width}
-              height={"auto"}
-              artworkBack={"/assets/04_roadmap-art.PNG"}
-              allBorderRadius={true}
-              sizeinher
-            /> */}
             </div>
             <div style={{ marginTop: "-15%" }}>
               <Roadmap />
             </div>
             <img
-              src="/assets/00_star-white.PNG"
+              src="/assets/00_star-white.webp"
               alt=""
               className="star"
               style={{
@@ -769,7 +762,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-yellow.PNG"
+              src="/assets/00_star-yellow.webp"
               alt=""
               className="star"
               style={{
@@ -781,7 +774,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-yellow.PNG"
+              src="/assets/00_star-yellow.webp"
               alt=""
               className="star"
               style={{
@@ -793,7 +786,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-white.PNG"
+              src="/assets/00_star-white.webp"
               alt=""
               className="star"
               style={{
@@ -804,7 +797,7 @@ export default function HomeScreen() {
             />
 
             <img
-              src="/assets/00_star-reds.PNG"
+              src="/assets/00_star-reds.webp"
               alt=""
               className="star"
               style={{
@@ -893,7 +886,7 @@ export default function HomeScreen() {
           >
             <div id="enter"></div>
             <img
-              src="/assets/00_star-reds.PNG"
+              src="/assets/00_star-reds.webp"
               alt=""
               className="star"
               style={{
@@ -903,7 +896,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-white.PNG"
+              src="/assets/00_star-white.webp"
               alt=""
               className="star"
               style={{
@@ -913,7 +906,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-yellow.PNG"
+              src="/assets/00_star-yellow.webp"
               alt=""
               className="star"
               style={{
@@ -925,7 +918,7 @@ export default function HomeScreen() {
               }}
             />
             <img
-              src="/assets/00_star-white.PNG"
+              src="/assets/00_star-white.webp"
               alt=""
               className="star"
               style={{

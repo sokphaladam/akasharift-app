@@ -88,7 +88,7 @@ function CharacterImage({
         style={{
           width: width ? width : "auto",
           height: height ? height : "auto",
-          backgroundImage: `url(/assets/02_chara.PNG)`,
+          backgroundImage: `url(/assets/02_chara.webp)`,
           margin,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
@@ -114,7 +114,7 @@ function CharacterImage({
         style={{
           width: width ? width : "auto",
           height: height ? height : "auto",
-          backgroundImage: `url(/assets/02_chara.PNG)`,
+          backgroundImage: `url(/assets/02_chara.webp)`,
           // transform: props.xys.interpolate(trans),
           margin,
         }}
@@ -208,7 +208,7 @@ export default function Charater({ character }: { character: any }) {
                 style={{
                   width: innerWidth - 78,
                   height: "447px",
-                  backgroundImage: `url(/assets/02_chara.PNG)`,
+                  backgroundImage: `url(/assets/02_chara.webp)`,
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   paddingBottom: "5%",
@@ -236,7 +236,7 @@ export default function Charater({ character }: { character: any }) {
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "450px 120px",
-                  backgroundImage: `url(/assets/02_chara_panel.PNG)`,
+                  backgroundImage: `url(/assets/02_chara_panel.webp)`,
                   margin: "auto",
                 }}
               >
@@ -308,7 +308,7 @@ export default function Charater({ character }: { character: any }) {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "450px 120px",
-                backgroundImage: `url(/assets/02_chara_panel.PNG)`,
+                backgroundImage: `url(/assets/02_chara_panel.webp)`,
                 margin: "auto",
               }}
             >
@@ -358,7 +358,7 @@ export default function Charater({ character }: { character: any }) {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "450px 120px",
-                backgroundImage: `url(/assets/02_chara_panel.PNG)`,
+                backgroundImage: `url(/assets/02_chara_panel.webp)`,
                 margin: "auto",
               }}
             >

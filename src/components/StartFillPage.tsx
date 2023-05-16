@@ -5,7 +5,7 @@ export function StarFillPage() {
   return (
     <>
       <img
-        src="/assets/00_star-reds.PNG"
+        src="/assets/00_star-reds.webp"
         alt=""
         style={{
           position: "absolute",
@@ -18,7 +18,7 @@ export function StarFillPage() {
         }}
       />
       <img
-        src="/assets/00_star-white.PNG"
+        src="/assets/00_star-white.webp"
         alt=""
         style={{
           position: "absolute",
@@ -31,7 +31,7 @@ export function StarFillPage() {
         }}
       />
       {/* <img
-        src="/assets/00_star-white.PNG"
+        src="/assets/00_star-white.webp"
         alt=""
         style={{
           position: "absolute",
@@ -44,7 +44,7 @@ export function StarFillPage() {
         }}
       /> */}
       <img
-        src="/assets/00_star-yellow.PNG"
+        src="/assets/00_star-yellow.webp"
         alt=""
         style={{
           position: "absolute",
@@ -57,7 +57,7 @@ export function StarFillPage() {
         }}
       />
       <img
-        src="/assets/00_star-white.PNG"
+        src="/assets/00_star-white.webp"
         alt=""
         style={{
           position: "absolute",
@@ -70,7 +70,7 @@ export function StarFillPage() {
         }}
       />
       <img
-        src="/assets/00_star-reds.PNG"
+        src="/assets/00_star-reds.webp"
         alt=""
         style={{
           position: "absolute",
@@ -83,7 +83,7 @@ export function StarFillPage() {
         }}
       />
       {/* <img
-        src="/assets/00_star-yellow.PNG"
+        src="/assets/00_star-yellow.webp"
         alt=""
         style={{
           position: "absolute",
@@ -96,7 +96,7 @@ export function StarFillPage() {
         }}
       /> */}
       {/* <img
-        src="/assets/00_star-reds.PNG"
+        src="/assets/00_star-reds.webp"
         alt=""
         style={{
           position: "absolute",
@@ -109,7 +109,7 @@ export function StarFillPage() {
         }}
       /> */}
       <img
-        src="/assets/00_star-white.PNG"
+        src="/assets/00_star-white.webp"
         alt=""
         style={{
           position: "absolute",

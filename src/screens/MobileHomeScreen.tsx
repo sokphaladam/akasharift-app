@@ -257,7 +257,7 @@ export function MobileHomeScreen({
                 }}
               >
                 <img
-                  src="/assets/00_lines.PNG"
+                  src="/assets/00_lines.webp"
                   style={{ width: "100%" }}
                   alt=""
                 />
