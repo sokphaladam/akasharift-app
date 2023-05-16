@@ -13,7 +13,8 @@ module.exports = {
     return [
       {
         source: '/home',
-        destination: 'https://akasharift.com/*',
+        destination: 'https://akasharift.com',
+        permanent: true,
       }
     ]
   },
