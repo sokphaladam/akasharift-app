@@ -24,12 +24,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SettingContext.Provider value={{ setting }}>
       <Head>
-        <meta
-          name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
-        />
-        <link rel="icon" href="/favicon.ico" />
-
         <link
           rel="stylesheet"
           href="https://unpkg.com/primeicons/primeicons.css"
@@ -47,6 +41,32 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           crossOrigin="*"
         />
+        {/* <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://unpkg.com/react-transition-group@4.4.2/dist/react-transition-group.js"></script>
+
+        <script src="https://unpkg.com/primereact/core/core.min.js"></script>
+        <script src="https://unpkg.com/primereact/slider/slider.min.js"></script> */}
+        {/* <script
+          disable-devtool-auto
+          src="https://cdn.jsdelivr.net/npm/disable-devtool"
+        ></script> */}
+      </Head>
+      <Component {...pageProps} />
+    </SettingContext.Provider>
+  );
+}
+
+function App(props: AppProps) {
+  return (
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+        />
+        <link rel="icon" href="/favicon.ico" />
 
         {/* <!-- Primary Meta Tags --> */}
         <title>Akasha Rift</title>
@@ -75,22 +95,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Welcome to Terrewat! A distant realm where our dreams converge."
         />
         <meta property="twitter:image" content={img} />
-
-        {/* <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
-        <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
-        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-        <script src="https://unpkg.com/react-transition-group@4.4.2/dist/react-transition-group.js"></script>
-
-        <script src="https://unpkg.com/primereact/core/core.min.js"></script>
-        <script src="https://unpkg.com/primereact/slider/slider.min.js"></script> */}
-        {/* <script
-          disable-devtool-auto
-          src="https://cdn.jsdelivr.net/npm/disable-devtool"
-        ></script> */}
       </Head>
-      <Component {...pageProps} />
-    </SettingContext.Provider>
+      <MyApp {...props} />
+    </>
   );
 }
 
-export default MyApp;
+export default App;
