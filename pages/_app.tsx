@@ -21,11 +21,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SettingContext.Provider value={{ setting }}>
       <Head>
-        <title>Akasha Rift</title>
-        {/* <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        ></meta> */}
         <meta
           name="viewport"
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
@@ -37,19 +32,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://unpkg.com/primeicons/primeicons.css"
           crossOrigin="*"
         />
-        {/* <link
-          rel="stylesheet"
-          href="https://unpkg.com/primereact/resources/themes/lara-light-indigo/theme.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/primereact/resources/primereact.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/primeflex@3.2.1/primeflex.min.css"
-        />
-      */}
         <link
           rel="stylesheet"
           type="text/css"
@@ -61,6 +43,49 @@ function MyApp({ Component, pageProps }: AppProps) {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           crossOrigin="*"
+        />
+
+        {/* <!-- HTML Meta Tags --> */}
+        <title>Akasha Rift</title>
+        <meta
+          name="description"
+          content="Welcome to Terrewat! A distant realm where our dreams converge."
+        />
+
+        {/* <!-- Google / Search Engine Tags --> */}
+        <meta itemProp="name" content="Akasha Rift" />
+        <meta
+          itemProp="description"
+          content="Welcome to Terrewat! A distant realm where our dreams converge."
+        />
+        <meta
+          itemProp="image"
+          content="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FLogo_Akasha-Rift_A-Black-removebg-preview.png?alt=media&token=94029238-260a-4551-a6e4-7fd05d8cd78f"
+        />
+
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://akasharift.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Akasha Rift" />
+        <meta
+          property="og:description"
+          content="Welcome to Terrewat! A distant realm where our dreams converge."
+        />
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FLogo_Akasha-Rift_A-Black-removebg-preview.png?alt=media&token=94029238-260a-4551-a6e4-7fd05d8cd78f"
+        />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Akasha Rift" />
+        <meta
+          name="twitter:description"
+          content="Welcome to Terrewat! A distant realm where our dreams converge."
+        />
+        <meta
+          name="twitter:image"
+          content="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FLogo_Akasha-Rift_A-Black-removebg-preview.png?alt=media&token=94029238-260a-4551-a6e4-7fd05d8cd78f"
         />
 
         {/* <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
