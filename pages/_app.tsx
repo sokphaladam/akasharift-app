@@ -11,6 +11,9 @@ import "primeflex/primeflex.css";
 import { SettingContext } from "../src/context/SettingContext";
 import { useSetting } from "../src/hook/useSetting";
 
+const img =
+  "https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2F6.webp?alt=media&token=a641d13c-06e9-49dc-87df-e9300247429f";
+
 function MyApp({ Component, pageProps }: AppProps) {
   const setting = useSetting();
 
@@ -45,48 +48,33 @@ function MyApp({ Component, pageProps }: AppProps) {
           crossOrigin="*"
         />
 
-        {/* <!-- HTML Meta Tags --> */}
+        {/* <!-- Primary Meta Tags --> */}
         <title>Akasha Rift</title>
+        <meta name="title" content="Akasha Rift" />
         <meta
           name="description"
           content="Welcome to Terrewat! A distant realm where our dreams converge."
         />
 
-        {/* <!-- Google / Search Engine Tags --> */}
-        <meta itemProp="name" content="Akasha Rift" />
-        <meta
-          itemProp="description"
-          content="Welcome to Terrewat! A distant realm where our dreams converge."
-        />
-        <meta
-          itemProp="image"
-          content="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FLogo_Akasha-Rift_A-Black-removebg-preview.png?alt=media&token=94029238-260a-4551-a6e4-7fd05d8cd78f"
-        />
-
-        {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://akasharift.com" />
+        {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://akasharift.com/" />
         <meta property="og:title" content="Akasha Rift" />
         <meta
           property="og:description"
           content="Welcome to Terrewat! A distant realm where our dreams converge."
         />
-        <meta
-          property="og:image"
-          content="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FLogo_Akasha-Rift_A-Black-removebg-preview.png?alt=media&token=94029238-260a-4551-a6e4-7fd05d8cd78f"
-        />
+        <meta property="og:image" content={img} />
 
-        {/* <!-- Twitter Meta Tags --> */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Akasha Rift" />
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://akasharift.com/" />
+        <meta property="twitter:title" content="Akasha Rift" />
         <meta
-          name="twitter:description"
+          property="twitter:description"
           content="Welcome to Terrewat! A distant realm where our dreams converge."
         />
-        <meta
-          name="twitter:image"
-          content="https://firebasestorage.googleapis.com/v0/b/akasharift-860aa.appspot.com/o/akasha_rift%2FLogo_Akasha-Rift_A-Black-removebg-preview.png?alt=media&token=94029238-260a-4551-a6e4-7fd05d8cd78f"
-        />
+        <meta property="twitter:image" content={img} />
 
         {/* <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
         <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
